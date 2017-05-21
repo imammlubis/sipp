@@ -8,7 +8,7 @@ namespace Sipp.Website.Areas.Organization
         {
             get 
             {
-                return "Organization";
+                return "Organization"; 
             }
         }
 
