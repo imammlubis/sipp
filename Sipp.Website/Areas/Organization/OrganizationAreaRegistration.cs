@@ -12,7 +12,7 @@ namespace Sipp.Website.Areas.Organization
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)  
         {
             context.MapRoute(
                 "Organization_default", 
