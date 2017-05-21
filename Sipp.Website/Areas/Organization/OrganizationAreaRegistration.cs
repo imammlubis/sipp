@@ -8,14 +8,14 @@ namespace Sipp.Website.Areas.Organization
         {
             get 
             {
-                return "Organization";
+                return "Organization"; 
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Organization_default",
+                "Organization_default", 
                 "Organization/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
