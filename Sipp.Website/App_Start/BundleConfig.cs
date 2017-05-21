@@ -36,7 +36,14 @@ namespace Sipp.Website
             //bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
             //    "~/Content/kendo/2016.2.607kendo.common-bootstrap.min.css",
             //    "~/Content/kendo/2016.2.607kendo.bootstrap.min.css"));
-
+            //bundles.Add(new StyleBundle("~/Content/css").Include(
+            //    "~/font-awesome/css/font-awesome.min.css",
+            //    "~/simple-line-icons/simple-line-icons.min.css",
+            //    "~/bootstrap/css/bootstrap.min.css",
+            //    "~/bootstrap-switch/css/bootstrap-switch.min.css",
+            //    "~/bootstrap-daterangepicker/daterangepicker.min.css",
+            //    "~/morris/morris.css"
+            //    ));
         }
     }
 }
