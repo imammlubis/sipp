@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{28637621-E5D0-4667-A891-980BF77F77F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HtmlTemplate", "HtmlTemplate", "{D39DB6C5-7AE4-4A9B-89E3-705F440EAC1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{CE9ABF1D-AA7F-486C-919F-6B2CBCD1423B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{13A6C661-ABFC-4FEC-8474-E6D1220725CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StoredProcedure", "StoredProcedure", "{2D8B75FF-B022-4597-98B0-A63534BD37B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sipp.Core", "Sipp.Core\Sipp.Core.csproj", "{7CA910CF-74AD-4599-8050-371828C522B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sipp.Data", "Sipp.Data\Sipp.Data.csproj", "{A9BA7CAA-4947-4837-A753-7AB52DD6652B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sipp.Service", "Sipp.Service\Sipp.Service.csproj", "{72C26D4D-0B5B-47AE-95A8-59F2BF2CBB6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sipp.Website", "Sipp.Website\Sipp.Website.csproj", "{D776E413-0547-498F-9802-150AEE577D38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sipp.Website.Tests", "Sipp.Website.Tests\Sipp.Website.Tests.csproj", "{BA79A8F2-4413-4838-9DD3-0FAF11EAA2B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CA910CF-74AD-4599-8050-371828C522B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA910CF-74AD-4599-8050-371828C522B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA910CF-74AD-4599-8050-371828C522B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA910CF-74AD-4599-8050-371828C522B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9BA7CAA-4947-4837-A753-7AB52DD6652B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BA7CAA-4947-4837-A753-7AB52DD6652B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BA7CAA-4947-4837-A753-7AB52DD6652B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BA7CAA-4947-4837-A753-7AB52DD6652B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C26D4D-0B5B-47AE-95A8-59F2BF2CBB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C26D4D-0B5B-47AE-95A8-59F2BF2CBB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C26D4D-0B5B-47AE-95A8-59F2BF2CBB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C26D4D-0B5B-47AE-95A8-59F2BF2CBB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D776E413-0547-498F-9802-150AEE577D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D776E413-0547-498F-9802-150AEE577D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D776E413-0547-498F-9802-150AEE577D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D776E413-0547-498F-9802-150AEE577D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA79A8F2-4413-4838-9DD3-0FAF11EAA2B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA79A8F2-4413-4838-9DD3-0FAF11EAA2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA79A8F2-4413-4838-9DD3-0FAF11EAA2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA79A8F2-4413-4838-9DD3-0FAF11EAA2B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CA910CF-74AD-4599-8050-371828C522B1} = {CE9ABF1D-AA7F-486C-919F-6B2CBCD1423B}
+		{A9BA7CAA-4947-4837-A753-7AB52DD6652B} = {CE9ABF1D-AA7F-486C-919F-6B2CBCD1423B}
+		{72C26D4D-0B5B-47AE-95A8-59F2BF2CBB6D} = {CE9ABF1D-AA7F-486C-919F-6B2CBCD1423B}
+		{D776E413-0547-498F-9802-150AEE577D38} = {13A6C661-ABFC-4FEC-8474-E6D1220725CC}
+		{BA79A8F2-4413-4838-9DD3-0FAF11EAA2B0} = {13A6C661-ABFC-4FEC-8474-E6D1220725CC}
+	EndGlobalSection
+EndGlobal
