@@ -9,7 +9,7 @@ namespace Sipp.Website.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             return View();
         }
