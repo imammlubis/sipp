@@ -9,29 +9,30 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    
+
     <meta content="" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <link href="../Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL STYLES -->
-    <link href="../Content/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-    <link href="../Content/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="~/Content/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME GLOBAL STYLES -->
     <!-- BEGIN THEME LAYOUT STYLES -->
-    <link href="../Content/assets/layouts/layout3/css/layout.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/layouts/layout3/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="../Content/assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/layouts/layout3/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/layouts/layout3/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="~/Content/assets/layouts/layout3/css/custom.css" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -47,8 +48,8 @@
                         <div class="container">
                             <!-- BEGIN LOGO -->
                             <div class="page-logo">
-                                <a href="index.html">
-                                    <img src="../Content/assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default">
+                                <a href="@Url.Action("index","InternalOrganization", new { area = "Organization"})">
+                                    <img src="~/Content/assets/layouts/img/logo_ESDM.png" alt="logo" class="logo-default" width="45" style="margin: 13.5px 0 0;" />
                                 </a>
                             </div>
                             <!-- END LOGO -->
@@ -75,25 +76,25 @@
                             <div class="hor-menu  ">
                                 <ul class="nav navbar-nav">
                                     <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown">
-                                        <a href="javascript:;">
+                                        <a href="@Url.Action("index","InternalOrganization", new { area = "Organization"})">
                                             <i class="fa fa-building-o"></i> Dashboard
                                             <span class="arrow"></span>
                                         </a>
                                     </li>                                    
                                     <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                        <a href="javascript:;">
+                                        <a href="@Url.Action("index","Billing", new { area = "Payment"})">
                                             <i class="fa fa-bank"></i> Tagihan
                                             <span class="arrow"></span>
                                         </a>
                                         <ul class="dropdown-menu pull-left">
                                             <li aria-haspopup="true" class="menu-dropdown">
-                                                <a href="javascript:;" class="nav-link">
+                                                <a href="@Url.Action("index","Billing", new { area = "Payment"})" class="nav-link">
                                                     <i class="icon-basket"></i> Input Tagihan Awal
                                                     <span class="arrow"></span>
                                                 </a>
                                             </li>
                                             <li aria-haspopup="true" class="menu-dropdown">
-                                                <a href="javascript:;" class="nav-link">
+                                                <a href="@Url.Action("BillingList","Billing", new { area = "Payment"})" class="nav-link">
                                                     <i class="icon-docs"></i> Daftar Tagihan
                                                     <span class="arrow"></span>
                                                 </a>
@@ -101,7 +102,7 @@
                                         </ul>
                                     </li>
                                     <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                        <a href="javascript:;">
+                                        <a href="@Url.Action("index","Company", new { area = "Organization"})">
                                             <i class="fa fa-building"></i> Perusahaan
                                             <span class="arrow"></span>
                                         </a>
@@ -731,7 +732,7 @@
         <div class="page-wrapper-row">
             <div class="page-wrapper-bottom">
                 <!-- BEGIN FOOTER -->
-                <!-- BEGIN PRE-FOOTER -->
+                <!-- BEGIN PRE-FOOTER
                 <div class="page-prefooter">
                     <div class="container">
                         <div class="row">
@@ -789,9 +790,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- END PRE-FOOTER -->
+                END PRE-FOOTER -->
                 <!-- BEGIN INNER FOOTER -->
-                <div class="page-footer">
+                <div class="page-footer text-center">
                     <div class="container">
                         2017 &copy; ESDM
                     </div>
