@@ -185,7 +185,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Organization\Controllers\CompanyController.cs" />
+    <Compile Include="Areas\Organization\Controllers\InternalOrganizationController.cs" />
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
+    <Compile Include="Areas\Payment\Controllers\BillingController.cs" />
     <Compile Include="Areas\Payment\PaymentAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2112,6 +2115,14 @@
     <Content Include="Content\assets\layouts\layout7\img\Thumbs.db" />
     <Content Include="Content\assets\pages\media\blog\Thumbs.db" />
     <Content Include="Content\assets\pages\media\pages\Thumbs.db" />
+    <Content Include="Areas\Payment\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Payment\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Organization\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Organization\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Organization\Views\InternalOrganization\Index.cshtml" />
+    <Content Include="Areas\Organization\Views\Company\Index.cshtml" />
+    <Content Include="Areas\Payment\Views\Billing\Index.cshtml" />
+    <Content Include="Areas\Payment\Views\Billing\BillingList.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -3627,12 +3638,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Organization\Controllers\" />
     <Folder Include="Areas\Organization\Models\" />
-    <Folder Include="Areas\Organization\Views\Shared\" />
-    <Folder Include="Areas\Payment\Controllers\" />
     <Folder Include="Areas\Payment\Models\" />
-    <Folder Include="Areas\Payment\Views\Shared\" />
     <Folder Include="Content\assets\apps\img\" />
   </ItemGroup>
   <ItemGroup>
