@@ -1,85 +1,94 @@
 ﻿
 @{
     ViewBag.Title = "";
-    Layout = "~/Areas/InternalOrganization/Views/Shared/_LayoutHome.cshtml";
+    Layout = "~/Areas/InternalOrganization/Views/Shared/_LayoutHomeCompanies.cshtml";
 }
-
-<div class="banner-wrapper">
-    <div class="index-banner">
-        <div class="tiles">
-            <!--start logo
-            <div class="tile image double-down double">
-                <div class="tile-body">
-                    <img src="~/Content/assets/layouts/img/logo_ESDM.png" />
-                </div>
-                <div class="tile-object">
-                    <div class="name">
+<div class="page-content-inner">
+    <div class="row margin-bottom-40">
+        <div class="col-lg-12">
+            <div class="portlet light about-text">
+                <h3>
+                    <i class="fa fa-check icon-info"></i> Petunjuk
+                </h3>
+                <p class="margin-top-20">
+                    Pada Halaman ini, Perusahaan dapat melakukan konfirmasi pembayaran ataupun cicilan tagihan Piutang PNBP.
+                </p>
+                <p>    Field yang harus diisi oleh perusahaan adalah:                    </p>
+                
+                <div class="row">
+                    <div class="col-xs-6">
+                        <ul class="list-unstyled margin-top-10 margin-bottom-10">
+                            <li>
+                                <i class="fa fa-check"></i> Memasukkan Nominal Tagihan yang dibayarkan
+                            </li>
+                            <li>
+                                <i class="fa fa-check"></i> Memasukkan bukti pembayaran
+                            </li>
+                            <li>
+                                <i class="fa fa-check"></i> Memasukkan alasan pada kolom keterangan, apabila menolak tagihan
+                            </li>
+                            
+                        </ul>
                     </div>
+                    @*<div class="col-xs-6">
+                        <ul class="list-unstyled margin-top-10 margin-bottom-10">
+                            <li>
+                                <i class="fa fa-check"></i> Nam liber tempor cum soluta
+                            </li>
+                            <li>
+                                <i class="fa fa-check"></i> Mirum est notare quam
+                            </li>
+                            <li>
+                                <i class="fa fa-check"></i> Lorem ipsum dolor sit amet
+                            </li>
+                            <li>
+                                <i class="fa fa-check"></i> Mirum est notare quam
+                            </li>
+                            <li>
+                                <i class="fa fa-check"></i> Mirum est notare quam
+                            </li>
+                        </ul>
+                    </div>*@
+                </div>
+                <div class="portlet-body form" ng-app="company" ng-controller="company-controller">
+                    <form class="form-horizontal" name="userForm" id="userForm" role="form">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Nominal Pembayaran</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control"
+                                           ng-model="creditModel.nominal"
+                                           name="nominal" id="nominal" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Foto / Scan Bukti Pembayaran</label>
+                                <div class="col-md-9">
+                                    <input type="file" class="form-control"
+                                           ng-model="creditModel.bukti"
+                                           name="bukti" id="bukti" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Keterangan</label>
+                                <div class="col-md-9">
+                                    <textarea rows="3" class="form-control"
+                                           ng-model="creditModel.keterangan"
+                                           name="keterangan" id="keterangan" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group text-right">
+                            <div class="right col-md-11">
+                                <button type="button" class="btn default">Cancel</button>
+                                <button type="submit" class="btn green" ng-click="CreateDetailKronologiTahapan()">Submit</button>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            end logo-->
-            <div id="block-3" class="tile double-down hidden-xs"></div>
-            <!--start memasukan data-->
-            <a href="@Url.Action("Index", "HomeAngkutJualMineral", new { Area = "AngkutJualMineral" })">
-                <div class="tile bg-yellow-saffron box-shadow">
-                    <div class="tile-body">
-                        <i class="fa fa-pencil-square-o"></i>
-                    </div>
-                    <div class="tile-object">
-                        <div class="name" style="margin-right:0;"> Angkut Jual Mineral </div>
-                    </div>
-                </div>
-            </a>
-            <!--start memasukan data-->
-            <!--start melihat daftar keseluruhan-->
-            <a href="@Url.Action("Index", "HomeAngkutJual", new { Area = "AngkutJual" })">
-                <div id="block-1" class="tile bg-blue-madison box-shadow">
-                    <div class="tile-body">
-                        <i class="fa fa-list-alt"></i>
-                    </div>
-                    <div class="tile-object">
-                        <div class="name"> Angkut Jual Batubara </div>
-                    </div>
-                </div>
-            </a>
-            <!--start melihat daftar keseluruhan-->
-            <!--start riwayat form evaluasi-->
-            <a href="@Url.Action("Index", "HomeKK", new { Area = "KontrakKarya" })">
-                <div id="block-2" class="tile bg-green-meadow box-shadow">
-                    <div class="tile-body">
-                        <i class="fa fa-history"></i>
-                    </div>
-                    <div class="tile-object">
-                        <div class="name" style="margin-right:0;"> Kontrak Karya </div>
-                    </div>
-                </div>
-            </a>
-            <!--start riwayat form evaluasi-->
-            <!--start daftar laporan-->
-            <a href="#">
-                <div class="tile double bg-purple-wisteria box-shadow">
-                    <div class="tile-body">
-                        <i class="fa fa-file-text-o"></i>
-                    </div>
-                    <div class="tile-object">
-                        <div class="name" style="margin-right:0;"> Penanaman Modal Asing</div>
-                    </div>
-                </div>
-            </a>
-            <!--start daftar laporan-->
-            <!--start daftar laporan-->
-            <a href="#">
-                <div id="block-4" class="tile double bg-red-mint box-shadow">
-                    <div class="tile-body">
-                        <i class="fa fa-file-text-o"></i>
-                    </div>
-                    <div class="tile-object">
-                        <div class="name" style="margin-right:0;"> Pengolahan & Permunian</div>
-                    </div>
-                </div>
-            </a>
-
         </div>
     </div>
 </div>
-

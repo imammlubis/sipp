@@ -306,6 +306,7 @@
     <Compile Include="Utils\SmsService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\InternalOrganization\Ng\Company.js" />
     <Content Include="Areas\InternalOrganization\Ng\Process.js" />
     <Content Include="Content\assets\global\css\components-md.css" />
     <Content Include="Content\assets\global\css\components-md.min.css" />
