@@ -1,0 +1,50 @@
+﻿@using Sipp.Web.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, 
+    new { @class = "login-form", role = "form" }))
+            {
+    @Html.AntiForgeryToken()
+
+    <div class="form-title">
+        <span class="form-title">Welcome.</span>
+        <span class="form-subtitle">Please login.</span>
+    </div>
+
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        <span> Enter any username and password. </span>
+    </div>
+
+    <div class="form-group">
+        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+        <label class="control-label visible-ie8 visible-ie9">Email</label>
+        @Html.TextBoxFor(m=>m.Email, new { @class = "form-control form-control-solid placeholder-no-fix", @placeholder="Email" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        @*<input class="form-control form-control-solid placeholder-no-fix" type="text" 
+               autocomplete="off" placeholder="Username" name="username">*@
+    </div>
+
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Password</label>
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-solid placeholder-no-fix", @placeholder = "Password" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        @*<input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password">*@
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" value="Log in" class="btn red btn-block uppercase">Login</button>
+    </div>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })   }
+@*<form class="login-form" action="#" method="post">*@
+@*</form>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

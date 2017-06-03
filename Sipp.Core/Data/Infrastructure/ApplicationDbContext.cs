@@ -15,9 +15,10 @@ namespace Sipp.Core.Data.Infrastructure
     {
         public DbSet<Company> Company { get; set; }
         public DbSet<CompanyHistory> CompanyHistory { get; set; }
-        public DbSet<RegularPayment> RegularPayment { get; set; }
-        public DbSet<PaymentHistory> PaymentHistory { get; set; }
-        
+        //public DbSet<RegularPayment> RegularPayment { get; set; }
+        public DbSet<BillCredit> BillCredit { get; set; }
+        public DbSet<RegularBill> RegularBill { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>ESDM - @ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link href="~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/plugins/uniform/css/uniform.default.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/css/components.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/global/css/plugins.min.css">
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/assets/pages/css/about.min.css" />-->
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/layouts/css/layout.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/layouts/css/themes/default.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/layouts/css/custom.css">
+    <link href="~/Content/assets/layouts/css/customKendoAngkutJual.css" rel="stylesheet" />
+    <!-- END THEME LAYOUT STYLES -->
+    <!--    <link rel="shortcut icon" href="favicon.ico" />-->
+</head>
+<!-- END HEAD -->
+<body class="page-container-bg-solid page-header-menu-fixed bg_11">
+    <!-- BEGIN HEADER -->
+    <div class="page-header">
+        <!-- BEGIN HEADER TOP -->
+        <div class="page-header-top">
+            <div class="container-fluid">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="@Url.Action("Index", "Home", new { Area = "AngkutJual" })">
+                        <!--<img src="~/Content/assets/layouts/img/logo-default.jpg" alt="logo" class="logo-default" />-->
+                        <img src="~/Content/assets/layouts/img/Logo_ESDM_2.png" alt="logo" class="logo-default" width="45" style="margin: 13.5px 0 0;" />
+                    </a>
+                    <div class="header_title">
+                        SISTEM INFORMASI PERIZINAN MINERAL DAN BATUBARA
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"></a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN USER LOGIN DROPDOWN
+                    <li class="dropdown dropdown-user dropdown-dark">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img alt="" class="img-circle" src="~/Content/assets/layouts/img/avatar9.jpg">
+                            <span class="username username-hide-mobile">Nick</span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="page_user_lock_1.html">
+                                    <i class="icon-lock"></i> Lock Screen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="page_user_login_1.html">
+                                    <i class="icon-key"></i> Log Out
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    END USER LOGIN DROPDOWN -->
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+        </div>
+        <!-- END HEADER TOP -->
+        <!-- BEGIN HEADER MENU -->
+        <div class="page-header-menu box-shadow">
+            <div class="container-fluid">
+                <!-- BEGIN HEADER SEARCH BOX -->
+                <!--
+            <form class="search-form" action="page_general_search.html" method="GET">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="query">
+                    <span class="input-group-btn">
+                        <a href="javascript:;" class="btn submit">
+                            <i class="icon-magnifier"></i>
+                        </a>
+                    </span>
+                </div>
+            </form>
+            -->
+                <!-- END HEADER SEARCH BOX -->
+                <!-- BEGIN MEGA MENU -->
+                <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+                <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+                <div class="hor-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="@Url.Action("Index", "Home", new { Area = String.Empty })" class="nav-link">
+                                Home
+                            </a>
+                        </li>
+                        <!--start menu master-->
+                        @*<li class="menu-dropdown classic-menu-dropdown">
+                            <a href="javascript:;">
+                                Master
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:;" class="nav-link">
+                                        Angkut Jual
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "AdjustedSks", new { Area = "AngkutJual" })" class="nav-link">
+                                                SK Penyesuaian
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "BannedSks", new { Area = "AngkutJual" })" class="nav-link">
+                                                SK Pencabutan Izin
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "CoalSourceSks", new { Area = "AngkutJual" })" class="nav-link">
+                                                SK IUP OP (Asal Batubara)
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "ExtendedSks", new { Area = "AngkutJual" })" class="nav-link">
+                                                SK Perpanjangan
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "FirstSks", new { Area = "AngkutJual" })" class="nav-link">
+                                                SK Awal
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "ReactivatedSks", new { Area = "AngkutJual" })" class="nav-link">
+                                                SK Pengaktifan
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "TempBannedSks", new { Area = "AngkutJual" })" class="nav-link">
+                                                SK Penghentian Sementara
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:;" class="nav-link">
+                                        Organisasi
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "Companies", new { Area = "Organization" })" class="nav-link">
+                                                Perusahaan
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "CompanyAddresses", new { Area = "Organization" })" class="nav-link">
+                                                Alamat Perusahaan
+                                            </a>
+                                        </li>
+                                        <li class="hide">
+                                            <a href="@Url.Action("Index", "IupTypes", new { Area = "Organization" })" class="nav-link">
+                                                IUP
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Index", "ShareHolders", new { Area = "Organization" })" class="nav-link">
+                                                Pemegang Saham
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>*@
+                        <!--end menu master-->
+
+                        <li class="menu-dropdown mega-menu-dropdown">
+                            <a href="javascript:;">
+                                Pengangkutan dan Penjualan
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+
+                                <li class="">
+                                    <!--memasukan_data.html-->
+                                    <a href="@Url.Action("PreCreation", "iupopangkutjual", new { Area = "AngkutJual" })" class="nav-link  ">
+                                        <i class="fa fa-pencil-square-o"></i> Memasukan Data
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <!--melihat_daftar_keseluruhan.html-->
+                                    <a href="@Url.Action("Index", "iupopangkutjuallist", new { Area = "AngkutJual" })" class="nav-link">
+                                        <i class="fa fa-list-alt"></i> Melihat Daftar Keseluruhan
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <!--riwayat_evaluasi.html-->
+                                    <a href="@Url.Action("Index", "EvaluationHistories", new { Area = "AngkutJual" })" class="nav-link">
+                                        <i class="fa fa-history"></i> Kesesuaian Sumber Batubara
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <!--laporan_rkab_realisasi_tahunan.html-->
+                                    <a href="@Url.Action("Index", "RKABRealizations", new { Area = "AngkutJual" })" class="nav-link">
+                                        <i class="fa fa-file-text-o"></i> Daftar Laporan RKAB, Triwulan, Tahunan
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="@Url.Action("Index", "NotificationLog", new { Area = "AngkutJual" })" class="nav-link">
+                                        <i class="glyphicon glyphicon-registration-mark"></i> Notification Log
+                                    </a>
+                                </li>
+                                @*<li class="">
+                                    <a href="@Url.Action("Index", "RegisterCompany", new { Area = "AngkutJual" })" class="nav-link">
+                                        <i class="glyphicon glyphicon-registration-mark"></i> Register Perusahaan
+                                    </a>
+                                </li>*@
+                            </ul>
+                        </li>
+                        <!--
+                        <li class="menu-dropdown classic-menu-dropdown">
+                            <a href="#">
+                                Pengolahan dan Pemurnian
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+
+                        <li class="menu-dropdown mega-menu-dropdown mega-menu-full">
+                            <a href="#">
+                                Penanaman Modal Asing
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+
+                        <li class="menu-dropdown mega-menu-dropdown mega-menu-full">
+                            <a href="http://pkp2b-dev.azurewebsites.net/Home/MelihatDaftarKeseluruhan">
+                                PKP2B
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        -->
+                    </ul>
+                </div>
+                <!-- END MEGA MENU -->
+            </div>
+        </div>
+        <!-- END HEADER MENU -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content bg_11">
+                <div class="container-fluid">
+                    <!-- BEGIN PAGE BREADCRUMBS -->
+                    <ul class="page-breadcrumb breadcrumb">
+                        <!--
+                        <li>
+                            <a href="/Home/Index">Home</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <a href="#">More</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <span>Form Stuff</span>
+                        </li>
+                        -->
+                    </ul>
+                    <!-- END PAGE BREADCRUMBS -->
+                    <!-- BEGIN PAGE CONTENT INNER -->
+                    <div class="page-content-inner">
+                        @RenderBody()
+                    </div>
+                    <!-- END PAGE CONTENT INNER -->
+
+
+                </div>
+            </div>
+            <!-- END PAGE CONTENT BODY -->
+            <!-- END CONTENT BODY -->
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <!-- BEGIN INNER FOOTER -->
+    <div class="page-footer">
+        <div class="container">
+            &copy; @DateTime.Now.Year ESDM
+        </div>
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+    <!-- END INNER FOOTER -->
+    <!-- END FOOTER -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/respond.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    <!-- BEGIN CORE PLUGINS -->
+    <script type="text/javascript" src="~/Content/assets/global/plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/js.cookie.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/uniform/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script type="text/javascript" src="~/Content/assets/global/plugins/moment.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script type="text/javascript" src="~/Content/assets/global/scripts/app.min.js"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="~/Content/assets/pages/scripts/components-date-time-pickers.min.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script type="text/javascript" src="~/Content/assets/layouts/scripts/layout/layout.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/layouts/scripts/layout/demo.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/layouts/scripts/global/scripts/quick-sidebar.min.js"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->
+</body>
+</html>

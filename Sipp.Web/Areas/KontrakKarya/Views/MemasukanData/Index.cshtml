@@ -1,0 +1,273 @@
+﻿
+@{
+    ViewBag.Title = "- Memasukan data";
+    Layout = "~/Areas/KontrakKarya/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #namaPerusahaan {
+        text-transform: uppercase;
+    }
+
+    #cpNama {
+        text-transform: uppercase;
+    }
+
+    #provinsi {
+        text-transform: uppercase;
+    }
+
+    #kabupaten {
+        text-transform: uppercase;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Memasukan Data Kontrak Karya</span>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;" ng-app="pkp2b" ng-controller="pkp2b-controller">
+                <div class="form-body">
+                    <!-- BEGIN FORM-->
+                    <form name="userForm">
+                        <div class="row no-margin">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Nama Perusahaan</label>
+                                        <input type="text" class="form-control"
+                                               ng-model="companyModel.nama"
+                                               name="namaPerusahaan" id="namaPerusahaan" required>
+                                    </div>
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">NPWP</label>
+                                        <input type="text" class="form-control"
+                                               ng-model="companyModel.npwp"
+                                               maxlength="21"
+                                               data-mask="99.999.999.9-999.999"
+                                               name="npwp" id="npwp" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group has-success col-xs-12">
+                                        <label for="NewPass">Alamat</label>
+                                        <textarea class="form-control"
+                                                  ng-model="companyModel.alamat" rows="5" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Telp</label>
+                                        <input type="text" ng-model="companyModel.telp" class="form-control" name="ConfirmNew" id="ConfirmNew">
+                                    </div>
+
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Fax</label>
+                                        <input type="text" ng-model="companyModel.fax" class="form-control" name="ConfirmNew" id="ConfirmNew">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="Email">Email</label>
+                                        <input type="email" ng-model="companyModel.email" class="form-control" id="Email">
+                                    </div>
+
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="Website">Website</label>
+                                        <input type="text" ng-model="companyModel.website" class="form-control" id="Website">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Contact Person (Nama)</label>
+                                        <input type="text" ng-model="companyModel.namacp" class="form-control" name="cpNama" id="cpNama">
+                                    </div>
+
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Contact Person (HP)</label>
+                                        <input type="text" value="" ng-model="companyModel.hpcp" class="form-control" name="cpHp" id="cpHp">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h3 class="bold">Data Kontrak Karya</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Generasi</label>
+                                        <select class="form-control" ng-model="dataPkp2bModel.generasi" name="generasi" id="generasi" required>
+                                            <option></option>
+                                            <option value="I">Generasi I</option>
+                                            <option value="II">Generasi II</option>
+                                            <option value="III">Generasi III</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group has-success col-sm-6" required>
+                                        <label for="ConfirmNew">Kode Wilayah</label>
+                                        <input type="text" class="form-control" ng-model="dataPkp2bModel.kodeWilayah" name="kodeWilayah" id="kodeWilayah" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Luas Wilayah (Awal)</label>
+                                        <input type="number"
+                                               ng-model="dataPkp2bModel.luasWilayahAwal" id="luasWilayahAwal" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Luas Wilayah (Dipertahankan)</label>
+                                        <input type="number"
+                                               ng-model="dataPkp2bModel.luasWilayahDipertahankan" id="luasWilayahDipertahankan" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group has-success col-xs-6">
+                                        <label for="ConfirmNew">Tahapan Akhir</label>
+                                        <select class="form-control" ng-model="dataPkp2bModel.tahapanAkhir" name="tahapanAkhir" id="tahapanAkhir" required>
+                                            <option></option>
+                                            <option value="Penyelidikan Umum">Penyelidikan Umum</option>
+                                            <option value="Eksplorasi">Eksplorasi</option>
+                                            <option value="Studi Kelayakan">Studi Kelayakan</option>
+                                            <option value="Konstruksi">Konstruksi</option>
+                                            <option value="Operasi Produksi">Operasi Produksi</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group has-success col-xs-6">
+                                        <label for="perizinan">Perizinan</label>
+                                        <select class="form-control" ng-model="dataPkp2bModel.perizinan" required>
+                                            <option></option>
+                                            <option value="BUMN">BUMN</option>
+                                            <option value="KK">KK</option>
+                                            <option value="IUPOPK">IUPOPK</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group has-success col-xs-12">
+                                        <label for="ConfirmNew">Komoditi</label>                                        
+                                        <select class="selectpicker form-control" multiple 
+                                                title="Please select..."
+                                                ng-model="dataPkp2bModel.komoditi"
+                                                name="komoditi"
+                                                id="komoditi" >
+                                            <option></option>
+                                            <option value="Timah">Timah</option>
+                                            <option value="Emas">Emas</option>
+                                            <option value="Nikel">Nikel</option>
+                                            <option value="Tembaga">Tembaga</option>
+                                            <option value="Granite">Granite</option>
+                                            <option value="Intan">Intan</option>
+                                            <option value="Pasir Besi">Pasir Besi</option>
+                                            <option value="Bauksit">Bauksit</option>
+                                            <option value="Biji Besi">Biji Besi</option>
+                                            <option value="Iodium">Iodium</option>
+                                            <option value="Alumina">Alumina</option>
+                                            <option value="Clay">Clay</option>
+                                            <option value="Zircon">Zircon</option>
+                                            <option value="Timbal">Timbal</option>
+                                            <option value="Seng">Seng</option>
+                                            <option value="Mangan">Mangan</option>
+                                            <option value="Lainnya">Lainnya</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">No Kontrak</label>
+                                        <input type="text" ng-model="dataPkp2bModel.noKontrak" required class="form-control" name="ConfirmNew" id="ConfirmNew">
+                                    </div>
+                                    <div class="form-group has-success col-sm-6">
+                                        <label>Tanggal Kontrak</label>
+                                        @*<input type="text" class="form-control form-control-inline date-picker"
+                                            id="tanggalKontrak"
+                                            data-date-format="dd/mm/yyyy"
+                                            size="16" value="" required ng-model="dataPkp2bModel.tanggalKontrak" />*@
+                                        <div class="input-group input-append date" id="tanggalKontrak">
+                                            <input type="text" ng-model="dataPkp2bModel.tanggalKontrak" class="form-control" data-date-format="dd/mm/yyyy"
+                                                   name="tanggalKontrak" />
+                                            <span class="input-group-addon add-on">
+                                                <span class="glyphicon glyphicon-calendar">
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Lokasi (Provinsi)</label>
+                                        <input type="text" ng-model="dataPkp2bModel.provinsi" id="provinsi" class="form-control" required>
+                                    </div>
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Lokasi (Kabupaten)</label>
+                                        <input type="text" ng-model="dataPkp2bModel.kabupaten" id="kabupaten" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-6">
+                                        <label for="ConfirmNew">Jangka Waktu</label>
+                                        <input class="form-control" ng-model="dataPkp2bModel.jangkaWaktu" required type="number" value="" />
+                                    </div>
+                                    <div class="form-group has-success col-sm-6">
+                                        <label>Tanggal Berakhir</label>
+                                        @*<input class="form-control form-control-inline date-picker" size="16" type="text" value=""
+                                            id="tanggalBerakhir"
+                                            data-date-format="dd/mm/yyyy"
+                                            ng-model="dataPkp2bModel.tanggalBerakhir" />*@
+                                        <div class="input-group input-append date" id="tanggalBerakhir">
+                                            <input type="text" ng-model="dataPkp2bModel.tanggalBerakhir"
+                                                   class="form-control" data-date-format="dd/mm/yyyy"
+                                                   name="tanggalBerakhir" />
+                                            <span class="input-group-addon add-on">
+                                                <span class="glyphicon glyphicon-calendar">
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group has-success col-sm-12">
+                                        <label for="ConfirmNew">Lainnya</label>
+                                        <input class="form-control" 
+                                               ng-model="dataPkp2bModel.lainnya"
+                                               type="text" 
+                                               value="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn green-sharp red-stripe" ng-click="SaveGeneralInformation()"><i class="fa fa-save"></i> Simpan</button>
+                                <button type="reset" class="btn red"><i class="fa fa-close"></i> Batal</button>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/KontrakKarya/Ng/KontrakKarya/Process.js")"></script>
+

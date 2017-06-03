@@ -1,0 +1,257 @@
+﻿@model EduSpot.Entity.Tables.Organization.Company
+
+@{
+    ViewBag.Title = "Peringatan";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+    var contactInformation = Model.CompanyAddresses.Count() > 0 ? Model.CompanyAddresses.FirstOrDefault() : new EduSpot.Entity.Tables.Organization.CompanyAddress();
+}
+<div class="row"
+     ng-app="alert"
+     ng-controller="alert-controller">
+    @Html.HiddenFor(s => s.ID, new { id = "ID" })
+
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Pengangkutan dan Penjualan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Melihat Daftar Keseluruhan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Peringatan</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="fa fa-info-circle font-red"></i>
+                            <span class="font-red sbold">
+                                Peringatan
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+                <div class="progress progress-striped active" ng-show="isBusy">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        <span class="sr-only"> 40% Complete (success) </span>
+                    </div>
+                </div>
+                <form action="#" id="form_sample_4" ng-show="!isBusy">
+                    <div class="form-body">
+                        <div class="peringatan">
+                            <div class="row">
+                                <!--start Jenis-->
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="form_control_1">Jenis Peringatan</label>
+                                        <select id="peringatan" ng-model="warningModel.WarningType" class="form-control">
+                                            <option value="Peringatan 1" selected="selected">Peringatan 1</option>
+                                            <option value="Peringatan 2">Peringatan 2</option>
+                                            <option value="Peringatan 3">Peringatan 3</option>
+                                            <option value="Pencabutan Izin">Pencabutan Izin</option>
+                                            <option value="Penghentian Sementara">Penghentian Sementara</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--end Jenis-->
+                                <div class="col-sm-4">
+                                    <div class="form-group has-success">
+                                        <label for="NoSurat">Nomor Surat</label>
+                                        <input type="text" class="form-control" name="nosurat" id="NoSurat" ng-model="warningModel.LetterNumber" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!--start no surat-->
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="hari">Jangka Waktu (Hari)</label>
+                                        <input type="text" id="hari" ng-model="warningModel.WarningDuration" disabled="disabled" class="form-control" />
+                                    </div>
+                                </div>
+                                <!--end no surat-->
+                                <!--start unduh surat-->
+                                <div class="col-sm-4">
+                                    <div class="space" style="margin-bottom: 23px;"></div>
+                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                        <span class="input-group-btn">
+                                            <button id="fake-file-button-browse2" type="button" class="btn btn-default">
+                                                <i class="fa fa-file-o"></i>
+                                            </button>
+                                        </span>
+                                        <input type="file" id="files-input-upload2" style="display:none">
+                                        <input type="text" id="fake-file-input-name2" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload2" data-target="#static" data-toggle="modal">
+                                                <span class="glyphicon glyphicon-upload"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="space"></div>
+                                </div>
+                                <!--end unduh surat-->
+                            </div>
+                            <div class="row">
+                                <!--start tgl surat-->
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <label>Tanggal Surat Peringatan</label>
+                                    @*<input class="form-control form-control-inline date-picker" size="16" type="text" value=""
+                                        id="tglSurat"
+                                        data-date-format="dd/mm/yyyy"
+                                        ng-model="warningModel.LetterDate" />*@
+                                    @Html.Kendo().DatePicker().Name("tglSurat").HtmlAttributes(new { ng_model = "warningModel.LetterDate", @class = "form-control" })
+                                    @*<input class="form-control form-control-inline date-picker"
+                                        id="tglSurat"
+                                        ng-model="warningModel.LetterDate"
+                                        size="16" type="text" value="">*@
+                                </div>
+                                <!--end tgl surat-->
+                                <!--start jangka waktu-->
+                                <div class="col-sm-4">
+                                    <div class="form-group has-success">
+                                        <label for="JangkaWaktu">Tanggal Akhir Peringatan</label>
+                                        @*<input type="text" class="form-control"
+                                            ng-model="warningModel.WarningDuration"
+                                            name="jangkawaktu" id="JangkaWaktu">*@
+                                        @Html.Kendo().DatePicker().Name("tglEndSurat").HtmlAttributes(new { ng_model = "warningModel.EndDate", @class = "form-control" }).Events(e => e.Close("close"))
+                                    </div>
+                                </div>
+                                <!--end jangka waktu-->
+                                <div class="space"></div>
+                            </div>
+
+                            <div class="row">
+                                <!--start nama perusahaan-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="NmPerusahaan">Nama Perusahaan</label>
+                                        <input type="text" class="form-control"
+                                               value="@Model.Name"
+                                               name="nmperusahaan" id="NmPerusahaan">
+                                    </div>
+                                </div>
+                                <!--end nama perusahaan-->
+                            </div>
+
+                            <div class="row">
+                                <!--start email-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="Email">Email</label>
+                                        <input type="email" class="form-control"
+                                               ng-model="warningModel.DestinationEmail"
+                                               name="email" id="Email">
+                                    </div>
+                                </div>
+                                <!--end email-->
+                                <!--start btn edit
+                                <div class="col-sm-1">
+                                    <div class="text-right">
+                                        <div class="space"></div>
+                                        <a href="#" class="btn green-sharp btn-outline">
+                                            Edit
+                                        </a>
+                                        <div class="space"></div>
+                                    </div>
+                                </div>
+                                start btn edit-->
+                            </div>
+
+                            <div class="row">
+                                <!--start No. Handphon-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="NoHp">No. Handphone</label>
+                                        <input type="text" class="form-control"
+                                               ng-model="warningModel.DestinationMobileNo"
+                                               name="nohp" id="NoHp">
+                                    </div>
+                                </div>
+                                <!--end No. Handphon-->
+                            </div>
+
+                            <div class="row">
+                                <!--start keterangan-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="form_control_4">Keterangan</label>
+                                        <textarea class="form-control" name="keterangan" rows="3"
+                                                  ng-model="warningModel.AdditionalInfo"></textarea>
+                                    </div>
+                                </div>
+                                <!--end keterangan-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button"
+                                        ng-click="sendAlert()"
+                                        class="btn green-sharp red-stripe">
+                                    <i class="fa fa-send-o"></i>
+                                    Kirim
+                                </button>
+                                <button type="reset" class="btn red" ng-click="buttonBatal()">
+                                    <i class="fa fa-close"></i>
+                                    Batal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/AngkutJual/Ng/IupOp/alertdata.js")"></script>
+
+@*<script>
+        function changer() {
+            var a = document.getElementById('peringatan');
+            var z = a.options[a.selectedIndex].value;
+
+            if (z == 'SP1' || z == 'SP2') {
+                $('#hides').hide();
+            }
+            else if (z == 'SP3') {
+                $('#hides').show();
+            }
+        }
+    </script>*@
+
+<script>
+    function close(){
+        if ($('#tglSurat').val() == '') {
+            $('#tglEndSurat').data("kendoDatePicker").value('');
+            document.getElementById("tglSurat").focus();
+            alert('Tolong Isi Tanggal Surat Peringatan');
+        }
+        else {
+            var oneDay = 24 * 60 * 60 * 1000;
+            var firstDate = $('#tglSurat').data("kendoDatePicker").value();
+            var secondDate = $('#tglEndSurat').data("kendoDatePicker").value();
+
+            var diffDays = Math.round(Math.abs((firstDate - secondDate) / (oneDay)));
+            $('#hari').val(diffDays.toString());
+
+        }
+    }
+</script>

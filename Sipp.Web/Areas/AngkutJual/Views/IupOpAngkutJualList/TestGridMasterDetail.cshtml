@@ -1,0 +1,267 @@
+﻿@{
+    ViewBag.Title = "- Melihat daftar keseluruhan";
+    Layout = "";
+}
+<!--BEGIN KENDO PLUGIN-->
+@Styles.Render("~/Content/kendo/css")
+<link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.default.mobile.min.css")" rel="stylesheet" type="text/css" />
+
+<link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.material.mobile.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.dataviz.material.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.material.min.css")" rel="stylesheet" type="text/css" />
+
+<script src="@Url.Content("~/Scripts/kendo/2016.2.607/jquery.min.js")"></script>
+<script src="@Url.Content("~/Scripts/kendo/2016.2.607/jszip.min.js")"></script>
+<script src="@Url.Content("~/Scripts/kendo/2016.2.607/kendo.all.min.js")"></script>
+
+<!--END KENDO PLUGIN-->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TestGridMasterDetail</title>
+</head>
+<body>
+    <div>
+
+        @(Html.Kendo().Grid<Esdm.Web.Areas.AngkutJual.Models.IupOpAngkutJualListDetailPeringatan>()
+        .Name("grid4")        
+        .ToolBar(tools => tools.Excel().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+        .Excel(excel => excel
+                .FileName("DetailPeringatan.xlsx")
+                .AllPages(true)
+                )                
+        .EnableCustomBinding(true)
+        .AutoBind(false)
+        .Columns(columns =>
+        {
+            columns.Command(
+                command =>
+                {
+                    command.Custom(" Print").Click("index.print4");
+                    command.Custom(" Alert").Click("index.alert2");
+                }).Width(200).Title("Action");
+            columns.Bound(p => p.ID).Hidden();
+            columns.Bound(p => p.CompanyID).Hidden();
+            columns.Bound(p => p.Name).HeaderTemplate("Nama Perusahaan").Width(500);
+            columns.Bound(p => p.Address).HeaderTemplate("Alamat Perusahaan").Width(992);
+            columns.Bound(p => p.Email).HeaderTemplate("Email").Width(300);
+            columns.Bound(p => p.NoHp).HeaderTemplate("Mobile No.").Width(200);
+        })
+        .Events(e => e.DataBound("onRowBound"))
+        .Pageable()
+        .Filterable()
+        .ClientDetailTemplateId("yomen")
+        .Sortable()
+        .ColumnMenu()
+        .Resizable(resize => resize.Columns(true))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read("ListDetailPeringatan", "IupOpAngkutJualList", new { area = "AngkutJual" })
+            .ServerOperation(true)
+        ))
+    </div>
+</body>
+</html>
+<script id="yomen" type="text/kendo-tmpl">
+    @(Html.Kendo().Grid<EduSpot.Entity.Tables.AngkutJual.WarningLetter>()
+            .Name("grid_#=ID#") // template expression, to be evaluated in the master context
+            .Columns(columns =>
+            {
+                //columns.Bound(o => o.ID).Width(110);
+                columns.Bound(o => o.AdditionalInfo).Width(110).HeaderTemplate("Keterangan");
+                columns.Bound(o => o.WarningType).Width(110).HeaderTemplate("Jenis Peringatan");
+                columns.Bound(o => o.WarningDuration).Width(110).HeaderTemplate("Jangka Waktu");
+            })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(10)
+                .Read(read => read.Action("ListDetail", "iupopangkutjuallist", new { area = "angkutjual", id = "#=ID#" }))
+            )
+            .Pageable()
+            .Sortable()
+            .ToClientTemplate()
+    )
+</script>
+
+<script>
+            //$("#grid").kendoGrid({
+            //    toolbar: ["pdf"],
+            //    pdfExport: function (e) {
+            //        var grid = $("#grid").data("kendoGrid");
+            //        grid.hideColumn(0);
+            //        e.promise
+            //        .done(function () {
+            //            grid.showColumn(0);
+            //        });
+            //    }
+            //})
+
+            function onRowBound(e) {
+                $(".k-grid-Print").find("span").addClass("k-font-icon  k-i-print");
+                $(".k-grid-Edit").find("span").addClass("k-font-icon k-i-pencil");
+                $(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+                $(".k-grid-Alert").find("span").addClass("k-font-icon k-i-exception");
+                $(".k-grid-History").find("span").addClass("k-font-icon k-i-refresh");
+
+                $(".k-grid2-Edit").find("span").addClass("k-font-icon k-i-pencil");
+                $(".k-grid2-Delete").find("span").addClass("k-font-icon k-i-trash");
+                $(".k-grid2-Alert").find("span").addClass("k-font-icon k-i-exception");
+
+                $(".k-grid3-Edit").find("span").addClass("k-font-icon k-i-pencil");
+                $(".k-grid3-Delete").find("span").addClass("k-font-icon k-i-trash");
+                $(".k-grid4-Alert").find("span").addClass("k-font-icon k-i-exception");
+
+                $(".k-grid4-Print").find("span").addClass("k-font-icon  k-i-print");
+            }
+
+            function returnSelectedRow(e) {
+                var grid = $("#grid").data("kendoGrid");
+                var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+                return selectedRow;
+            };
+            function refreshGrid() {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            }
+
+            function returnSelectedRow2(e) {
+                var grid = $("#grid2").data("kendoGrid");
+                var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+                return selectedRow;
+            };
+            function returnSelectedRow4(e) {
+                var grid = $("#grid4").data("kendoGrid");
+                var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+                return selectedRow;
+            };
+
+            function returnSelectedRow3(e) {
+                var grid = $("#grid3").data("kendoGrid");
+                var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+                return selectedRow;
+            };
+            function refreshGrid3() {
+                $("#grid3").data("kendoGrid").dataSource.read();
+                $("#grid3").data("kendoGrid").refresh();
+            }
+            function refreshGrid4() {
+                $("#grid4").data("kendoGrid").dataSource.read();
+                $("#grid4").data("kendoGrid").refresh();
+            }
+            var tabActive = function () {
+                var tabstrip = $("#tabStrip").data("kendoTabStrip");
+                if (tabstrip.select().text() == "Semua") {
+                    $("#grid").data("kendoGrid").dataSource.read();
+                    $("#grid").data("kendoGrid").refresh();
+                }
+                else if (tabstrip.select().text() == "Masa SK Akan Habis") {
+                    $("#grid2").data("kendoGrid").dataSource.read();
+                    $("#grid2").data("kendoGrid").refresh();
+                }
+                else if (tabstrip.select().text() == "Detail Peringatan") {
+                    $("#grid4").data("kendoGrid").dataSource.read();
+                    $("#grid4").data("kendoGrid").refresh();
+                }
+            }
+
+            var index = (function ($) {
+                var self = this;
+                return {
+                    edit: function (e) {
+                        var selectedRow = returnSelectedRow(e);
+                        var url = "@Url.Action("details", "IupOpAngkutJual")" + "/" + selectedRow.ID.toString();
+                        window.location.replace(url);
+                    },
+                    edit3: function (e) {
+                        var selectedRow = returnSelectedRow3(e);
+                        var url = "@Url.Action("details", "IupOpAngkutJual")" + "/" + selectedRow.CompanyID.toString();
+                        window.location.replace(url);
+                    },
+                    edit4: function (e) {
+                        var selectedRow = returnSelectedRow4(e);
+                        var url = "@Url.Action("details", "IupOpAngkutJual")" + "/" + selectedRow.CompanyID.toString();
+                        window.location.replace(url);
+                    },
+                    print: function (e) {
+                        var selectedRow = returnSelectedRow(e);
+                        var url = "@Url.Action("DownloadViewPDF", "PrintSk", new { area = "AngkutJual" })" + "/" + selectedRow.ID.toString();
+                        window.location.replace(url);
+                    },
+                    history: function (e) {
+                        var selectedRow = returnSelectedRow(e);
+                        var url = "@Url.Action("ViewHistory", "CompanyHistories")" + "/" + selectedRow.ID.toString();
+                        window.location.replace(url);
+                    },
+
+                    delete3: function (e) {
+                        var selectedRow = returnSelectedRow3(e);
+                        var konf = confirm("Are You Sure to delete " + selectedRow.Name + "'s Evaluation ?");
+                        if (konf == true) {
+                            $.ajax({
+                                type: "POST",
+                                url: "@Url.Action("Delete")",
+                                data: {
+                                    p: selectedRow.ID
+                                },
+                                traditional: true,
+                                success: function (result) {
+                                    if (result) {
+                                        alert("Data has been successfully Deleted");
+                                        refreshGrid3();
+                                    }
+                                }
+                            });
+                        }
+                    },
+
+                    delete4: function (e) {
+                        var selectedRow = returnSelectedRow3(e);
+                        var konf = confirm("Are You Sure to delete " + selectedRow.Name + "'s  ?");
+                        if (konf == true) {
+                            $.ajax({
+                                type: "POST",
+                                url: "@Url.Action("Delete")",
+                                data: {
+                                    p: selectedRow.ID
+                                },
+                                traditional: true,
+                                success: function (result) {
+                                    debugger;
+                                    if (result) {
+                                        alert("Data has been successfully Deleted");
+                                        refreshGrid4();
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    alert: function (e) {
+                        var selectedRow = returnSelectedRow2(e);
+                        var url = "@Url.Action("AlertData", "IupOpAngkutJual")" + "/" + selectedRow.ID.toString();
+                        window.location.replace(url);
+                    },
+                    alert2: function (e) {
+                        var selectedRow = returnSelectedRow4(e);
+                        var url = "@Url.Action("AlertPeringatan", "IupOpAngkutJual")" + "/" + selectedRow.ID.toString();
+                        window.location.replace(url);
+                    },
+
+                    refreshGrid1: function (e) {
+                        $("#grid").data("kendoGrid").dataSource.read();
+                        $("#grid").data("kendoGrid").refresh();
+                    },
+                    refreshGrid2: function (e) {
+                        $("#grid2").data("kendoGrid").dataSource.read();
+                        $("#grid2").data("kendoGrid").refresh();
+                    },
+                    refreshGrid3: function (e) {
+                        $("#grid3").data("kendoGrid").dataSource.read();
+                        $("#grid3").data("kendoGrid").refresh();
+                    }
+                }
+            })(jQuery);
+</script>

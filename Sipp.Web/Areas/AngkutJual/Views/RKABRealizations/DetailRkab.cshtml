@@ -1,0 +1,1435 @@
+﻿@*@model Esdm.Web.Areas.AngkutJual.Models.EvaluationFormViewModel*@
+@{
+    ViewBag.Title = "Detail Rkab";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutRKAB.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="portlet light portlet-fit portlet-form box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Pengangkutan dan Penjualan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Melihat Daftar Keseluruhan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Respond</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="fa fa-history font-red"></i>
+                            <span class="font-red sbold">
+                                Detail RKAB, Triwulan, Tahunan
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+
+                <div class="form-body">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a href="#rkab" data-toggle="tab"> RKAB </a>
+                            </li>
+                            <li>
+                                <a href="#triwulan" data-toggle="tab"> Triwulan </a>
+                            </li>
+                            <li>
+                                <a href="#tahunan" data-toggle="tab"> Tahunan </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="rkab">
+                                <!-- start RKAB -->
+                                <div class="form-body">
+                                    <form action="#" style="margin-bottom:10px;">
+                                        <div class="row no-margin">
+                                            <!--start no surat-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="NoSurat">Nomor Surat</label>
+                                                    <input type="text" class="form-control" name="nosurat" id="NoSurat" value="" Required>
+                                                </div>
+                                            </div>
+                                            <!--end no surat-->
+                                            <!--start tgl surat-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="TglSurat"> Tanggal Surat </label>
+                                                    <input class="form-control date-picker" size="16" type="text" value="" Required />
+                                                </div>
+                                            </div>
+                                            <!--end tgl surat-->
+                                            <!--start tahun RKAB-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="form_control_1">Tahun RKAB</label>
+                                                    <select class="form-control" name="produksitahunan" value="" Required>
+                                                        <option></option>
+                                                        <option value="2016">2016</option>
+                                                        <option value="2015">2015</option>
+                                                        <option value="2014">2014</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end tahun RKAB-->
+                                        </div>
+
+                                        <div class="row no-margin">
+                                            <!--start unggah surat pengantar-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahSuratPengantar">Unggah Surat Pengantar</label>
+                                                    <input type="file" class="form-control" name="unggahSuratPengantar" id="unggahSuratPengantar" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah surat pengantar-->
+                                            <!--start unggah tanda terima-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahTandaTerima">Unggah Tanda Terima</label>
+                                                    <input type="file" class="form-control" name="unggahTandaTerima" id="unggahTandaTerima" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah tanda terima-->
+                                            <!--start unggah Data Pendukung-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahTandaTerima">Unggah Data Pendukung</label>
+                                                    <input type="file" class="form-control" name="unggahForm" id="unggahForm" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah Data Pendukung-->
+                                        </div>
+
+                                        <div class="row no-margin">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                                                <button type="reset" class="btn red"><i class="fa fa-close"></i> batal</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!--start accordion-->
+                                            <div class="panel-group accordion" id="RkabKontrak">
+                                                <!--start accordion pembelian-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#RkabKontrak" href="#RkabPembelian">
+                                                                Kontrak Pembelian Batubara (Asal Batubara)
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="RkabPembelian" class="panel-collapse in">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn tambah kontrak-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormPembelianBatubaraRkab" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-plus"></i> Tambah Kontrak Pembelian
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn tambah kontrak-->
+                                                                <!-- start table 1 -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Nama Perusahaan IUP OP</th>
+                                                                                    <th>Lokasi Tambang</th>
+                                                                                    <th>Lokasi Pengolahan</th>
+                                                                                    <th>Lokasi Pelabuhan</th>
+                                                                                    <th>Rencana Produksi Tahunan</th>
+                                                                                    <th>Detail</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#DetailPembelianBatubaraRkab" title="klik">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table 1 -->
+                                                                <!-- start form tonase -->
+                                                                <div class="">
+                                                                    <!--start btn tambah tonase-->
+                                                                    <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                        <a data-toggle="modal" href="#FormTambahTonaseRkab" class="btn green-sharp red-stripe">
+                                                                            <i class="fa fa-plus"></i> Tambah Tonase
+                                                                        </a>
+                                                                    </div>
+                                                                    <!--end btn tambah tonase-->
+                                                                    <!-- start table 2 -->
+                                                                    <div class="col-md-12">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-striped table-bordered table-hover">
+                                                                                <caption><h5 class="bold">Detail tonase</h5></caption>
+                                                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                    <tr>
+                                                                                        <th>Sumber Batubara </th>
+                                                                                        <th>Tonase</th>
+                                                                                        <th colspan="2">Detail</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="delete">
+                                                                                                <i class="fa fa-trash font-red"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="edit">
+                                                                                                <i class="fa fa-pencil font-blue"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end table 2 -->
+                                                                </div>
+                                                                <!-- end form tonase -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/Pembelian/PartialKontrakPembelian.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal tambah tonase -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/Pembelian/PartialTonasePembelian.cshtml")
+                                                            <!-- end modal tambah tonase -->
+                                                            <!-- start modal detail pembelian -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/Pembelian/PartialDetailKontrakPembelian.cshtml")
+                                                            <!-- start modal detail pembelian -->
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion pembelian-->
+
+                                                <!--start accordion penjualan-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#RkabKontrak" href="#RkabPenjualan">
+                                                                Kontrak Penjualan Batubara
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="RkabPenjualan" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn tambah-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormPenjualanBatubaraRkab" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-plus"></i> Tambah Kontrak Penjualan
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn tambah-->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Nama Perusahaan Pembeli</th>
+                                                                                    <th>Negara</th>
+                                                                                    <th>Lokasi Pelabuhan</th>
+                                                                                    <th>Lokasi Transshipment</th>
+                                                                                    <th>Detail</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#DetailPenjualanBatubaraRkab" title="klik">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                                <!-- start form tonase -->
+                                                                <div class="">
+                                                                    <!--start btn tambah tonase-->
+                                                                    <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                        <a data-toggle="modal" href="#FormTambahTonase2Rkab" class="btn green-sharp red-stripe">
+                                                                            <i class="fa fa-plus"></i> Tambah Tonase
+                                                                        </a>
+                                                                    </div>
+                                                                    <!--end btn tambah tonase-->
+                                                                    <!-- start table 2 -->
+                                                                    <div class="col-md-12">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-striped table-bordered table-hover">
+                                                                                <caption><h5 class="bold">Detail tonase</h5></caption>
+                                                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                    <tr>
+                                                                                        <th>Sumber Batubara </th>
+                                                                                        <th>Tonase</th>
+                                                                                        <th colspan="2">Detail</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="delete">
+                                                                                                <i class="fa fa-trash font-red"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="edit">
+                                                                                                <i class="fa fa-pencil font-blue"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end table 2 -->
+                                                                </div>
+                                                                <!-- end form tonase -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/Penjualan/PartialKontrakPenjualan.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/Penjualan/PartialDetailKontrakPenjualan.cshtml")
+                                                            <!-- end modal detail -->
+                                                            <!-- start modal tambah tonase -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/Penjualan/PartialTonasePenjualan.cshtml")
+                                                            <!-- end modal tambah tonase -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion penjualan-->
+
+                                                <!--start tenaga kerja-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#RkabKontrak" href="#RkabTenagaKerja">
+                                                                Tenaga Kerja
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="RkabTenagaKerja" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn entry tenaga kerja-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormTenagaKerjaRkab" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-list"></i> Entry Tenaga Kerja
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn  entry tenaga kerja-->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Direktur (TKI)</th>
+                                                                                    <th>Direktur (TKA)</th>
+                                                                                    <th>Manajer / Profesional (TKI)</th>
+                                                                                    <th>Manajer / Profesional (TKA)</th>
+                                                                                    <th>Supervisor / Technical (TKI)</th>
+                                                                                    <th>Supervisor / Technical (TKA)</th>
+                                                                                    <th>Tenaga Terampil (TKI)</th>
+                                                                                    <th>Tenaga Terampil (TKA)</th>
+                                                                                    <th>Administrasi (TKI)</th>
+                                                                                    <th>Administrasi (TKA)</th>
+                                                                                    <th>Tenaga Tidak Terampil (TKI)</th>
+                                                                                    <th>Tenaga Tidak Terampil (TKA)</th>
+                                                                                    <th>Keterangan</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#KeteranganTenagaKerjaRkab">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/TenagaKerja/PartialTenagaKerja.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/TenagaKerja/PartialDetailTenagaKerja.cshtml")
+                                                            <!-- end modal detail -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end tenaga kerja-->
+
+                                                <!--start detil keuangan-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#RkabKontrak" href="#RkabKeuangan">
+                                                                Detail Keuangan
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="RkabKeuangan" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn entry detail keuangan -->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormDetailKeuanganRkab" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-list"></i> Entry Detail Keuangan
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn  entry entry detail keuangan -->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Jenis</th>
+                                                                                    <th>Revenue</th>
+                                                                                    <th>Harga Pokok Penjualan</th>
+                                                                                    <th>Laba Sebelum Pajak</th>
+                                                                                    <th>Laba Bersih (rugi)</th>
+                                                                                    <th>Pajak Karyawan (PPh21)</th>
+                                                                                    <th>Pajak Badan (PPh 25)</th>
+                                                                                    <th>Keterangan</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#KeteranganDetailKeuanganRkab">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/DetailKeuangan/PartialKeuangan.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Rkab/DetailKeuangan/PartialDetailKeuangan.cshtml")
+                                                            <!-- end modal detail -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end detil keuangan-->
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-check"></i> Approve</button>
+                                                        <button type="reset" class="btn red"><i class="fa fa-close"></i> Reject </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end accordion-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end RKAB-->
+                            </div>
+
+                            <div class="tab-pane" id="triwulan">
+                                <!-- start triwulan-->
+                                <div class="form-body">
+                                    <form action="#" style="margin-bottom:10px;">
+                                        <div class="row no-margin">
+                                            <!--start no surat-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-success">
+                                                    <label for="NoSurat">Nomor Surat</label>
+                                                    <input type="text" class="form-control" name="nosurat" id="NoSurat" Required>
+                                                </div>
+                                            </div>
+                                            <!--end no surat-->
+                                            <!--start tgl surat-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-success">
+                                                    <label for="TglSurat"> Tanggal Surat </label>
+                                                    <input class="form-control date-picker" size="16" type="text" value="" Required />
+                                                </div>
+                                            </div>
+                                            <!--end tgl surat-->
+                                        </div>
+
+                                        <div class="row no-margin">
+                                            <!--start laporan tahun-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-success">
+                                                    <label for="form_control_1">Tahun Laporan</label>
+                                                    <select class="form-control" name="produksitahunan" Required>
+                                                        <option></option>
+                                                        <option value="2016">2016</option>
+                                                        <option value="2015">2015</option>
+                                                        <option value="2014">2014</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end laporan tahun-->
+                                            <!--start Triwulan-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-success">
+                                                    <label for="form_control_1">Triwulan</label>
+                                                    <select class="form-control" name="produksitahunan" Required>
+                                                        <option></option>
+                                                        <option value="I">I</option>
+                                                        <option value="II">II</option>
+                                                        <option value="III">III</option>
+                                                        <option value="IV">IV</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end Triwulan-->
+                                        </div>
+
+                                        <div class="row no-margin">
+                                            <!--start unggah surat pengantar-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahSuratPengantar">Unggah Surat Pengantar</label>
+                                                    <input type="file" class="form-control" name="unggahSuratPengantar" id="unggahSuratPengantar" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah surat pengantar-->
+                                            <!--start unggah tanda terima-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahTandaTerima">Unggah Tanda Terima</label>
+                                                    <input type="file" class="form-control" name="unggahTandaTerima" id="unggahTandaTerima" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah tanda terima-->
+                                            <!--start unggah Data Pendukung-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahTandaTerima">Unggah Data Pendukung</label>
+                                                    <input type="file" class="form-control" name="unggahForm" id="unggahForm" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah Data Pendukung-->
+                                        </div>
+
+                                        <div class="row no-margin">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                                                <button type="reset" class="btn red"><i class="fa fa-close"></i> batal</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!--start accordion-->
+                                            <div class="panel-group accordion" id="TriwulanKontrak">
+                                                <!--start accordion pembelian-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#TriwulanKontrak" href="#TriwulanPembelian">
+                                                                Kontrak Pembelian Batubara (Asal Batubara)
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TriwulanPembelian" class="panel-collapse in">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn tambah kontrak-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormPembelianBatubaraTriwulan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-plus"></i> Tambah Kontrak Pembelian
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn tambah kontrak-->
+                                                                <!-- start table 1 -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Nama Perusahaan IUP OP</th>
+                                                                                    <th>Lokasi Tambang</th>
+                                                                                    <th>Lokasi Pengolahan</th>
+                                                                                    <th>Lokasi Pelabuhan</th>
+                                                                                    <th>Rencana Produksi Tahunan</th>
+                                                                                    <th>Detail</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#DetailPembelianBatubaraTriwulan" title="klik">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table 1 -->
+                                                                <!-- start form tonase -->
+                                                                <div class="">
+                                                                    <!--start btn tambah tonase-->
+                                                                    <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                        <a data-toggle="modal" href="#FormTambahTonaseTriwulan" class="btn green-sharp red-stripe">
+                                                                            <i class="fa fa-plus"></i> Tambah Tonase
+                                                                        </a>
+                                                                    </div>
+                                                                    <!--end btn tambah tonase-->
+                                                                    <!-- start table 2 -->
+                                                                    <div class="col-md-12">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-striped table-bordered table-hover">
+                                                                                <caption><h5 class="bold">Detail tonase</h5></caption>
+                                                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                    <tr>
+                                                                                        <th>Sumber Batubara </th>
+                                                                                        <th>Tonase</th>
+                                                                                        <th colspan="2">Detail</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="delete">
+                                                                                                <i class="fa fa-trash font-red"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="edit">
+                                                                                                <i class="fa fa-pencil font-blue"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end table 2 -->
+                                                                </div>
+                                                                <!-- end form tonase -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/Pembelian/PartialKontrakPembelian.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal tambah tonase -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/Pembelian/PartialTonasePembelian.cshtml")
+                                                            <!-- end modal tambah tonase -->
+                                                            <!-- start modal detail pembelian -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/Pembelian/PartialDetailKontrakPembelian.cshtml")
+                                                            <!-- start modal detail pembelian -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion pembelian-->
+
+                                                <!--start accordion penjualan-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#TriwulanKontrak" href="#TriwulanPenjualan">
+                                                                Kontrak Penjualan Batubara
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TriwulanPenjualan" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn tambah-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormPenjualanBatubaraTriwulan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-plus"></i> Tambah Kontrak Penjualan
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn tambah-->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Nama Perusahaan Pembeli</th>
+                                                                                    <th>Negara</th>
+                                                                                    <th>Lokasi Pelabuhan</th>
+                                                                                    <th>Lokasi Transshipment</th>
+                                                                                    <th>Detail</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#DetailPenjualanBatubaraTriwulan" title="klik">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                                <!-- start form tonase -->
+                                                                <div class="">
+                                                                    <!--start btn tambah tonase-->
+                                                                    <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                        <a data-toggle="modal" href="#FormTambahTonase2Triwulan" class="btn green-sharp red-stripe">
+                                                                            <i class="fa fa-plus"></i> Tambah Tonase
+                                                                        </a>
+                                                                    </div>
+                                                                    <!--end btn tambah tonase-->
+                                                                    <!-- start table 2 -->
+                                                                    <div class="col-md-12">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-striped table-bordered table-hover">
+                                                                                <caption><h5 class="bold">Detail tonase</h5></caption>
+                                                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                    <tr>
+                                                                                        <th>Sumber Batubara </th>
+                                                                                        <th>Tonase</th>
+                                                                                        <th colspan="2">Detail</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="delete">
+                                                                                                <i class="fa fa-trash font-red"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="edit">
+                                                                                                <i class="fa fa-pencil font-blue"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end table 2 -->
+                                                                </div>
+                                                                <!-- end form tonase -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/Penjualan/PartialKontrakPenjualan.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/Penjualan/PartialDetailKontrakPenjualan.cshtml")
+                                                            <!-- end modal detail -->
+                                                            <!-- start modal tambah tonase -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/Penjualan/PartialTonasePenjualan.cshtml")
+                                                            <!-- end modal tambah tonase -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion penjualan-->
+
+                                                <!--start accordion tenaga kerja-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#TriwulanKontrak" href="#TriwulanTenagaKerja">
+                                                                Tenaga Kerja
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TriwulanTenagaKerja" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn entry tenaga kerja-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormTenagaKerjaTriwulan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-list"></i> Entry Tenaga Kerja
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn  entry tenaga kerja-->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Direktur (TKI)</th>
+                                                                                    <th>Direktur (TKA)</th>
+                                                                                    <th>Manajer / Profesional (TKI)</th>
+                                                                                    <th>Manajer / Profesional (TKA)</th>
+                                                                                    <th>Supervisor / Technical (TKI)</th>
+                                                                                    <th>Supervisor / Technical (TKA)</th>
+                                                                                    <th>Tenaga Terampil (TKI)</th>
+                                                                                    <th>Tenaga Terampil (TKA)</th>
+                                                                                    <th>Administrasi (TKI)</th>
+                                                                                    <th>Administrasi (TKA)</th>
+                                                                                    <th>Tenaga Tidak Terampil (TKI)</th>
+                                                                                    <th>Tenaga Tidak Terampil (TKA)</th>
+                                                                                    <th>Keterangan</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#KeteranganTenagaKerjaTriwulan">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                            </div>
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/TenagaKerja/PartialTenagaKerja.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/TenagaKerja/PartialDetailTenagaKerja.cshtml")
+                                                            <!-- end modal detail -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion tenaga kerja-->
+
+                                                <!--start accordion detil keuangan-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#TriwulanKontrak" href="#TriwulanKeuangan">
+                                                                Detail Keuangan
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TriwulanKeuangan" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn entry detail keuangan -->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormDetailKeuanganTriwulan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-list"></i> Entry Detail Keuangan
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn  entry entry detail keuangan -->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Jenis</th>
+                                                                                    <th>Revenue</th>
+                                                                                    <th>Harga Pokok Penjualan</th>
+                                                                                    <th>Laba Sebelum Pajak</th>
+                                                                                    <th>Laba Bersih (rugi)</th>
+                                                                                    <th>Pajak Karyawan (PPh21)</th>
+                                                                                    <th>Pajak Badan (PPh 25)</th>
+                                                                                    <th>Keterangan</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#KeteranganDetailKeuanganTriwulan">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/DetailKeuangan/PartialKeuangan.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Triwulan/DetailKeuangan/PartialDetailKeuangan.cshtml")
+                                                            <!-- end modal detail -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion detil keuangan-->
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-check"></i> Approve</button>
+                                                        <button type="reset" class="btn red"><i class="fa fa-close"></i> Reject </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end accordion-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end triwulan-->
+                            </div>
+
+                            <div class="tab-pane" id="tahunan">
+                                <!-- start tahunan-->
+                                <div class="form-body">
+                                    <form action="#" style="margin-bottom:10px;">
+                                        <div class="row no-margin">
+                                            <!--start no surat-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="NoSurat">Nomor Surat</label>
+                                                    <input type="text" class="form-control" name="nosurat" id="NoSurat" Required>
+                                                </div>
+                                            </div>
+                                            <!--end no surat-->
+                                            <!--start tgl surat-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="TglSurat"> Tanggal Surat </label>
+                                                    <input class="form-control date-picker" size="16" type="text" value="" Required />
+                                                </div>
+                                            </div>
+                                            <!--end tgl surat-->
+                                            <!--start tahun RKAB-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="form_control_1">Tahun RKAB</label>
+                                                    <select class="form-control" name="produksitahunan" Required>
+                                                        <option></option>
+                                                        <option value="2016">2016</option>
+                                                        <option value="2015">2015</option>
+                                                        <option value="2014">2014</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end tahun RKAB-->
+                                        </div>
+
+                                        <div class="row no-margin">
+                                            <!--start unggah surat pengantar-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahSuratPengantar">Unggah Surat Pengantar</label>
+                                                    <input type="file" class="form-control" name="unggahSuratPengantar" id="unggahSuratPengantar" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah surat pengantar-->
+                                            <!--start unggah tanda terima-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahTandaTerima">Unggah Tanda Terima</label>
+                                                    <input type="file" class="form-control" name="unggahTandaTerima" id="unggahTandaTerima" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah tanda terima-->
+                                            <!--start unggah Data Pendukung-->
+                                            <div class="col-md-4">
+                                                <div class="form-group has-success">
+                                                    <label for="unggahTandaTerima">Unggah Data Pendukung</label>
+                                                    <input type="file" class="form-control" name="unggahForm" id="unggahForm" Required>
+                                                </div>
+                                            </div>
+                                            <!--end unggah Data Pendukung-->
+                                        </div>
+
+                                        <div class="row no-margin">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                                                <button type="reset" class="btn red"><i class="fa fa-close"></i> batal</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!--start accordion-->
+                                            <div class="panel-group accordion" id="Tahunankontrak">
+                                                <!--start accordion pembelian-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#Tahunankontrak" href="#TahunanPembelian">
+                                                                Kontrak Pembelian Batubara (Asal Batubara)
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TahunanPembelian" class="panel-collapse in">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn tambah kontrak-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormPembelianBatubaraTahunan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-plus"></i> Tambah Kontrak Pembelian
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn tambah kontrak-->
+                                                                <!-- start table 1 -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Nama Perusahaan IUP OP</th>
+                                                                                    <th>Lokasi Tambang</th>
+                                                                                    <th>Lokasi Pengolahan</th>
+                                                                                    <th>Lokasi Pelabuhan</th>
+                                                                                    <th>Rencana Produksi Tahunan</th>
+                                                                                    <th>Detail</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#DetailPembelianBatubaraTahunan" title="klik">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table 1 -->
+                                                                <!-- start form tonase -->
+                                                                <div class="">
+                                                                    <!--start btn tambah tonase-->
+                                                                    <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                        <a data-toggle="modal" href="#FormTambahTonaseTahunan" class="btn green-sharp red-stripe">
+                                                                            <i class="fa fa-plus"></i> Tambah Tonase
+                                                                        </a>
+                                                                    </div>
+                                                                    <!--end btn tambah tonase-->
+                                                                    <!-- start table 2 -->
+                                                                    <div class="col-md-12">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-striped table-bordered table-hover">
+                                                                                <caption><h5 class="bold">Detail tonase</h5></caption>
+                                                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                    <tr>
+                                                                                        <th>Sumber Batubara </th>
+                                                                                        <th>Tonase</th>
+                                                                                        <th colspan="2">Detail</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="delete">
+                                                                                                <i class="fa fa-trash font-red"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="edit">
+                                                                                                <i class="fa fa-pencil font-blue"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end table 2 -->
+                                                                </div>
+                                                                <!-- end form tonase -->
+                                                            </div>
+
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/Pembelian/PartialKontrakPembelian.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal tambah tonase -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/Pembelian/PartialTonasePembelian.cshtml")
+                                                            <!-- end modal tambah tonase -->
+                                                            <!-- start modal detail pembelian -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/Pembelian/PartialDetailKontrakPembelian.cshtml")
+                                                            <!-- start modal detail pembelian -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion pembelian-->
+
+                                                <!--start accordion penjualan-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#Tahunankontrak" href="#TahunanPenjualan">
+                                                                Kontrak Penjualan Batubara
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TahunanPenjualan" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn tambah-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormPenjualanBatubaraTahunan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-plus"></i> Tambah Kontrak Penjualan
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn tambah-->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Nama Perusahaan Pembeli</th>
+                                                                                    <th>Negara</th>
+                                                                                    <th>Lokasi Pelabuhan</th>
+                                                                                    <th>Lokasi Transshipment</th>
+                                                                                    <th>Detail</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#DetailPenjualanBatubaraTahunan" title="klik">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                                <!-- start form tonase -->
+                                                                <div class="">
+                                                                    <!--start btn tambah tonase-->
+                                                                    <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                        <a data-toggle="modal" href="#FormTambahTonase2Tahunan" class="btn green-sharp red-stripe">
+                                                                            <i class="fa fa-plus"></i> Tambah Tonase
+                                                                        </a>
+                                                                    </div>
+                                                                    <!--end btn tambah tonase-->
+                                                                    <!-- start table 2 -->
+                                                                    <div class="col-md-12">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-striped table-bordered table-hover">
+                                                                                <caption><h5 class="bold">Detail tonase</h5></caption>
+                                                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                    <tr>
+                                                                                        <th>Sumber Batubara </th>
+                                                                                        <th>Tonase</th>
+                                                                                        <th colspan="2">Detail</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td> &nbsp </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="delete">
+                                                                                                <i class="fa fa-trash font-red"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td class="text-center">
+                                                                                            <a href="#" title="edit">
+                                                                                                <i class="fa fa-pencil font-blue"></i>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end table 2 -->
+                                                                </div>
+                                                                <!-- end form tonase -->
+                                                            </div>
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/Penjualan/PartialKontrakPenjualan.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/Penjualan/PartialDetailKontrakPenjualan.cshtml")
+                                                            <!-- end modal detail -->
+                                                            <!-- start modal tambah tonase -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/Penjualan/PartialTonasePenjualan.cshtml")
+                                                            <!-- end modal tambah tonase -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end accordion penjualan-->
+
+                                                <!--start tenaga kerja-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#Tahunankontrak" href="#TahunanTenagaKerja">
+                                                                Tenaga Kerja
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TahunanTenagaKerja" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn entry tenaga kerja-->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormTenagaKerjaTahunan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-list"></i> Entry Tenaga Kerja
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn  entry tenaga kerja-->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Direktur (TKI)</th>
+                                                                                    <th>Direktur (TKA)</th>
+                                                                                    <th>Manajer / Profesional (TKI)</th>
+                                                                                    <th>Manajer / Profesional (TKA)</th>
+                                                                                    <th>Supervisor / Technical (TKI)</th>
+                                                                                    <th>Supervisor / Technical (TKA)</th>
+                                                                                    <th>Tenaga Terampil (TKI)</th>
+                                                                                    <th>Tenaga Terampil (TKA)</th>
+                                                                                    <th>Administrasi (TKI)</th>
+                                                                                    <th>Administrasi (TKA)</th>
+                                                                                    <th>Tenaga Tidak Terampil (TKI)</th>
+                                                                                    <th>Tenaga Tidak Terampil (TKA)</th>
+                                                                                    <th>Keterangan</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#KeteranganTenagaKerjaTahunan">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                            </div>
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/TenagaKerja/PartialTenagaKerja.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/TenagaKerja/PartialDetailTenagaKerja.cshtml")
+                                                            <!-- end modal detail -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end tenaga kerja-->
+
+                                                <!--start detil keuangan-->
+                                                <div class="panel border-red">
+                                                    <div class="panel-heading bg-red bg-font-red">
+                                                        <h4 class="panel-title">
+                                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#Tahunankontrak" href="#TahunanKeuangan">
+                                                                Detail Keuangan
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="TahunanKeuangan" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <!--start btn entry detail keuangan -->
+                                                                <div class="col-md-12 text-right" style="margin-bottom:10px;">
+                                                                    <a data-toggle="modal" href="#FormDetailKeuanganTahunan" class="btn green-sharp red-stripe">
+                                                                        <i class="fa fa-list"></i> Entry Detail Keuangan
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn  entry entry detail keuangan -->
+                                                                <!-- start table -->
+                                                                <div class="col-md-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-striped table-bordered table-hover">
+                                                                            <thead class="bg-green-sharp bg-font-green-sharp">
+                                                                                <tr>
+                                                                                    <th>Jenis</th>
+                                                                                    <th>Revenue</th>
+                                                                                    <th>Harga Pokok Penjualan</th>
+                                                                                    <th>Laba Sebelum Pajak</th>
+                                                                                    <th>Laba Bersih (rugi)</th>
+                                                                                    <th>Pajak Karyawan (PPh21)</th>
+                                                                                    <th>Pajak Badan (PPh 25)</th>
+                                                                                    <th>Keterangan</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td> &nbsp </td>
+                                                                                    <td class="text-center">
+                                                                                        <a data-toggle="modal" href="#KeteranganDetailKeuanganTahunan">
+                                                                                            <i class="fa fa-info-circle"></i>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end table -->
+                                                            </div>
+                                                            <!-- start modal form -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/DetailKeuangan/PartialKeuangan.cshtml")
+                                                            <!-- end modal form -->
+                                                            <!-- start modal detail -->
+                                                            @Html.Partial("~/Areas/AngkutJual/Views/RKABRealizations/Tahunan/DetailKeuangan/PartialDetailKeuangan.cshtml")
+                                                            <!-- end modal detail -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end detil keuangan-->
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-check"></i> Approve</button>
+                                                        <button type="reset" class="btn red"><i class="fa fa-close"></i> Reject </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!--end accordion-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end tahunan-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

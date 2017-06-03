@@ -1,0 +1,51 @@
+﻿@model EduSpot.Entity.Tables.AngkutJual.SalesDestination
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SalesDestination</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtendedSk.LetterNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtendedSk.LetterNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstSk.LetterNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstSk.LetterNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

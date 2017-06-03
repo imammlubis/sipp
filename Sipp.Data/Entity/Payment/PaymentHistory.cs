@@ -13,21 +13,26 @@ namespace Sipp.Data.Entity.Payment
     [Table("PaymentHistory", Schema = "payment")]
     public class PaymentHistory : BaseEntity
     {
-        public string Province { get; set; }
-        public string FirstBillingNo { get; set; }
-        public int YearOfCheckingPeriod { get; set; }
-        public int YearOfBillingPeriod { get; set; }
-        public Nullable<DateTime> FirstBillingDate { get; set; }
-        public string LegalType { get; set; } //IUPMINERAL, IUPBATUBARA, PKP2B, KK
-        public string BillingType { get; set; }//IT, R, PHT
+        public string Evaluator { get; set; }
+        public int YearOfCheckingPeriod { get; set; }//Periode Pemeriksaan
+        public int YearOfBillingPeriod { get; set; }//Tahun Penagihan
+        public int BiilingSeq { get; set; }//Penagihan Ke
+        public string BillingNo { get; set; }//No Surat Tagihan
+        public Nullable<DateTime> BillingDate { get; set; }//Tanggal Tagihan
+        public string BillingType { get; set; }//IT, R, PHT//Tipe Tagihan
+        public Nullable<double> Amount { get; set; }
+
         public Nullable<bool> IsFirstBill { get; set; }
         public string ObjectionInformation { get; set; }
-        public Nullable<double> Amount { get; set; }
         public string FileValidation { get; set; }
         public Nullable<bool> IsApproved { get; set; }
 
         [ForeignKey("Company")]
         public string CompanyId { get; set; }
         public virtual Company Company { get; set; }
+
+        [ForeignKey("RegularPayment")]
+        public string RegularPaymentId { get; set; }
+        public virtual Company RegularPayment { get; set; }
     }
 }

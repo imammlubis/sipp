@@ -1,0 +1,154 @@
+﻿@model IEnumerable<EduSpot.Entity.Tables.AngkutJual.AdjustedSk>
+
+@{
+    ViewBag.Title = "Daftar SK Penyesuaian";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit portlet-datatable box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Master</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Angkut Jual</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>SK Penyesuaian</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body"> <!-- style="overflow:hidden;"-->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>
+                            <i class="fa fa-list-alt font-red"></i>
+                            <span class="font-red sbold">
+                                Daftar SK Penyesuaian
+                            </span>
+                        </h4>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a href="@Url.Action("Create")" class="btn green-sharp red-stripe">
+                            <i class="fa fa-plus"></i> Tambah Data
+                        </a>
+                        <div class="space"></div>
+                    </div>
+                </div>
+
+               @(Html.Kendo().Grid<EduSpot.Entity.Tables.AngkutJual.AdjustedSk>()
+                   .Name("grid")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                   columns.Command(
+                       command =>
+                       {
+                               //<i class='fa fa-trash font-red'></i>
+                               command.Custom(" Delete").Click("index.delete");
+                               //<i class='fa fa-pencil font-green-sharp'></i>
+                               command.Custom(" Edit").Click("index.edit");
+                               //<i class='fa fa-bell-o font-green-sharp'></i>
+                               //command.Custom("<i class='fa fa-bell-o'>").Click("index.alert");
+                           }).Width(110).Title(" Action");
+                   //columns.Bound(p => p.Company.Name).Title("Nama Perusahaan").Width("223px");
+                       columns.Bound(p => p.LetterNumber).Title("No. Surat").Width(200);
+                       columns.Bound(p => p.LetterDate).Title("Tanggal Surat").Format("{0:dd/MM/yyyy}").Width(148);
+                       columns.Bound(p => p.RpiitNumber).Title("No. RPIIT").Width(150);
+                       columns.Bound(p => p.RpiitDate).Title("Tanggal RPIIT").Format("{0:dd/MM/yyyy}").Width(200);
+                       columns.Bound(p => p.SkNumber).Title("No. SK").Width(150);
+                       columns.Bound(p => p.SkDate).Title("Tanggal SK").Format("{0:dd/MM/yyyy}").Width(148);
+                       columns.Bound(p => p.AdditionalInfo).Title("Keterangan").Width(200);                   
+                       columns.Bound(p => p.SkFile).Title("File SK").Width(250).ClientTemplate("<a href='"+@Url.Content("~/Documents/SkPenyesuaian/"+ "#=SkFile#'")+"' target='_blank''>#=SkFile#</a>");
+                       columns.Bound(p => p.CreatedBy).Title("Dibuat Oleh").Width(250);
+                       columns.Bound(p => p.CreatedDate).Title("Dibuat Tanggal").Format("{0:dd/MM/yyyy}").Width(148);
+                       columns.Bound(p => p.ModifiedBy).Title("Diubah Oleh").Width(250);
+                       columns.Bound(p => p.ModifiedDate).Title("Diubah Tanggal").Format("{0:dd/MM/yyyy}").Width(152);
+
+                   })
+                   .Events(e => e.DataBound("onRowBound"))
+                   .Scrollable()
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("List", "AdjustedSks", new { area = "AngkutJual" })
+                       .ServerOperation(true)
+                    ))
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function onRowBound(e) {
+        $(".k-grid-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+        //$(".k-grid2-Edit").find("span").addClass("k-icon k-i-pencil");
+        //$(".k-grid2-Delete").find("span").addClass("k-icon k-delete");
+        //$(".k-grid-View").find("span").addClass("k-icon km-view");
+    }
+    function refreshGrid() {
+        $("#grid").data("kendoGrid").dataSource.read();
+        $("#grid").data("kendoGrid").refresh();
+    }
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    var index = (function ($) {
+        var self = this;
+        return {
+            edit: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("Edit", "AdjustedSks")" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+
+            delete: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var konf = confirm("Are You Sure to delete " + selectedRow.Name + "'s Evaluation ?");
+                if (konf == true) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Delete")",
+                        data: {
+                        p: selectedRow.ID
+                        },
+                    traditional: true,
+                    success: function (result) {
+                        debugger;
+                        if (result) {
+                            alert("Data has been successfully Deleted");
+                            refreshGrid();
+                        }
+                    }
+                });
+            }
+        },
+
+            alert: function (e) {
+                alert('z')
+            },
+            refreshGrid1: function (e) {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            }
+        }
+    })(jQuery);
+</script>

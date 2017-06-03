@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "- Daftar laporan";
+    Layout = "~/Areas/PKP2B/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Detail Laporan RKAB Triwulan Tahunan</span>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+                <div class="form-body">
+                    @(Html.Kendo().Grid<Esdm.Web.Areas.AngkutJual.Controllers.ReportViewModel>()
+                   .Name("grid")
+                   //.ToolBar(tools => tools.Pdf().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+                   .ToolBar(tools => tools.Excel().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+                   .Excel(excel => excel
+                   .AllPages(true)
+                   .FileName("RekapitulasiLaporanRKAB_Tahunan_Triwulan.xlsx"))
+                   //.Pdf(pdf => pdf
+                   //    .AllPages()
+                   //    .AvoidLinks(true)
+                   //    .PaperSize("A4")
+                   //    .Scale(0.8)
+                   //    .Margin("2cm", "1cm", "1cm", "1cm")
+                   //    .Landscape()
+                   //    .RepeatHeaders()
+                   //    .TemplateId("page-template")
+                   //    .FileName("RekapitulasiLaporanRKAB_Tahunan_Triwulan.pdf")
+                   //    .ProxyURL(Url.Action("Pdf_Export_Save", "EvaluationHistories"))
+                   // )
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Command(
+                           command =>
+                           {
+                               command.Custom(" Respond").Click("index.Respond");
+                           }).Width(115).Title("Action");
+                       columns.Bound(p => p.ID).Hidden();
+                       columns.Bound(p => p.CompanyName).HeaderTemplate("Nama Perusahaan").Width(300);
+                       columns.Bound(p => p.Year).HeaderTemplate("Tahun");
+                       columns.Bound(p => p.Rkab).HeaderTemplate("RKAB").Format("{0:##,#}");
+                       columns.Bound(p => p.Q1).HeaderTemplate("Q1").Format("{0:##,#}");
+                       columns.Bound(p => p.Q2).HeaderTemplate("Q2").Format("{0:##,#}");
+                       columns.Bound(p => p.Q3).HeaderTemplate("Q3").Format("{0:##,#}");
+                       columns.Bound(p => p.Q4).HeaderTemplate("Q4").Format("{0:##,#}");
+                       columns.Bound(p => p.Annual).HeaderTemplate("Annual").Format("{0:##,#}");
+                       columns.Bound(p => p.StatusRespond).HeaderTemplate("Status Respond").Format("{0:##,#}").Width(146);
+                   })
+                   .Events(e => e.DataBound("onRowBound"))
+                   .Scrollable()
+                   .Groupable()
+                   .Pageable(pageable => pageable
+                       .Refresh(true)
+                       .PageSizes(true)
+                       .ButtonCount(5)
+                   )
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListReport", "MelihatDaftarKeseluruhan", new { area = "Pkp2b" })
+                       .ServerOperation(true)
+                    ))
+                </div>
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+<script>
+    $("#grid").kendoGrid({
+        toolbar: ["pdf"],
+        pdfExport: function (e) {
+            var grid = $("#grid").data("kendoGrid");
+            grid.hideColumn(0);
+            e.promise
+            .done(function () {
+                grid.showColumn(0);
+            });
+        }
+    })
+
+    function onRowBound(e) {
+        $(".k-grid-Respond").find("span").addClass("k-font-icon k-i-connector");
+        //$(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+        //$(".k-grid-Alert").find("span").addClass("k-font-icon k-i-exception");
+        $(".k-grid2-Expand").find("span").addClass("k-font-icon k-i-dimension");
+        $(".k-grid3-Expand").find("span").addClass("k-font-icon k-i-dimension");
+        $(".k-grid4-Expand").find("span").addClass("k-font-icon k-i-dimension");
+
+
+    }
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow2(e) {
+        var grid = $("#grid2").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow3(e) {
+        var grid = $("#grid3").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow4(e) {
+        var grid = $("#grid4").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    var tabActive = function () {
+        debugger;
+        var tabstrip = $("#tabStrip").data("kendoTabStrip");
+        //if (tabstrip.select().text() == "Semua") {
+        //    $("#grid").data("kendoGrid").dataSource.read();
+        //    $("#grid").data("kendoGrid").refresh();
+        //}
+        if (tabstrip.select().text() == "RKAB") {
+            $("#grid2").data("kendoGrid").dataSource.read();
+            $("#grid2").data("kendoGrid").refresh();
+        }
+        else if (tabstrip.select().text() == "Tahunan"){
+            $("#grid3").data("kendoGrid").dataSource.read();
+            $("#grid3").data("kendoGrid").refresh();
+        }
+        else if (tabstrip.select().text() == "Triwulan"){
+            $("#grid4").data("kendoGrid").dataSource.read();
+            $("#grid4").data("kendoGrid").refresh();
+        }
+    }
+
+    var index = (function ($) {
+        var self = this;
+        return {
+            Respond: function (e) {
+                debugger;
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("Respond", "DaftarLaporan")";
+                window.location.replace(url);
+            },
+
+            edit: function (e) {
+                alert('a')
+            },
+
+            delete: function (e) {
+                alert('z')
+            },
+
+            alert: function (e) {
+                alert('z')
+            },
+            refreshGrid1: function (e) {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            },
+            refreshGrid2: function (e) {
+                $("#grid2").data("kendoGrid").dataSource.read();
+                $("#grid2").data("kendoGrid").refresh();
+            },
+            refreshGrid3: function (e) {
+                $("#grid3").data("kendoGrid").dataSource.read();
+                $("#grid3").data("kendoGrid").refresh();
+            }
+        }
+    })(jQuery);
+</script>

@@ -1,0 +1,171 @@
+﻿<div id="static8" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="dataDetailKronologiTahapanForm" data-toggle="validator" role="form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">Form Detail Kronologi Tahapan</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="tahapanInduk">Tahapan Induk</label>
+                                <select id="tahapanInduk"
+                                        ng-model="detailKronologiTahapanModel.tahapanInduk"
+                                        tabindex="1"
+                                        class="form-control"
+                                        name="tahapanInduk"
+                                        required>
+                                    <option></option>
+                                    <option value="Penyelidikan Umum">Penyelidikan Umum</option>
+                                    <option value="Eksplorasi">Eksplorasi</option>
+                                    <option value="Studi Kelayakan">Studi Kelayakan</option>
+                                    <option value="Konstruksi">Konstruksi</option>
+                                    <option value="Operasi Produksi">Operasi Produksi</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="tahapanDetail">Tahapan</label>
+                                <input type="text"
+                                       ng-model="detailKronologiTahapanModel.tahapan"
+                                       id="tahapanDetail"
+                                       tabindex="1"
+                                       class="form-control"
+                                       name="tahapanDetail"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="noSkDetail">No SK / Surat</label>
+                                <input type="text"
+                                       ng-model="detailKronologiTahapanModel.noSk"
+                                       class="form-control" 
+                                       name="noSkKtDetail" 
+                                       id="noSkKtDetail" 
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="tanggalSkKtDetail">Tanggal SK / Surat</label>
+                                @*<input id="tanggalSkKt" 
+                                       ng-model="kronologiTahapanModel.tanggalSk" 
+                                       class="form-control form-control-inline date-picker" size="16" type="text" value="" required />*@
+                                <div class="input-group input-append date" id="tanggalSkKtDetail">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           data-date-format="dd/mm/yyyy"
+                                           ng-model="detailKronologiTahapanModel.tanggalSk"
+                                           name="tanggalSkKtDetail"
+                                           required />
+                                    <span class="input-group-addon add-on">
+                                        <span class="glyphicon glyphicon-calendar">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="mulaiKtDetail">Mulai</label>
+                                @*<input class="form-control form-control-inline date-picker" 
+                                       id="mulaiKt"
+                                       ng-model="kronologiTahapanModel.mulai" 
+                                       size="16" type="text" value="" required />*@
+                                <div class="input-group input-append date" id="mulaiKtDetail">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           data-date-format="dd/mm/yyyy"
+                                           ng-model="detailKronologiTahapanModel.mulai"
+                                           name="mulaiKtDetail" 
+                                           required />
+                                    <span class="input-group-addon add-on">
+                                        <span class="glyphicon glyphicon-calendar">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="sdKtDetail">Sampai Dengan</label>
+                                @*<input class="form-control form-control-inline date-picker" 
+                                       id="sdKt"
+                                       ng-model="kronologiTahapanModel.sampaiDengan" 
+                                       size="16" type="text" value="" required />*@
+                                <div class="input-group input-append date" id="sdKtDetail">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           data-date-format="dd/mm/yyyy"
+                                           ng-model="detailKronologiTahapanModel.sampaiDengan"
+                                           name="sdKtDetail" 
+                                           required />
+                                    <span class="input-group-addon add-on">
+                                        <span class="glyphicon glyphicon-calendar">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="jangkaWaktuDetail">Jangka Waktu</label>
+                                <input type="text"
+                                       name="jangkaWaktuDetail"   
+                                       class="form-control" 
+                                       id="jangkaWaktuDetail" 
+                                       ng-model="detailKronologiTahapanModel.jangkaWaktu"
+                                       required />
+                            </div>
+                        </div>
+                        @*<div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="fileKtDetail">File</label>                                
+                                <input type="file"
+                                       name="fileKtDetail"  
+                                       id="fileKtDetail"
+                                       ng-model="detailKronologiTahapanModel.file" 
+                                       class="form-control" />
+                            </div>
+                        </div>*@
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group has-success">
+                                <label for="keteranganKtDetail">Keterangan</label>
+                                <textarea id="keteranganKtDetail" 
+                                          class="form-control" 
+                                          name="keteranganKtDetail" 
+                                          rows="3" 
+                                          ng-model="detailKronologiTahapanModel.keterangan" 
+                                          required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="submit" ng-show="isEditDetailKronologiTahapan" ng-click="SaveChangesDetailKronologiTahapan()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+
+                    <button type="submit" ng-show="!isEditDetailKronologiTahapan" ng-click="CreateDetailKronologiTahapan()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="reset" data-dismiss="modal" class="btn red"><i class="fa fa-close"></i> Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

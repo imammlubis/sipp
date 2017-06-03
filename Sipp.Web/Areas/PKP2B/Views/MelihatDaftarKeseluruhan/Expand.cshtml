@@ -1,0 +1,739 @@
+﻿
+@{
+    ViewBag.Title = "- Expand";
+    Layout = "~/Areas/PKP2B/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Expand Data PKP2B</span>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+
+                <div class="form-body">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a href="#tab_15_1" data-toggle="tab"> General Information </a>
+                            </li>
+                            <li>
+                                <a href="#tab_15_2" data-toggle="tab"> Status Permodalan </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_15_1">
+                                <!-- BEGIN FORM-->
+                                <form action="#">
+                                    <div class="row no-margin">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Nama Perusahaan</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">NPWP</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-xs-12">
+                                                    <label for="NewPass">Alamat</label>
+                                                    <textarea class="form-control" rows="5" required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Telp</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Fax</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="Email">Email</label>
+                                                    <input type="email" class="form-control" id="Email" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="Website">Website</label>
+                                                    <input type="text" class="form-control" id="Website" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Contact Person (Nama)</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Contact Person (HP)</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <h3 class="bold">Data PKP2B</h3>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Generasi</label>
+                                                    <select class="form-control" name="produksitahunan" required>
+                                                        <option></option>
+                                                        <option value="I">Generasi I</option>
+                                                        <option value="II">Generasi II</option>
+                                                        <option value="III">Generasi III</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Kode Wilayah</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Luas Wilayah (Awal)</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Luas Wilayah (Dipertahankan)</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-xs-12">
+                                                    <label for="ConfirmNew">Tahapan Akhir</label>
+                                                    <select class="form-control" name="produksitahunan" required>
+                                                        <option></option>
+                                                        <option value="PU">Penyelidikan Umum</option>
+                                                        <option value="EK">Eksplorasi</option>
+                                                        <option value="SK">Studi Kelayakan</option>
+                                                        <option value="K">Konstruksi</option>
+                                                        <option value="OP">Operasi Produksi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">No Kontrak</label>
+                                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Tanggal Kontrak</label>
+                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="" required />
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Lokasi (Provinsi)</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Lokasi (Kabupaten)</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Tanggal Berakhir</label>
+                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="" required />
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Jangka Waktu</label>
+                                                    <input class="form-control" type="text" value="" required />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="portlet box green">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        History Data PKP2B
+                                                    </div>
+                                                    <div class="tools">
+                                                        <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="min-width: 200px;"> Generasi </th>
+                                                                    <th style="min-width: 200px;"> Kode Wilayah </th>
+                                                                    <th style="min-width: 200px;"> No Kontrak </th>
+                                                                    <th style="min-width: 200px;"> Tanggal Kontrak </th>
+                                                                    <th style="min-width: 200px;"> Luas Wilayah (Asal) </th>
+                                                                    <th style="min-width: 200px;"> Luas Wilayah (Dipertahankan) </th>
+                                                                    <th style="min-width: 200px;"> Lokasi (Provinsi) </th>
+                                                                    <th style="min-width: 200px;"> Lokasi (Kabupaten) </th>
+                                                                    <th style="min-width: 200px;"> Tahapan Akhir </th>
+                                                                    <th style="min-width: 200px;"> Tanggal Berakhir </th>
+                                                                    <th style="min-width: 200px;"> Jangka Waktu </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                    <th> &nbsp; </th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 text-right">
+                                            <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                                            <button type="reset" class="btn red"><i class="fa fa-close"></i> batal</button>
+                                            <div class="space"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+
+                                <div class="row no-margin">
+                                    <div class="col-md-12">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Data Akta
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a href="#" data-target="#static" data-toggle="modal" type="button" class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="3" class="text-center"> Akta Pendirian dan Perubahan </th>
+
+                                                                <th colspan="2" class="text-center"> Pengesahan Kemenkumham </th>
+
+                                                                <th rowspan="2" class="text-center"> File </th>
+
+                                                                <th colspan="2" rowspan="2" class="text-center"> action </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th> Judul Akta </th>
+                                                                <th> No Akta </th>
+                                                                <th> Tanggal Akta </th>
+
+                                                                <th> No </th>
+                                                                <th> Tanggal </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th style="min-width:150px;"> &nbsp; </th><!-- judul akta-->
+                                                                <th style="min-width:150px;"> &nbsp; </th><!-- no akta-->
+                                                                <th style="min-width:150px;"> &nbsp; </th><!-- judul akta-->
+
+                                                                <th style="min-width:150px;"> &nbsp; </th><!-- no-->
+                                                                <th style="min-width:150px;"> &nbsp; </th><!-- tanggal-->
+
+                                                                <th> &nbsp; </th><!-- file-->
+
+
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-margin">
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Kronologi Tahapan
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a href="#" data-target="#static2" data-toggle="modal" type="button" class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Tahapan </th>
+                                                                <th> No SK / Surat </th>
+                                                                <th> Tanggal SK / Surat </th>
+                                                                <th> Mulai </th>
+                                                                <th> Sampai Dengan </th>
+                                                                <th> Jangka Waktu </th>
+                                                                <th> File </th>
+                                                                <th> Keterangan </th>
+
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="min-width:150px;"> &nbsp; </td>
+                                                                <td style="min-width:150px;"> &nbsp; </td>
+                                                                <td style="min-width:150px;"> &nbsp; </td>
+                                                                <td style="min-width:150px;"> &nbsp; </td>
+                                                                <td style="min-width:150px;"> &nbsp; </td>
+                                                                <td> &nbsp; </td>
+                                                                <td> &nbsp; </td>
+                                                                <td style="min-width:150px;"> &nbsp; </td>
+
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Lingkungan, IPPKH, dan persetujuan lainnya
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a href="#" data-target="#static3" data-toggle="modal" type="button" class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Jenis Persetujuan </th>
+                                                                <th> No Surat / SK </th>
+                                                                <th> Tanggal Surat / SK </th>
+                                                                <th> File </th>
+
+
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> &nbsp; </td>
+                                                                <td> &nbsp; </td>
+                                                                <td> &nbsp; </td>
+                                                                <td> &nbsp; </td>
+
+
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-margin">
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Cadangan Batubara
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a href="#" data-target="#static4" data-toggle="modal" type="button" class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Blok </th>
+                                                                <th> Terkira (Ton) </th>
+                                                                <th> Terbukti (Ton) </th>
+                                                                <th> Total (Ton) </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> Satu </td>
+                                                                <td> 500 </td>
+                                                                <td> 500 </td>
+                                                                <td> 1000 </td>
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Kualitas Batubara
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a href="#" data-target="#static5" data-toggle="modal" type="button" class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="min-width: 200px;"> Parameter / Unit </th>
+                                                                <th style="min-width: 200px;"> TM </th>
+                                                                <th style="min-width: 200px;"> IM </th>
+                                                                <th style="min-width: 200px;"> ASH </th>
+                                                                <th style="min-width: 200px;"> VM </th>
+                                                                <th style="min-width: 200px;"> FC </th>
+                                                                <th style="min-width: 200px;"> TS </th>
+                                                                <th style="min-width: 200px;"> CV </th>
+                                                                <th style="min-width: 200px;"> CV </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th> Satu </th>
+                                                                <th> 20 (%ar) </th>
+                                                                <th> 20 (%adb) </th>
+                                                                <th> 20 (%adb) </th>
+                                                                <th> 20 (%adb) </th>
+                                                                <th> 20 (%adb) </th>
+                                                                <th> 20 (%adb) </th>
+                                                                <th> 20 Cal/g (adb) </th>
+                                                                <th> 20 Cal/g (adb) </th>
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="#"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-margin">
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Biaya Eksplorasi
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group has-success">
+                                                                <label for="form_control_1">Mata Uang</label>
+                                                                <select class="form-control" name="produksitahunan" required>
+                                                                    <option></option>
+                                                                    <option value="2016">USD</option>
+                                                                    <option value="2015">Rp</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group has-success">
+                                                                <label for="ConfirmNew">Jumlah Uang</label>
+                                                                <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn green-sharp red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                                                <button type="reset" class="btn red"><i class="fa fa-close"></i> batal</button>
+                                            </div>
+                                        </div>
+                                        -->
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <!-- Start Modal data akta -->
+                                @Html.Partial("~/Areas/PKP2B/Views/PartialView/MemasukanData/DataAkta.cshtml")
+                                <!-- End Modal data akta -->
+                                <!-- Start Modal Kronologi Tahapan -->
+                                @Html.Partial("~/Areas/PKP2B/Views/PartialView/MemasukanData/KronologiTahapan.cshtml")
+                                <!-- End Modal Kronologi Tahapan -->
+                                <!-- Start Modal Persetujuan -->
+                                @Html.Partial("~/Areas/PKP2B/Views/PartialView/MemasukanData/Persetujuan.cshtml")
+                                <!-- End Modal Persetujuan -->
+                                <!-- Start Modal Tahap Kegiatan -->
+                                @Html.Partial("~/Areas/PKP2B/Views/PartialView/MemasukanData/TahapKegiatan.cshtml")
+                                <!-- End Modal Tahap Kegiatan -->
+                                <!-- Start Modal Cadangan Batubara -->
+                                @Html.Partial("~/Areas/PKP2B/Views/PartialView/MemasukanData/CadanganBatubara.cshtml")
+                                <!-- End Modal Cadangan Batubara -->
+                                <!-- Start Modal Kualitas Batubara -->
+                                @Html.Partial("~/Areas/PKP2B/Views/PartialView/MemasukanData/KualitasBatubara.cshtml")
+                                <!-- End Modal Kualitas Batubara -->
+                                <!-- Start Sumber Daya Batubara -->
+                                @Html.Partial("~/Areas/PKP2B/Views/PartialView/MemasukanData/SumberDayaBatubara.cshtml")
+                                <!-- End Sumber Daya Batubara -->
+                            </div>
+
+                            <div class="tab-pane" id="tab_15_2">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <caption class="bold">Pemegang Saham</caption>
+                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                    <tr>
+                                                        <th> Nama </th>
+                                                        <th> Domestik / Asing </th>
+                                                        <th> Negara </th>
+                                                        <th> Jumlah Saham </th>
+                                                        <th> Nilai Saham </th>
+                                                        <th> Prosentase Saham </th>
+                                                        <th> &nbsp; </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <select class="form-control">
+                                                                <option value="WNI">WNI</option>
+                                                                <option value="WNA">WNA</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" class="btn green-sharp btn-outline btn-block red-stripe">
+                                                                <i class="fa fa-save"></i> Simpan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <caption class="bold">Direksi</caption>
+                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                    <tr>
+                                                        <th> Nama </th>
+                                                        <th> Kewarganegaraan </th>
+                                                        <th> Negara </th>
+                                                        <th> Keterangan </th>
+                                                        <th> &nbsp; </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <select class="form-control">
+                                                                <option value="WNI">WNI</option>
+                                                                <option value="WNA">WNA</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" class="btn green-sharp btn-outline btn-block red-stripe">
+                                                                <i class="fa fa-save"></i> Simpan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <caption class="bold">Komisaris</caption>
+                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                    <tr>
+                                                        <th> Nama </th>
+                                                        <th> Kewarganegaraan </th>
+                                                        <th> Negara </th>
+                                                        <th> Keterangan </th>
+                                                        <th> &nbsp; </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <select class="form-control">
+                                                                <option value="WNI">WNI</option>
+                                                                <option value="WNA">WNA</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" class="btn green-sharp btn-outline btn-block red-stripe">
+                                                                <i class="fa fa-save"></i> Simpan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+

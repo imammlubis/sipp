@@ -1,0 +1,2006 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJualTransaction.cshtml";
+}
+
+<div ng-app="iupop" ng-controller="iupop-controller">
+    <!-- BEGIN PAGE BREADCRUMBS -->
+    <ul class="page-breadcrumb breadcrumb">
+        <li>
+            <a href="#">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+        <li>
+            <a href="#">Pengangkutan dan Penjualan</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>Data Baru</span>
+        </li>
+
+    </ul>
+    <!-- END PAGE BREADCRUMBS -->
+    <!-- BEGIN PAGE CONTENT INNER -->
+    <div class="page-content-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN VALIDATION STATES-->
+                <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-file-o font-red"></i>
+                            <span class="caption-subject font-red sbold">
+                                Entri Data Baru IUP OP Khusus Pengangkutan & Penjualan Batubara
+                            </span>
+                        </div>
+                    </div>
+                    <div class="portlet-body" style="overflow:hidden;">
+                        <!-- BEGIN FORM-->
+                        <form action="#" id="form_sample_3">
+                            <div class="form-body">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#tab_1_0" data-toggle="tab">
+                                                    General Information
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab_1_1" data-toggle="tab">
+                                                    Pemegang Saham
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab_1_2" data-toggle="tab">
+                                                    Komisaris
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab_1_3" data-toggle="tab">
+                                                    Direksi
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+
+                                            <div class="tab-pane fade active in" id="tab_1_0">
+                                                <div class="form-body">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="NmPerusahaan">Nama Perusahaan</label>
+                                                            <input type="text" class="form-control" name="nmperusahaan" id="NmPerusahaan">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="NoTlpn">No Telepon</label>
+                                                            <input type="text" class="form-control" name="notlpn" id="NoTlpn">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="Email_Website">Email </label>
+                                                            <input type="email" class="form-control" name="email" id="Email">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="NpWp">NPWP</label>
+                                                            <input type="text" class="form-control" name="npwp" id="NpWp">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="form_control_1">Alamat Perusahaan</label>
+                                                            <textarea class="form-control" name="alamat" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="NoUrutBerkas">Nomor Urut Berkas</label>
+                                                            <input type="text" class="form-control" name="nourutberkas" id="NoUrutBerkas">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="NoMobile">No Mobile</label>
+                                                            <input type="text" class="form-control" name="NoMobile" id="NoMobile">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="website">Website </label>
+                                                            <input type="email" class="form-control" name="website" id="website">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="form_control_1">Status Izin</label>
+                                                            <select class="form-control" name="stsizin">
+                                                                <option value="Aktif">Aktif</option>
+                                                                <option value="USD">Tidak Aktif</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="form_control_1">Keterangan</label>
+                                                            <textarea class="form-control" name="keterangan" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane fade" id="tab_1_1">
+                                                <!--start table pemegang saham-->
+                                                <div class="flip-scroll">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> # </th>
+                                                                <th> Nama </th>
+                                                                <th> Jumlah </th>
+                                                                <th> Nilai </th>
+                                                                <th> Status WN/BH </th>
+                                                                <th> Status Aktif/Non-Aktif </th>
+                                                                <th> &nbsp; </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> 1 </td>
+                                                                <td> Mark </td>
+                                                                <td> 3000 </td>
+                                                                <td> 234 </td>
+                                                                <td> WN </td>
+                                                                <td> Aktif </td>
+                                                                <td>
+                                                                    <a href="#" class="btn btn-xs btn-outline">
+                                                                        <i class="fa fa-pencil"></i>
+                                                                    </a>
+                                                                    |
+                                                                    <a href="#" class="btn btn-xs btn-outline">
+                                                                        <i class="fa fa-trash"></i>
+                                                                    </a>
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> &nbsp; </td>
+                                                                <td> <input class="form-control form-filter input-sm" name="nama" type="text"> </td>
+                                                                <td> <input class="form-control form-filter input-sm" name="jumlah" type="text"> </td>
+                                                                <td> <input class="form-control form-filter input-sm" name="nilai" type="text"> </td>
+                                                                <td> <input class="form-control form-filter input-sm" name="statusWnWb" type="text"> </td>
+                                                                <td> <input class="form-control form-filter input-sm" name="statusAktif" type="text"> </td>
+                                                                <td>
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-save"></i> Simpan
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+
+                                                <!--end table pemegang saham-->
+                                            </div>
+                                            <div class="tab-pane fade" id="tab_1_2">
+                                                <!--start table komisaris-->
+
+                                                <div class="flip-scroll">
+                                                    <div class="table-scrollable">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th> # </th>
+                                                                    <th> Nama </th>
+                                                                    <th> Keterangan </th>
+                                                                    <th> Status Aktif/Non-Aktif </th>
+                                                                    <th> &nbsp; </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td> 1 </td>
+                                                                    <td> Mark </td>
+                                                                    <td> Lorem ipsum </td>
+                                                                    <td> Aktif </td>
+                                                                    <td>
+                                                                        <a href="#" class="btn btn-xs btn-outline">
+                                                                            <i class="fa fa-pencil"></i>
+                                                                        </a>
+                                                                        |
+                                                                        <a href="#" class="btn btn-xs btn-outline">
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> &nbsp; </td>
+                                                                    <td> <input class="form-control form-filter input-sm" name="nama" type="text"> </td>
+                                                                    <td> <input class="form-control form-filter input-sm" name="ket" type="text"> </td>
+                                                                    <td> <input class="form-control form-filter input-sm" name="statusAktif" type="text"> </td>
+                                                                    <td>
+                                                                        <a href="#" class="btn green-sharp btn-outline">
+                                                                            <i class="fa fa-save"></i> Simpan
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <!--end table komisaris-->
+                                            </div>
+                                            <div class="tab-pane fade" id="tab_1_3">
+                                                <!--start table direksi-->
+
+                                                <div class="flip-scroll">
+                                                    <div class="table-scrollable">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th> # </th>
+                                                                    <th> Nama </th>
+                                                                    <th> Keterangan </th>
+                                                                    <th> Status Aktif/Non-Aktif </th>
+                                                                    <th> &nbsp; </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td> 1 </td>
+                                                                    <td> Mark </td>
+                                                                    <td> Lorem ipsum </td>
+                                                                    <td> Aktif </td>
+                                                                    <td>
+                                                                        <a href="#" class="btn btn-xs btn-outline">
+                                                                            <i class="fa fa-pencil"></i>
+                                                                        </a>
+                                                                        |
+                                                                        <a href="#" class="btn btn-xs btn-outline">
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> &nbsp; </td>
+                                                                    <td> <input class="form-control form-filter input-sm" name="nama" type="text"> </td>
+                                                                    <td> <input class="form-control form-filter input-sm" name="ket" type="text"> </td>
+                                                                    <td> <input class="form-control form-filter input-sm" name="statusAktif" type="text"> </td>
+                                                                    <td>
+                                                                        <a href="#" class="btn green-sharp btn-outline">
+                                                                            <i class="fa fa-save"></i> Simpan
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <!--end table direksi-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--start row accordion-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!--start accordion-->
+                                        <div class="panel-group accordion" id="FormEvaluasiRKAB">
+                                            <!--start accordion Sk awal-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
+                                                           data-parent="#FormEvaluasiRKAB" href="#DetailPelaporan">
+                                                            SK Awal
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="DetailPelaporan" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <!--start btn tambah-->
+                                                            <div class="col-md-12">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Tambah SK
+                                                                    </a>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end btn tambah-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start Nomor Surat-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="JenisLaporan">Nomor Surat</label>
+                                                                    <input type="text" class="form-control" name="nosurat" id="NoSurat">
+                                                                </div>
+                                                            </div>
+                                                            <!--end Nomor Surat-->
+                                                            <!--start tgl surat permohonan-->
+                                                            <div class="col-sm-4">
+                                                                <label> Tanggal Surat Permohonan </label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="" />
+                                                            </div>
+                                                            <!--end tgl surat permohonan-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start no SK-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="NoSk">Nomor SK</label>
+                                                                    <input type="text" class="form-control" name="nosk" id="NoSk">
+                                                                </div>
+                                                            </div>
+                                                            <!--end no SK-->
+                                                            <!--start tgl sk-->
+                                                            <div class="col-sm-4">
+                                                                <label> Tanggal SK </label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="" />
+                                                            </div>
+                                                            <!--end tgl sk-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start unggah surat-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="space" style="margin-bottom:23px;"></div>
+                                                                <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                    <span class="input-group-btn">
+                                                                        <button id="fake-file-button-browse1" type="button" class="btn btn-default">
+                                                                            <i class="fa fa-file-o"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="file" id="files-input-upload1" style="display:none">
+                                                                    <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload1" data-target="#static" data-toggle="modal">
+                                                                            <span class="glyphicon glyphicon-upload"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end unggah surat-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start tgl izin berakhir-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <label>Tanggal Izin Berakhir</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="" />
+                                                            </div>
+                                                            <!--end tgl izin berakhir-->
+                                                            <!--start jangka waktu-->
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label for="JangkaWaktu">Jangka Wkatu</label>
+                                                                    <input type="text" class="form-control" name="jangkawaktu" id="JangkaWaktu">
+                                                                </div>
+                                                            </div>
+                                                            <!--end jangka waktu-->
+                                                            <div class="space"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="add-sk-iup-op">
+                                                                <!--start btn add-->
+                                                                <div class="col-sm-12">
+                                                                    <div class="text-right">
+                                                                        <a href="#" class="btn green-sharp btn-outline">
+                                                                            <i class="fa fa-plus"></i> Add SK IUP OP
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end btn add-->
+                                                                <!--start SK IUP OP Asal-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="SKAsal">SK IUP OP (Asal Batubara)</label>
+                                                                        <input type="text" class="form-control" name="skasal" id="SKAsal">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end SK IUP OP Asal-->
+                                                                <!--start unggah surat-->
+                                                                <div class="col-sm-4">
+                                                                    <div class="space" style="margin-bottom:23px;"></div>
+                                                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                        <span class="input-group-btn">
+                                                                            <button id="fake-file-button-browse2" type="button" class="btn btn-default">
+                                                                                <i class="fa fa-file-o"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="file" id="files-input-upload2" style="display:none">
+                                                                        <input type="text" id="fake-file-input-name2" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload2" data-target="#static" data-toggle="modal">
+                                                                                <span class="glyphicon glyphicon-upload"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                                <!--end unggah surat-->
+                                                                <div class="col-sm-12">
+                                                                    <!--start nama perusahaan asal-->
+                                                                    <div class="col-sm-4 col-sm-offset-2 no-padding-left">
+                                                                        <div class="space" style="margin-bottom: 36px;"></div>
+                                                                        <div class="form-group">
+                                                                            <label for="NmPerusahaanAsal">Perusahaan Asal Batubara</label>
+                                                                            <input type="text" class="form-control" name="nmperusahaanasal" id="NmPerusahaanAsal">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end nama perusahaan asal-->
+                                                                    <!--start alamat perusahaan-->
+                                                                    <div class="col-sm-4 no-padding-right">
+                                                                        <div class="form-group">
+                                                                            <label for="form_control_1">Alamat Perusahaan Asal Batubara</label>
+                                                                            <textarea class="form-control" name="alamatperusahaanasal" rows="3"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end alamat perusahaan-->
+                                                                </div>
+                                                                <!--start kota asal-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="KotaPerusahaanAsal">Kota Asal Batubara</label>
+                                                                        <input type="text" class="form-control" name="kotaperusahaanasal" id="KotaPerusahaanAsal">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end kota asal-->
+                                                                <!--start provinsi asal-->
+                                                                <div class="col-sm-4">
+                                                                    <div class="form-group">
+                                                                        <label for="ProvinsiPerusahaanAsal">Provinsi Asal Batubara</label>
+                                                                        <input type="text" class="form-control" name="provinsiperusahaanasal" id="ProvinsiPerusahaanAsal">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end provinsi asal-->
+                                                                <!--start volume-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="Volume">Volume</label>
+                                                                        <input type="text" class="form-control" name="volume" id="Volume">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end volume-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start tujuan penjualan-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="TujuanPenjualan">Tujuan Penjualan</label>
+                                                                    <input type="text" class="form-control" name="tujuanpenjualan" id="TujuanPenjualan">
+                                                                </div>
+                                                            </div>
+                                                            <!--end tujuan penjualan-->
+                                                            <!--start btn add-->
+                                                            <div class="col-sm-4">
+                                                                <div class="space" style="margin-bottom:23px;"></div>
+                                                                <a href="#" class="btn green-sharp btn-outline">
+                                                                    <i class="fa fa-plus"></i> Add Tujuan Penjualan
+                                                                </a>
+                                                            </div>
+                                                            <!--end btn add-->
+                                                            <!--start keterangan-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="form_control_1">Tambah Keterangan</label>
+                                                                    <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end keterangan-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end accordion Sk awal-->
+                                            <!--start accordion tambah SK-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#FormEvaluasiRKAB" href="#penjualan">
+                                                            Tambah SK
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="penjualan" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <!--start pilih jenis-->
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label for="form_control_1">Jenis SK</label>
+                                                                    <select class="form-control" name="jenissk">
+                                                                        <option value="Perpanjangan">Perpanjangan</option>
+                                                                        <option value="Penyesuaian">Penyesuaian</option>
+                                                                        <option value="Penghentian">Penghentian</option>
+                                                                        <option value="Pencabutan">Pencabutan</option>
+                                                                        <option value="Pengaktifan">Pengaktifan</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!--end pilih jenis-->
+                                                        </div>
+                                                        <!--sk perpanjangan-->
+                                                        <div class="sk-perpanjangan">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <h3>SK Perpanjangan</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no surat permohonan-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoSuratPermohonan">Nomor Surat Permohoan</label>
+                                                                        <input type="text" class="form-control" name="nosuratpermohonan" id="NoSuratPermohonan">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no surat permohonan-->
+                                                                <!--start tgl surat permohonan-->
+                                                                <div class="col-sm-4">
+                                                                    <label> Tanggal Surat Permohonan </label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl surat permohonan-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start No. Agenda RPIIT/DBB-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoAgenda">No. Agenda RPIIT/DBB</label>
+                                                                        <input type="text" class="form-control" name="noagenda" id="NoAgenda">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end No. Agenda RPIIT/DBB-->
+                                                                <!--start Tanggal Agenda RPIIT/DBB-->
+                                                                <div class="col-sm-4">
+                                                                    <label>Tanggal Agenda RPIIT/DBB </label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end Tanggal Agenda RPIIT/DBB-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no SK-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoSk">Nomor SK</label>
+                                                                        <input type="text" class="form-control" name="nosk" id="NoSk">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no SK-->
+                                                                <!--start tgl sk-->
+                                                                <div class="col-sm-4">
+                                                                    <label> Tanggal SK </label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl sk-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start unggah surat-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                        <span class="input-group-btn">
+                                                                            <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                                <i class="fa fa-file-o"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="file" id="files-input-upload3" style="display:none">
+                                                                        <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                                <span class="glyphicon glyphicon-upload"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                                <!--end unggah surat-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start tgl izin berakhir-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <label> Tanggal Izin Berakhir </label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl izin berakhir-->
+                                                                <!--start jangka waktu-->
+                                                                <div class="col-sm-4">
+                                                                    <div class="form-group">
+                                                                        <label for="JangkaWaktu">Jangka Waktu</label>
+                                                                        <input type="text" class="form-control" name="jangkawaktu" id="JangkaWaktu">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end jangka waktu-->
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="add-sk-iup-op">
+                                                                    <!--start btn add-->
+                                                                    <div class="col-sm-12">
+                                                                        <div class="text-right">
+                                                                            <a href="#" class="btn green-sharp btn-outline">
+                                                                                <i class="fa fa-plus"></i> Add SK IUP OP
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end btn add-->
+                                                                    <!--start SK IUP OP Asal-->
+                                                                    <div class="col-sm-4 col-sm-offset-2">
+                                                                        <div class="form-group">
+                                                                            <label for="SKAsal">SK IUP OP (Asal Batubara)</label>
+                                                                            <input type="text" class="form-control" name="skasal" id="SKAsal">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end SK IUP OP Asal-->
+                                                                    <!--start unggah surat-->
+                                                                    <div class="col-sm-4">
+                                                                        <div class="space" style="margin-bottom: 23px;"></div>
+                                                                        <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                            <span class="input-group-btn">
+                                                                                <button id="fake-file-button-browse2" type="button" class="btn btn-default">
+                                                                                    <i class="fa fa-file-o"></i>
+                                                                                </button>
+                                                                            </span>
+                                                                            <input type="file" id="files-input-upload2" style="display:none">
+                                                                            <input type="text" id="fake-file-input-name2" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                            <span class="input-group-btn">
+                                                                                <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload2" data-target="#static" data-toggle="modal">
+                                                                                    <span class="glyphicon glyphicon-upload"></span>
+                                                                                </button>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="space"></div>
+                                                                    </div>
+                                                                    <!--end unggah surat-->
+                                                                    <div class="col-sm-12">
+                                                                        <!--start tgl sk asal batubara-->
+                                                                        <div class="col-sm-4 col-sm-offset-2 no-padding-left">
+                                                                            <label>Tanggal SK Asal Batubara </label>
+                                                                            <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                        </div>
+                                                                        <!--end tgl sk asal batubara-->
+                                                                        <!--start nama perusahaan asal-->
+                                                                        <div class="col-sm-4 no-padding-right">
+                                                                            <div class="form-group">
+                                                                                <label for="NmPerusahaanAsal">Perusahaan Asal Batubara</label>
+                                                                                <input type="text" class="form-control" name="nmperusahaanasal" id="NmPerusahaanAsal">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end nama perusahaan asal-->
+                                                                    </div>
+                                                                    <!--start lokasi asal-->
+                                                                    <div class="col-sm-8 col-sm-offset-2">
+                                                                        <div class="form-group">
+                                                                            <label for="LokasiAsalBatubara">Lokasi Asal Batubara</label>
+                                                                            <input type="text" class="form-control" name="lokasiasalbatubara" id="LokasiAsalBatubara">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end lokasi asal-->
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start tujuan penjualan-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="TujuanPenjualan">Tujuan Penjualan</label>
+                                                                        <input type="text" class="form-control" name="tujuanpenjualan" id="TujuanPenjualan">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end tujuan penjualan-->
+                                                                <!--start btn add-->
+                                                                <div class="col-sm-4">
+                                                                    <div class="space" style="margin-bottom:23px;"></div>
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Add Tujuan Penjualan
+                                                                    </a>
+                                                                </div>
+                                                                <!--end btn add-->
+                                                                <!--start keterangan-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="form_control_1">Tambah Keterangan</label>
+                                                                        <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end keterangan-->
+                                                            </div>
+                                                        </div>
+                                                        <!--sk perpanjangan-->
+                                                        <!--sk penyesuaian-->
+                                                        <div class="sk-penyesuaian">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <h3>SK Penyesuaian</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no SK penyesuaian-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoSk">Nomor SK Penyesuaian</label>
+                                                                        <input type="text" class="form-control" name="noskpenyesuaian" id="NoSkPenyesuaian">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no SK penyesuaian-->
+                                                                <!--start tgl sk-->
+                                                                <div class="col-sm-4">
+                                                                    <label> Tanggal SK </label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl sk-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start unggah surat-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                        <span class="input-group-btn">
+                                                                            <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                                <i class="fa fa-file-o"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="file" id="files-input-upload3" style="display:none">
+                                                                        <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                                <span class="glyphicon glyphicon-upload"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                                <!--end unggah surat-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no surat permohoann-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoSuratPermohonan">Nomor Surat Permohonan</label>
+                                                                        <input type="text" class="form-control" name="nosuratpermohonan" id="NoSuratPermohonan">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no surat permohoanan-->
+                                                                <!--start tgl surat permohonan-->
+                                                                <div class="col-sm-4">
+                                                                    <label>Tanggal Surat Permohonan </label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl surat permohonan-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no agenda-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoAgenda">No. Agenda RPIIT/DBB</label>
+                                                                        <input type="text" class="form-control" name="noagenda" id="NoAgenda">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no sagenda-->
+                                                                <!--start tgl agenda-->
+                                                                <div class="col-sm-4">
+                                                                    <label>Tanggal Agenda RPIIT/DBB </label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl agenda-->
+                                                                <!--start keterangan-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="form_control_1">Tambah Keterangan</label>
+                                                                        <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end keterangan-->
+                                                            </div>
+                                                        </div>
+                                                        <!--sk penyesuaian-->
+                                                        <!--sk penghentian-->
+                                                        <div class="sk-penghentian">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <h3>SK Penghentian Sementara</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no SK penghentian-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoSkPenghentian">Nomor SK Penghentian</label>
+                                                                        <input type="text" class="form-control" name="noskpenghentian" id="NoSkPenghentian">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no SK penghentian-->
+                                                                <!--start tgl sk-->
+                                                                <div class="col-sm-4">
+                                                                    <label>Tanggal SK</label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl sk-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start unggah surat-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                        <span class="input-group-btn">
+                                                                            <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                                <i class="fa fa-file-o"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="file" id="files-input-upload3" style="display:none">
+                                                                        <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                                <span class="glyphicon glyphicon-upload"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                                <!--end unggah surat-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start keterangan-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="form_control_1">Tambah Keterangan</label>
+                                                                        <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end keterangan-->
+                                                            </div>
+                                                        </div>
+                                                        <!--sk penghentian-->
+                                                        <!--sk penceabutan-->
+                                                        <div class="sk-pencabutan">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <h3>SK Pencabutan Izin</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no SK pencabutan-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoSkPenghentian">No. SK Pencabutan Izin</label>
+                                                                        <input type="text" class="form-control" name="noskpenghentian" id="NoSkPenghentian">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no SK pencabutan-->
+                                                                <!--start tgl sk-->
+                                                                <div class="col-sm-4">
+                                                                    <label>Tanggal SK</label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl sk-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start unggah surat-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                        <span class="input-group-btn">
+                                                                            <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                                <i class="fa fa-file-o"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="file" id="files-input-upload3" style="display:none">
+                                                                        <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                                <span class="glyphicon glyphicon-upload"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                                <!--end unggah surat-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start keterangan-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="form_control_1">Tambah Keterangan</label>
+                                                                        <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end keterangan-->
+                                                            </div>
+                                                        </div>
+                                                        <!--sk penceabutan-->
+                                                        <!--sk pengaktifan-->
+                                                        <div class="sk-pengaktifan">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <h3>SK Pengaktifan Kembali</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start no SK pengaktifan-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="NoSkPenghentian">No. SK Pengaktifan Kembali</label>
+                                                                        <input type="text" class="form-control" name="noskpenghentian" id="NoSkPenghentian">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end no SK pengaktifan-->
+                                                                <!--start tgl sk-->
+                                                                <div class="col-sm-4">
+                                                                    <label>Tanggal SK</label>
+                                                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                </div>
+                                                                <!--end tgl sk-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start unggah surat-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                        <span class="input-group-btn">
+                                                                            <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                                <i class="fa fa-file-o"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="file" id="files-input-upload3" style="display:none">
+                                                                        <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                                <span class="glyphicon glyphicon-upload"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                                <!--end unggah surat-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <!--start keterangan-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="form_control_1">Tambah Keterangan</label>
+                                                                        <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end keterangan-->
+                                                            </div>
+                                                        </div>
+                                                        <!--sk pengaktifan-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end accordion tambah SK-->
+                                            <!--start status perizinan-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#FormEvaluasiRKAB" href="#Keuangan">
+                                                            Status Perizinan Penyesuaian dari BKPM
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="Keuangan" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <!--start btn tambah-->
+                                                            <div class="col-md-12">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Tambah BKPM
+                                                                    </a>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end btn tambah-->
+                                                            <!--start Nomor SK-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="NoSK">Nomor SK</label>
+                                                                    <input type="text" class="form-control" name="nosk" id="NoSK">
+                                                                </div>
+                                                            </div>
+                                                            <!--end Nomor SK-->
+                                                            <!--start unggah surat-->
+                                                            <div class="col-sm-4">
+                                                                <div class="space" style="margin-bottom: 23px;"></div>
+                                                                <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                    <span class="input-group-btn">
+                                                                        <button id="fake-file-button-browse1" type="button" class="btn btn-default">
+                                                                            <i class="fa fa-file-o"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="file" id="files-input-upload1" style="display:none">
+                                                                    <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload1" data-target="#static" data-toggle="modal">
+                                                                            <span class="glyphicon glyphicon-upload"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end unggah surat-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start no Surat permohonan-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="NoPermohonan">No. Surat Permohonan</label>
+                                                                    <input type="text" class="form-control" name="nopermohonan" id="NoSk">
+                                                                </div>
+                                                            </div>
+                                                            <!--end no Surat permohonan-->
+                                                            <!--start tgl surat permohonan-->
+                                                            <div class="col-sm-4">
+                                                                <label>Tanggal Surat Permohonan</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="" />
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end tgl surat permohonan-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start tgl terima bkpm-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <label>Tanggal Terima BKPM</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="" />
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end tgl terima bkpm-->
+                                                            <!--start tgl terima evaluator-->
+                                                            <div class="col-sm-4">
+                                                                <label>Tanggal Terima Evaluator</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="" />
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end tgl terima evaluator-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start Nomor SK-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="JenisPermohonan">Jenis Permohonan</label>
+                                                                    <input type="text" class="form-control" name="jenispermohonan" id="JenisPermohonan">
+                                                                </div>
+                                                            </div>
+                                                            <!--end Nomor SK-->
+                                                            <!--start status-->
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label for="Status">Status</label>
+                                                                    <input type="text" class="form-control" name="status" id="Status">
+                                                                </div>
+                                                            </div>
+                                                            <!--end status-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start btn add-->
+                                                            <div class="col-sm-12">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Add SK IUP OP
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <!--end btn add-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="add-sk-iup-op">
+                                                                <!--start SK IUP OP Asal-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="SKAsal">SK IUP OP (Asal Batubara)</label>
+                                                                        <input type="text" class="form-control" name="skasal" id="SKAsal">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end SK IUP OP Asal-->
+                                                                <!--start unggah surat-->
+                                                                <div class="col-sm-4">
+                                                                    <div class="space" style="margin-bottom: 23px;"></div>
+                                                                    <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                        <span class="input-group-btn">
+                                                                            <button id="fake-file-button-browse2" type="button" class="btn btn-default">
+                                                                                <i class="fa fa-file-o"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="file" id="files-input-upload2" style="display:none">
+                                                                        <input type="text" id="fake-file-input-name2" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload2" data-target="#static" data-toggle="modal">
+                                                                                <span class="glyphicon glyphicon-upload"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                                <!--end unggah surat-->
+                                                                <div class="col-sm-12">
+                                                                    <!--start tgl sk asal-->
+                                                                    <div class="col-sm-4 col-sm-offset-2 no-padding-left">
+                                                                        <label>Tanggal SK Asal Batubara</label>
+                                                                        <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                                        <div class="space"></div>
+                                                                    </div>
+                                                                    <!--end tgl sk asal-->
+                                                                    <!--start perusahaan asal-->
+                                                                    <div class="col-sm-4 no-padding-right">
+                                                                        <div class="form-group">
+                                                                            <label for="PerusahaanPerusahaanAsal">Perusahaan Asal Batubara</label>
+                                                                            <input type="text" class="form-control" name="perusahaanperusahaanasal" id="PerusahaanPerusahaanAsal">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end perusahaan asal-->
+                                                                </div>
+                                                                <!--start alamat perusahaan-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="form_control_1">Alamat Perusahaan Asal Batubara</label>
+                                                                        <textarea class="form-control" name="alamatperusahaan" rows="3"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end alamat perusahaan-->
+                                                                <!--start Kota asal-->
+                                                                <div class="col-sm-4 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="kotaPerusahaanAsal">Kota Asal Batubara</label>
+                                                                        <input type="text" class="form-control" name="kotaperusahaanasal" id="kotaPerusahaanAsal">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end Kota asal-->
+                                                                <!--start provinsi asal-->
+                                                                <div class="col-sm-4">
+                                                                    <div class="form-group">
+                                                                        <label for="ProvinsiPerusahaanAsal">Provinsi Asal Batubara</label>
+                                                                        <input type="text" class="form-control" name="provinsiperusahaanasal" id="ProvinsiPerusahaanAsal">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end provinsi asal-->
+                                                                <!--start volume-->
+                                                                <div class="col-sm-8 col-sm-offset-2">
+                                                                    <div class="form-group">
+                                                                        <label for="Volume">Volume</label>
+                                                                        <input type="text" class="form-control" name="volume" id="Volume">
+                                                                    </div>
+                                                                </div>
+                                                                <!--end volume-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end status perizinan-->
+                                            <!--start rekomendasi ET-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#FormEvaluasiRKAB" href="#RekEt">
+                                                            Rekomendasi ET
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="RekEt" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <!--start btn tambah-->
+                                                            <div class="col-md-12">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Tambah Rekomendasi ET
+                                                                    </a>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end btn tambah-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start no SK-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="NoSk">Nomor SK</label>
+                                                                    <input type="text" class="form-control" name="nosk" id="NoSk">
+                                                                </div>
+                                                            </div>
+                                                            <!--end no SK-->
+                                                            <!--start tgl sk-->
+                                                            <div class="col-sm-4">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                            </div>
+                                                            <!--end tgl sk-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start unggah surat-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                    <span class="input-group-btn">
+                                                                        <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                            <i class="fa fa-file-o"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="file" id="files-input-upload3" style="display:none">
+                                                                    <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                            <span class="glyphicon glyphicon-upload"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end unggah surat-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start ket-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="form_control_1">Tambah Keterangan</label>
+                                                                    <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end ket-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end rekomendasi ET-->
+                                            <!--start penambahan kerja sama-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#FormEvaluasiRKAB" href="#KerjaSma">
+                                                            Penambahan Kerjasama
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="KerjaSma" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <!--start btn tambah-->
+                                                            <div class="col-sm-12">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Penambahan Kerjasama
+                                                                    </a>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end btn tambah-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start Surat Persetujuan Penambahan Kerjasama-->
+                                                            <div class="col-sm-8 col-md-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="SuratPersetujuan">Surat Persetujuan Penambahan Kerjasama</label>
+                                                                    <input type="text" class="form-control" name="suratpersetujuan" id="SuratPersetujuan">
+                                                                </div>
+                                                            </div>
+                                                            <!--end Surat Persetujuan Penambahan Kerjasama-->
+                                                            <!--start tgl sk-->
+                                                            <div class="col-sm-8 col-md-4">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                            </div>
+                                                            <!--end tgl sk-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start unggah surat-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                    <span class="input-group-btn">
+                                                                        <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                            <i class="fa fa-file-o"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="file" id="files-input-upload3" style="display:none">
+                                                                    <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                            <span class="glyphicon glyphicon-upload"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end unggah surat-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start ket-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="form_control_1">Tambah Keterangan</label>
+                                                                    <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end ket-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end penambahan kerja sama-->
+                                            <!--start Sertifikat CNC IUP OP-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#FormEvaluasiRKAB" href="#SertifikatCnc">
+                                                            Sertifikat CNC IUP OP
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="SertifikatCnc" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <!--start btn tambah-->
+                                                            <div class="col-md-12">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Sertifikat CNC
+                                                                    </a>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end btn tambah-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start Sertifikat CNC IUP OP-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="SuratPersetujuan">Sertifikat CNC IUP OP</label>
+                                                                    <input type="text" class="form-control" name="suratpersetujuan" id="SuratPersetujuan">
+                                                                </div>
+                                                            </div>
+                                                            <!--end Sertifikat CNC IUP OP-->
+                                                            <!--start tgl sk-->
+                                                            <div class="col-sm-4">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="">
+                                                            </div>
+                                                            <!--end tgl sk-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start unggah surat-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                    <span class="input-group-btn">
+                                                                        <button id="fake-file-button-browse3" type="button" class="btn btn-default">
+                                                                            <i class="fa fa-file-o"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="file" id="files-input-upload3" style="display:none">
+                                                                    <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload3" data-target="#static" data-toggle="modal">
+                                                                            <span class="glyphicon glyphicon-upload"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end unggah surat-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start ket-->
+                                                            <div class="col-sm-8 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="form_control_1">Tambah Keterangan</label>
+                                                                    <textarea class="form-control" name="tambahket" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end ket-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Sertifikat CNC IUP OP-->
+                                            <!--start Rekap RKAB dan Realisasi-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#FormEvaluasiRKAB" href="#RekapRkab">
+                                                            Rekap RKAB dan Realisasi
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="RekapRkab" class="panel-collapse collapse">
+                                                    <div class="portlet-body">
+                                                        <!--start rekap RKAB-->
+                                                        <div id="RKAB" style="margin:10px;">
+                                                            <div class="col-xs-6">
+                                                                <h4>RKAB</h4>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <div class="col-xs-6 text-right">
+                                                                <a href="#" class="btn green-sharp btn-outline">
+                                                                    <i class="fa fa-plus"></i> Tambah
+                                                                </a>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <div class="table-scrollable">
+                                                                <table class="table table-striped table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-center" scope="col">
+                                                                                2014
+                                                                            </th>
+                                                                            <th class="text-center" scope="col">
+                                                                                2015
+                                                                            </th>
+                                                                            <th class="text-center" scope="col">
+                                                                                2016
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya1" name="radio1" class="md-radiobtn">
+                                                                                            <label for="ya1">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak1" name="radio1" class="md-radiobtn">
+                                                                                            <label for="tidak1">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya2" name="radio2" class="md-radiobtn">
+                                                                                            <label for="ya2">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak2" name="radio2" class="md-radiobtn">
+                                                                                            <label for="tidak2">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya3" name="radio3" class="md-radiobtn">
+                                                                                            <label for="ya3">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak3" name="radio3" class="md-radiobtn">
+                                                                                            <label for="tidak3">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="paginate">
+                                                                <ul class="pagination" style="visibility: visible;">
+                                                                    <li class="prev disabled">
+                                                                        <a href="#" title="Prev"><i class="fa fa-angle-left"></i></a>
+                                                                    </li>
+                                                                    <li class="active">
+                                                                        <a href="#">1</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">2</a>
+                                                                    </li>
+                                                                    <li class="next">
+                                                                        <a href="#" title="Next"><i class="fa fa-angle-right"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!--end rekap RKAB-->
+                                                        <!--start realisasi triwulan-->
+                                                        <div id="RealisasiTriwulan" style="margin:10px;">
+                                                            <div class="col-xs-6">
+                                                                <h4>Realisasi Triwulan</h4>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <div class="col-xs-6 text-right">
+                                                                <a href="#" class="btn green-sharp btn-outline">
+                                                                    <i class="fa fa-plus"></i> Tambah
+                                                                </a>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <div class="table-scrollable">
+                                                                <table class="table table-striped table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th colspan="4" class="text-center" scope="col">
+                                                                                2014
+                                                                            </th>
+                                                                            <th colspan="4" class="text-center" scope="col">
+                                                                                2015
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="text-center">
+                                                                                <small>I</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya4" name="radio4" class="md-radiobtn">
+                                                                                            <label for="ya4">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak4" name="radio4" class="md-radiobtn">
+                                                                                            <label for="tidak4">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="text-center">
+                                                                                <small>II</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya5" name="radio5" class="md-radiobtn">
+                                                                                            <label for="ya5">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak5" name="radio5" class="md-radiobtn">
+                                                                                            <label for="tidak5">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="text-center">
+                                                                                <small>III</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya6" name="radio6" class="md-radiobtn">
+                                                                                            <label for="ya6">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak6" name="radio6" class="md-radiobtn">
+                                                                                            <label for="tidak6">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="text-center">
+                                                                                <small>IV</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya7" name="radio7" class="md-radiobtn">
+                                                                                            <label for="ya7">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak7" name="radio7" class="md-radiobtn">
+                                                                                            <label for="tidak7">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+
+                                                                            <td class="text-center">
+                                                                                <small>I</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya8" name="radio8" class="md-radiobtn">
+                                                                                            <label for="ya8">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak8" name="radio8" class="md-radiobtn">
+                                                                                            <label for="tidak8">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="text-center">
+                                                                                <small>II</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya9" name="radio9" class="md-radiobtn">
+                                                                                            <label for="ya9">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak9" name="radio9" class="md-radiobtn">
+                                                                                            <label for="tidak9">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="text-center">
+                                                                                <small>III</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya10" name="radio10" class="md-radiobtn">
+                                                                                            <label for="ya10">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak10" name="radio10" class="md-radiobtn">
+                                                                                            <label for="tidak10">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="text-center">
+                                                                                <small>IV</small>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya11" name="radio11" class="md-radiobtn">
+                                                                                            <label for="ya11">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak11" name="radio11" class="md-radiobtn">
+                                                                                            <label for="tidak11">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="paginate">
+                                                                <ul class="pagination" style="visibility: visible;">
+                                                                    <li class="prev disabled">
+                                                                        <a href="#" title="Prev"><i class="fa fa-angle-left"></i></a>
+                                                                    </li>
+                                                                    <li class="active">
+                                                                        <a href="#">1</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">2</a>
+                                                                    </li>
+                                                                    <li class="next">
+                                                                        <a href="#" title="Next"><i class="fa fa-angle-right"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!--end realisasi triwulan-->
+                                                        <!--start rekap tahunan-->
+                                                        <div id="Tahunan" style="margin:10px;">
+                                                            <div class="col-xs-6">
+                                                                <h4>Tahunan</h4>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <div class="col-xs-6 text-right">
+                                                                <a href="#" class="btn green-sharp btn-outline">
+                                                                    <i class="fa fa-plus"></i> Tambah
+                                                                </a>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <div class="table-scrollable">
+                                                                <table class="table table-striped table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-center" scope="col">
+                                                                                2014
+                                                                            </th>
+                                                                            <th class="text-center" scope="col">
+                                                                                2015
+                                                                            </th>
+                                                                            <th class="text-center" scope="col">
+                                                                                2016
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya12" name="radio12" class="md-radiobtn">
+                                                                                            <label for="ya12">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak12" name="radio12" class="md-radiobtn">
+                                                                                            <label for="tidak12">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya13" name="radio13" class="md-radiobtn">
+                                                                                            <label for="ya13">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak13" name="radio13" class="md-radiobtn">
+                                                                                            <label for="tidak13">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group form-md-radios text-center">
+                                                                                    <div class="md-radio-inline">
+                                                                                        <div class="md-radio has-success">
+                                                                                            <input type="radio" id="ya14" name="radio14" class="md-radiobtn">
+                                                                                            <label for="ya14">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Ya
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="md-radio has-error">
+                                                                                            <input type="radio" id="tidak14" name="radio14" class="md-radiobtn">
+                                                                                            <label for="tidak14">
+                                                                                                <span class="inc"></span>
+                                                                                                <span class="check"></span>
+                                                                                                <span class="box"></span> Tidak
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="paginate">
+                                                                <ul class="pagination" style="visibility: visible;">
+                                                                    <li class="prev disabled">
+                                                                        <a href="#" title="Prev"><i class="fa fa-angle-left"></i></a>
+                                                                    </li>
+                                                                    <li class="active">
+                                                                        <a href="#">1</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">2</a>
+                                                                    </li>
+                                                                    <li class="next">
+                                                                        <a href="#" title="Next"><i class="fa fa-angle-right"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!--end rekap tahunan-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Rekap RKAB dan Realisasi-->
+                                            <!--start Unggah File Lain-->
+                                            <div class="panel border-red">
+                                                <div class="panel-heading bg-red bg-font-red">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#FormEvaluasiRKAB" href="#UnggahFileLain">
+                                                            Unggah File Lain
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="UnggahFileLain" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <!--start btn tambah-->
+                                                            <div class="col-md-12">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn green-sharp btn-outline">
+                                                                        <i class="fa fa-plus"></i> Tambah File
+                                                                    </a>
+                                                                    <div class="space"></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end btn tambah-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start Nomor surat-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="NoSurat">Nomor Surat</label>
+                                                                    <input type="text" class="form-control" name="nosurat" id="NoSurat">
+                                                                </div>
+                                                            </div>
+                                                            <!--end Nomor surat-->
+                                                            <!--start unggah surat-->
+                                                            <div class="col-sm-4">
+                                                                <div class="space" style="margin-bottom: 23px;"></div>
+                                                                <div class="input-group" style="margin-left:auto;margin-right:auto">
+                                                                    <span class="input-group-btn">
+                                                                        <button id="fake-file-button-browse1" type="button" class="btn btn-default">
+                                                                            <i class="fa fa-file-o"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                    <input type="file" id="files-input-upload1" style="display:none">
+                                                                    <input type="text" id="fake-file-input-name1" disabled="disabled" placeholder="Unggah Surat" class="form-control">
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload1" data-target="#static" data-toggle="modal">
+                                                                            <span class="glyphicon glyphicon-upload"></span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end unggah surat-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start nama surat-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="NmSurat">Nama Surat</label>
+                                                                    <input type="text" class="form-control" name="nmsurat" id="NmSurat">
+                                                                </div>
+                                                            </div>
+                                                            <!--end nama surat-->
+                                                            <!--start tgl surat-->
+                                                            <div class="col-sm-4">
+                                                                <label>Tanggal Surat</label>
+                                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="" />
+                                                                <div class="space"></div>
+                                                            </div>
+                                                            <!--end tgl surat-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start pengirim-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="Pengirim">Pengirim</label>
+                                                                    <input type="text" class="form-control" name="pengirim" id="Pengirim">
+                                                                </div>
+                                                            </div>
+                                                            <!--end pengirim-->
+                                                            <!--start tujuan-->
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label for="Tujuan">Tujuan</label>
+                                                                    <input type="text" class="form-control" name="tujuan" id="Tujuan">
+                                                                </div>
+                                                            </div>
+                                                            <!--end tujuan-->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!--start alamat perihal-->
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <div class="form-group">
+                                                                    <label for="form_control_1">Perihal</label>
+                                                                    <textarea class="form-control" name="perihal" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end alamat perihal-->
+                                                            <!--start alamat keterangan-->
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label for="form_control_1">Keterangan</label>
+                                                                    <textarea class="form-control" name="keterangan" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end alamat keterangan-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Unggah File Lain-->
+                                        </div>
+                                        <!--end accordion-->
+                                    </div>
+                                </div>
+                                <!--end row accordion-->
+                            </div>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn green-sharp btn-outline">Submit</button>
+                                        <button type="reset" class="btn default">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END VALIDATION STATES-->
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT INNER -->
+</div>
+
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-route.min.js"></script>
+<script src="~/Areas/AngkutJual/Ng/IupOp/create.js"></script>

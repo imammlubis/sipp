@@ -1,0 +1,363 @@
+﻿@{
+    ViewBag.Title = "- Melihat daftar keseluruhan";
+    Layout = "~/Areas/PKP2B/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    .k-widget.k-grid#grid>.k-grid-content {
+        height: 500px!important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Melihat Daftar Keseluruhan</span>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+                <div class="form-body">                    
+                    @(Html.Kendo().TabStrip()
+            .Name("tabStrip")
+            .Animation(animation => animation.Open(open => open.Fade(FadeDirection.In)))
+            .Events(e => e.Activate("tabActive"))
+            .Items(tabsrip =>
+            {
+                tabsrip.Add().Text("Semua")
+                .Selected(true)
+                .Content(
+                    @<text>
+                        @*@TestA()*@
+                    @Html.Action("TestGridMasterDetail", "MelihatDaftarKeseluruhan")
+                    </text>
+                    );
+                tabsrip.Add().Text("Masa SK Akan Habis")
+                .Content(@<text>@TestB()</text>);
+            })
+                    )
+
+                    @helper TestA()
+                        {
+    @(Html.Kendo().Grid<Esdm.Web.Areas.PKP2B.Models.GeneralInformationViewModel>()
+                   .Name("gridxxx")
+                   //.ToolBar(tools => tools.Pdf().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+                   .ToolBar(tools => tools.Excel().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+                   .Excel(
+                        excel => excel
+                        .FileName("Data Seluruh Perusahaan.xlsx")
+                        .AllPages(true)
+                    )
+                   //.Pdf(
+                   //     pdf => pdf
+                   //     .AllPages()
+                   //     .AvoidLinks()
+                   //     .PaperSize("A4")
+                   //     .Scale(0.8)
+                   //     .Margin("2cm", "1cm", "1cm", "1cm")
+                   //     .Landscape()
+                   //     .RepeatHeaders()
+                   //     .TemplateId("page-template")
+                   //     .FileName("Data Seluruh Perusahaan.pdf")
+                   //     .ProxyURL(Url.Action("Pdf_Export_Save", "IupOpAngkutJualList"))
+                   // )
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Command(
+                           command =>
+                           {
+                               command.Custom(" Print").Click("index.print");
+                               command.Custom(" Edit").Click("index.edit");
+                               command.Custom(" History").Click("index.history");
+                           }).Width(240).Title("Action");
+                       columns.Bound(p => p.ID).Hidden();
+                       columns.Bound(p => p.Name).Title("Nama Perusahaan").Width(223);
+                       columns.Bound(p => p.Alamat).Title("Alamat").Width(400);
+                       columns.Bound(p => p.Provinsi).Title("Provinsi").Width(200);
+                       //columns.Bound(p => p.StatusIzin).Title("Status Perizinan").Width(70).HeaderHtmlAttributes("align=center");
+                       columns.Bound(p => p.LuasWilayahAwal).Title("Luas Wilayah Awal").Width(150);
+                       columns.Bound(p => p.TanggalKontrak).Title("Tanggal Kontrak").Format("{0:dd/MM/yyyy}").Width(170);
+                       columns.Bound(p => p.TanggalBerakhir).Title("Tanggal Berakhir").Format("{0:dd/MM/yyyy}").Width(170);
+                   })
+                   .Events(events => events.DataBound("onRowBound"))
+                   .Sortable()
+                   .Pageable()
+                   .Scrollable()
+                   .Filterable()
+                   .ClientDetailTemplateId("yomen")
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("List", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })
+                       .ServerOperation(true)
+                    ))
+
+}
+
+                    @helper TestB()
+                    {
+                    @(Html.Kendo().Grid<Esdm.Web.Areas.PKP2B.Models.GeneralInformationViewModel>()
+                   .Name("gridxxz")
+                   //.ToolBar(tools => tools.Pdf().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+                   .ToolBar(tools => tools.Excel().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+                   .Excel(excel => excel
+                    .FileName("MasaSkAkanHabis.xlsx"))
+                   //.Pdf(pdf => pdf
+                   //     .AllPages()
+                   //     .AvoidLinks(true)
+                   //     .PaperSize("A4")
+                   //     .Scale(0.8)
+                   //     .Margin("2cm", "1cm", "1cm", "1cm")
+                   //     .Landscape()
+                   //     .RepeatHeaders()
+                   //     .TemplateId("page-template")
+                   //     .FileName("MasaSkAkanHabis.pdf")
+                   //     .ProxyURL(Url.Action("Pdf_Export_Save", "EvaluationHistories"))
+                   // )
+                   .EnableCustomBinding(true)
+                   .AutoBind(false)
+                   .Columns(columns =>
+                   {
+                       columns.Command(
+                           command =>
+                           {
+                               command.Custom(" Alert").Click("index.alert");
+                           }).Width(100).Title("Action");
+                       columns.Bound(p => p.SkEndId).Hidden();
+                       columns.Bound(p => p.Name).Title("Nama Perusahaan").Width(223);
+                       columns.Bound(p => p.Alamat).Title("Alamat").Width(400);
+                       columns.Bound(p => p.Provinsi).Title("Provinsi").Width(200);
+                       //columns.Bound(p => p.StatusIzin).Title("Status Perizinan").Width(70).HeaderHtmlAttributes("align=center");
+                       columns.Bound(p => p.LuasWilayahAwal).Title("Luas Wilayah Awal").Width(150);
+                       columns.Bound(p => p.TanggalKontrak).Title("Tanggal Kontrak").Format("{0:dd/MM/yyyy}").Width(170);
+                       columns.Bound(p => p.TanggalBerakhir).Title("Tanggal Berakhir").Format("{0:dd/MM/yyyy}").Width(170);
+                       columns.Bound(p => p.JangkaWaktu).Title("Durasi(Bulan)").Width(170);
+                       columns.Bound(p => p.Email).Title("Email").Width(170);
+                       columns.Bound(p => p.CpHp).Title("Contact").Width(170);
+                   })
+                   .Events(e => e.DataBound("onRowBound2"))
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListSkEnd", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })
+                       .ServerOperation(true)
+                    ))
+}
+                </div>
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+<script id="yomen" type="text/kendo-tmpl">
+    @(Html.Kendo().Grid< Esdm.Web.Areas.PKP2B.Models.TahapKegiatanViewModel> ()
+            .Name("grid_#=ID#") // template expression, to be evaluated in the master context
+            .Columns(columns =>
+            {
+                //columns.Bound(o => o.OrderID).Width(110);
+                //columns.Bound(o => o.ShipCountry).Width(110);
+                //columns.Bound(o => o.ShipAddress).ClientTemplate("\\#= ShipAddress \\#"); // escaped template expression, to be evaluated in the child/detail context
+                //columns.Bound(o => o.ShipName).Width(300);
+                //columns.Bound(o => o.ID).Width(110);
+                columns.Bound(o => o.Tahap).Width(110);
+                columns.Bound(o => o.LuasDipertahankan).Width(110);
+            })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(10)
+                .Read(read => read.Action("ListDetail", "MelihatDaftarKeseluruhan", new {area = "pkp2b", id = "#=ID#" }))
+            )
+            .Pageable()
+            .Sortable()
+            .ToClientTemplate()
+    )
+</script>
+
+<script>
+    $("#gridxxx").kendoGrid({
+        toolbar:["pdf"],
+        pdfExport: function (e) {
+            var grid = $("#gridxxx").data("kendoGrid");
+            grid.hideColumn(0);
+            e.promise
+            .done(function () {
+                grid.showColumn(0);
+            });
+        }
+    })
+
+    function onRowBound(events) {
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+        
+        $(".k-gridxxx-Print").find("span").addClass("k-font-icon  k-i-print");
+        $(".k-gridxxx-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-gridxxx-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-gridxxx-Alert").find("span").addClass("k-font-icon k-i-exception");
+        $(".k-gridxxx-History").find("span").addClass("k-font-icon k-i-refresh");
+
+        $(".k-gridxxz-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-gridxxz-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-gridxxz-Alert").find("span").addClass("k-font-icon k-i-exception");
+
+        $(".k-grid3-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid3-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-grid3-Alert").find("span").addClass("k-font-icon k-i-exception");
+    }
+
+    function onRowBound2(e) {
+        //this.expandRow(this.tbody.find("tr.k-master-row").first());
+        $(".k-gridxxz-Print").find("span").addClass("k-font-icon  k-i-print");
+        $(".k-gridxxz-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-gridxxz-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-gridxxz-Alert").find("span").addClass("k-font-icon k-i-exception");
+        $(".k-gridxxz-History").find("span").addClass("k-font-icon k-i-refresh");
+
+    }
+
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow2(e) {
+        var grid = $("#gridxxz").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+
+    function refreshGrid() {
+        $("#gridxxx").data("kendoGrid").dataSource.read();
+        $("#gridxxx").data("kendoGrid").refresh();
+    }
+
+    var tabActive = function () {
+        var tabstrip = $("#tabStrip").data("kendoTabStrip");
+        if (tabstrip.select().text() == "Semua") {
+            $("#grid").data("kendoGrid").dataSource.read();
+            $("#grid").data("kendoGrid").refresh();
+        }
+        else if (tabstrip.select().text() == "Masa SK Akan Habis") {
+            $("#gridxxz").data("kendoGrid").dataSource.read();
+            $("#gridxxz").data("kendoGrid").refresh();
+        }
+    }
+
+    var index = (function ($) {
+        var self = this;
+        return {
+            edit: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("edit", "memasukandata", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+            print: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("DownloadViewPDF", "printdata", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+            history: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("ViewHistory", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+
+            dataBound: function(){
+                var grid = $("#grid").data("kendoGrid");
+                grid.find(".k-hierarchy-cell, .k-hierarchy-col").hide(); //get rid of detail icon
+            },
+
+            alert: function (e) {
+            @*var url = "@Url.Action("AlertData", "IupOpAngkutJual")" + "/" + selectedRow.ID.toString();
+            window.location.replace(url);*@
+                @*swal({
+                title: "Are You Sure?", text: "Send Alert? ",
+                type: "warning", showCancelButton: true, confirmButtonColor: "#3085d6",
+                confirmButtonText: "Ya, silahkan kirim!", closeOnConfirm: false
+            }, function () {
+                debugger;
+                var selectedRow = returnSelectedRow(e);
+                //var url = "@Url.Action("SendAlert/", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })" + selectedRow.SkEndId.toString();
+                //$http.post('/pkp2b/melihatdaftarkeseluruhan/sendalert/', { id: selectedRow.ID })
+                //$http.post(url)
+                //.success(function (data) {
+                //    //$scope.loadKronologiTahapan();
+                //    swal("Sukses!", "Peringatan Telah dikirim", "success");
+                //})
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("SendAlert", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })",
+                    data: {
+                        id: selectedRow.SkEndId
+                    },
+                traditional: true,
+                success: function (result) {
+                    if (result) {
+                        swal("Sukses!", "Peringatan Telah dikirim", "success");
+                    }
+                },
+                
+                });
+            });*@
+                var inputOptions = new Promise(function (resolve) {
+                    setTimeout(function () {
+                        resolve({
+                            'EMAIL': 'EMAIL',
+                            'SMS': 'SMS',
+                            'EMAIL&SMS': 'EMAIL&SMS'
+                        })
+                    }, 2000)
+                })
+                swal({
+                    title: 'Select option',
+                    input: 'radio',
+                    inputOptions: inputOptions,
+                    inputValidator: function (result) {
+                        return new Promise(function (resolve, reject) {
+                            var selectedRow = returnSelectedRow2(e);
+                            if (result) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "@Url.Action("SendAlert", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })",
+                                    data: {
+                                        id: selectedRow.SkEndId,
+                                        type: result
+                                    },
+                                traditional: true,
+                                success: function (result) {
+                                    if (result) {
+                                        swal("Sukses!", "Peringatan Telah dikirim", "success");
+                                    }
+                                },                
+                                });
+                            } else {
+                                reject('You need to select something!')
+                            }
+                        })
+                    }
+                }).then(function (result) {
+                    swal({
+                        type: 'success',
+                        html: 'You selected: ' + result
+                    })
+                })
+        },
+
+        refreshGrid1: function (e) {
+            $("#gridxxx").data("kendoGrid").dataSource.read();
+            $("#gridxxx").data("kendoGrid").refresh();
+        },
+        refreshGrid2: function (e) {
+            $("#gridxxz").data("kendoGrid").dataSource.read();
+            $("#gridxxz").data("kendoGrid").refresh();
+        }
+        }
+    })(jQuery);
+</script>

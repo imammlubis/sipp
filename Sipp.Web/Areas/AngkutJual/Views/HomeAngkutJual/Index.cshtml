@@ -1,0 +1,188 @@
+﻿
+@{
+    Layout ="~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJualHome.cshtml";
+    ViewBag.Title = "Home Page";
+}
+
+<div class="banner-wrapper">
+    <div class="index-banner">
+        <div class="row hide">
+            <!--
+            <div class="col-sm-8 col-sm-offset-2">
+                <img src="~/Content/assets/layouts/img/logo_ESDM.png" width="150"/>
+            </div>
+            -->
+            <div class="col-sm-8 col-sm-offset-2">
+                <h3 class="font-white text-left">Selamat datang</h3>
+                <p class="font-white text-left" style="margin-top:0;">
+                    Sistem Informasi Perizinan Batubara<br>
+                    Ijin usaha pertambangan operasi produksi khusus untuk pengangkutan penjualan yang disebut IUP Operasi Produksi khusus pengangkutan dan penjualan adalah ijin usaha yang diberikan kepada peruahaan untuk membeli, mengangkut, mengolah, dan memurnikan termasuk menjual komoditas tambang mineral atau batubara hasil olahannya.
+                </p>
+            </div>
+        </div>
+        <div class="tiles">
+            <!--start logo
+            <div class="tile image double-down double">
+                <div class="tile-body">
+                    <img src="~/Content/assets/layouts/img/logo_ESDM.png" />
+                </div>
+                <div class="tile-object">
+                    <div class="name">
+                    </div>
+                </div>
+            </div>
+            end logo-->
+            <div id="block-3" class="tile double-down hidden-xs"></div>
+            <!--start memasukan data-->
+            <a href="@Url.Action("Index", "HomeAngkutJualMineral", new { Area = "AngkutJualMineral" })">
+                <div class="tile bg-yellow-saffron box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> Angkut Jual Mineral </div>
+                    </div>
+                </div>
+            </a>
+            <!--start memasukan data-->
+            <!--start melihat daftar keseluruhan-->
+            <a href="@Url.Action("Index", "HomePKP2B", new { Area = "PKP2B" })">
+                <div id="block-1" class="tile bg-blue-madison box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-list-alt"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name"> PKP2B </div>
+                    </div>
+                </div>
+            </a>
+            <!--start melihat daftar keseluruhan-->
+            <!--start riwayat form evaluasi-->
+            <a href="@Url.Action("Index", "HomeKK", new { Area = "KontrakKarya" })">
+                <div id="block-2" class="tile bg-green-meadow box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-history"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> Kontrak Karya </div>
+                    </div>
+                </div>
+            </a>
+            <!--start riwayat form evaluasi-->
+            <!--start daftar laporan-->
+            <a href="#">
+                <div class="tile double bg-purple-wisteria box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-file-text-o"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> Penanaman Modal Asing</div>
+                    </div>
+                </div>
+            </a>
+            <!--start daftar laporan-->
+            <!--start daftar laporan-->
+            <a href="#">
+                <div id="block-4" class="tile double bg-red-mint box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-file-text-o"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> Pengolahan & Permunian</div>
+                    </div>
+                </div>
+            </a>
+            <!--start daftar laporan-->
+            <!--start Register Perusahaan-->
+            @*<a href="@Url.Action("Index", "RegisterCompany", new { Area = "AngkutJual" })">
+                    <div id="block-3" class="tile bg-red-sunglo box-shadow">
+                        <div class="tile-body">
+                            <i class="glyphicon glyphicon-registration-mark"></i>
+                        </div>
+                        <div class="tile-object">
+                            <div class="name"> Register Perusahaan </div>
+                        </div>
+                    </div>
+                </a>*@
+            <!--end Register Perusahaan-->
+
+        </div>
+
+        @*<div class="tiles">
+                <!--start logo
+                <div class="tile image double-down double">
+                    <div class="tile-body">
+                        <img src="~/Content/assets/layouts/img/logo_ESDM.png" />
+                    </div>
+                    <div class="tile-object">
+                        <div class="name">
+                        </div>
+                    </div>
+                </div>
+                end logo-->
+                <div id="block-3" class="tile double-down hidden-xs"></div>
+                <!--start memasukan data-->
+                <a href="@Url.Action("PreCreation", "iupopangkutjual", new { Area = "AngkutJual" })">
+                    <div class="tile bg-yellow-saffron box-shadow">
+                        <div class="tile-body">
+                            <i class="fa fa-pencil-square-o"></i>
+                        </div>
+                        <div class="tile-object">
+                            <div class="name" style="margin-right:0;"> Memasukan Data </div>
+                        </div>
+                    </div>
+                </a>
+                <!--start memasukan data-->
+                <!--start melihat daftar keseluruhan-->
+                <a href="@Url.Action("Index", "iupopangkutjuallist", new { Area = "AngkutJual" })">
+                    <div id="block-1" class="tile bg-blue-madison box-shadow">
+                        <div class="tile-body">
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                        <div class="tile-object">
+                            <div class="name"> Melihat Daftar Keseluruhan </div>
+                        </div>
+                    </div>
+                </a>
+                <!--start melihat daftar keseluruhan-->
+                <!--start riwayat form evaluasi-->
+                <a href="@Url.Action("Index", "EvaluationHistories", new { Area = "AngkutJual" })">
+                    <div id="block-2" class="tile bg-green-meadow box-shadow">
+                        <div class="tile-body">
+                            <i class="fa fa-history"></i>
+                        </div>
+                        <div class="tile-object">
+                            <div class="name" style="margin-right:0;"> Kesesuaian Sumber Batubara </div>
+                        </div>
+                    </div>
+                </a>
+                <!--start riwayat form evaluasi-->
+                <!--start daftar laporan-->
+                <a href="@Url.Action("Index", "RKABRealizations", new { Area = "AngkutJual" })">
+                    <div class="tile double bg-purple-wisteria box-shadow">
+                        <div class="tile-body">
+                            <i class="fa fa-file-text-o"></i>
+                        </div>
+                        <div class="tile-object">
+                            <div class="name" style="margin-right:0;"> Daftar Laporan RKAB, Realisasi, Tahunan</div>
+                        </div>
+                    </div>
+                </a>
+                <!--start daftar laporan-->
+
+                <!--start Register Perusahaan-->
+                    <a class="hide" href="@Url.Action("Index", "RegisterCompany", new { Area = "AngkutJual" })">
+                    <div id="block-3" class="tile bg-red-sunglo box-shadow">
+                        <div class="tile-body">
+                            <i class="glyphicon glyphicon-registration-mark"></i>
+                        </div>
+                        <div class="tile-object">
+                            <div class="name"> Register Perusahaan </div>
+                        </div>
+                    </div>
+                </a>
+                <!--end Register Perusahaan-->
+            <!--</div>-->*@
+
+    </div>
+</div>

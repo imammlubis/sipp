@@ -1,0 +1,96 @@
+﻿<div id="static5" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="dataKualitasBatubaraForm" data-toggle="validator" role="form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">Form Kadar</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="Komoditi">Komoditi</label>
+                                <select class="form-control"
+                                        name="Komoditi"
+                                        ng-model="kadarModel.komoditi"
+                                        id="Komoditi"
+                                        required>
+                                    <option></option>
+                                    <option value="Timah">Timah</option>
+                                    <option value="Emas">Emas</option>
+                                    <option value="Nikel">Nikel</option>
+                                    <option value="Tembaga">Tembaga</option>
+                                    <option value="Granite">Granite</option>
+                                    <option value="Intan">Intan</option>
+                                    <option value="Pasir Besi">Pasir Besi</option>
+                                    <option value="Bauksit">Bauksit</option>
+                                    <option value="Biji Besi">Biji Besi</option>
+                                    <option value="Iodium">Iodium</option>
+                                    <option value="Alumina">Alumina</option>
+                                    <option value="Clay">Clay</option>
+                                    <option value="Zircon">Zircon</option>
+                                    <option value="Timbal">Timbal</option>
+                                    <option value="Seng">Seng</option>
+                                    <option value="Mangan">Mangan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="Kadar">Kadar</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="Kadar" 
+                                       ng-model="kadarModel.kadar"
+                                       placeholder="" 
+                                       required />
+                            </div>
+                        </div>
+                        @*<div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="ConfirmNew">Luas Dipertahankan / Blok (Ha)</label>
+                                <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                            </div>
+                        </div>*@
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="Komoditi">Blok/Area (HA)</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="Kadar"
+                                       ng-model="kadarModel.blok"
+                                       placeholder=""
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="Kadar">Sample Code</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="Kadar"
+                                       ng-model="kadarModel.sampleCode"
+                                       placeholder=""
+                                       required />
+                            </div>
+                        </div>
+                        @*<div class="col-md-6">
+                <div class="form-group has-success">
+                    <label for="ConfirmNew">Luas Dipertahankan / Blok (Ha)</label>
+                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                </div>
+            </div>*@
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" ng-show="!isEditKadar" ng-click="CreateKadar()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="submit" ng-show="isEditKadar" ng-click="SaveChangesKadar()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="reset" data-dismiss="modal" class="btn red"><i class="fa fa-close"></i> Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

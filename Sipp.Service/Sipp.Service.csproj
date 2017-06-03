@@ -50,10 +50,10 @@
     <Compile Include="Organization\CompanyRepository.cs" />
     <Compile Include="Organization\ICompanyHistoryRepository.cs" />
     <Compile Include="Organization\ICompanyRepository.cs" />
-    <Compile Include="Payment\IPaymentHistoryRepository.cs" />
-    <Compile Include="Payment\IRegularPaymentRepository.cs" />
-    <Compile Include="Payment\PaymentHistoryRepository.cs" />
-    <Compile Include="Payment\RegularPaymentRepository.cs" />
+    <Compile Include="Payment\BillCreditRepository.cs" />
+    <Compile Include="Payment\IBillCreditRepository.cs" />
+    <Compile Include="Payment\IRegularBillRepository.cs" />
+    <Compile Include="Payment\RegularBillRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

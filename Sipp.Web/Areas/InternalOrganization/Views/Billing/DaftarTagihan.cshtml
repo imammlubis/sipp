@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "- Input Tagihan Awal";
+    Layout = "~/Areas/InternalOrganization/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Daftar Tagihan Perusahaan</span>
+                </div>
+            </div>
+            <div class="portlet-body form" ng-app="internal" ng-controller="internal-controller">
+                @(Html.Kendo().Grid<Sipp.Web.Areas.InternalOrganization.Models.DaftarTagihanViewModel>()
+                   .Name("grid")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.Id).Hidden();
+                       columns.Bound(p => p.CompanyName).HeaderTemplate("Perusahaan").Width(200);
+                       columns.Bound(p => p.Province).HeaderTemplate("Provinsi");
+                       columns.Bound(p => p.Evaluator).HeaderTemplate("Evaluator");
+                       columns.Bound(p => p.YearOfCheckingPeriod).HeaderTemplate("Periode Pemeriksaan");
+                       columns.Bound(p => p.YearOfBillingPeriod).HeaderTemplate("Tahun Penagihan");
+
+                       columns.Bound(p => p.FirstBillingNo).HeaderTemplate("No. Surat Tagihan I");
+                       columns.Bound(p => p.FirstAmount).HeaderTemplate("Nominal Tagihan I").Format("{0:##,#}");
+                       columns.Bound(p => p.FirstBillingDate).HeaderTemplate("Tgl Tagihan I").Format("{0:dd/MM/yyyy}").Width(148);
+
+                       //columns.Bound(p => p.SecondBillingNo).HeaderTemplate("No. Surat Tagihan II");
+                       //columns.Bound(p => p.SecondAmount).HeaderTemplate("Nominal Tagihan II");
+                       //columns.Bound(p => p.SecondBillingDate).HeaderTemplate("Tgl Tagihan II").Format("{0:dd/MM/yyyy}").Width(148);
+
+                       //columns.Bound(p => p.ThirdBillingNo).HeaderTemplate("No. Surat Tagihan III");
+                       //columns.Bound(p => p.ThirdAmount).HeaderTemplate("Nominal Tagihan III");
+                       //columns.Bound(p => p.ThirdBillingDate).HeaderTemplate("Tgl Tagihan III").Format("{0:dd/MM/yyyy}").Width(148);
+
+                       //columns.Bound(p => p.FourthBillingNo).HeaderTemplate("No. Surat Tagihan IV");
+                       //columns.Bound(p => p.FourthAmount).HeaderTemplate("Nominal Tagihan IV");
+                       //columns.Bound(p => p.FourthBillingDate).HeaderTemplate("Tgl Tagihan IV").Format("{0:dd/MM/yyyy}").Width(148);
+                   })
+                   .Scrollable()
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListDaftarTagihan", "Billing", new { area = "InternalOrganization"})
+                       .ServerOperation(true)
+                    ))
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/InternalOrganization/Ng/Process.js")"></script>

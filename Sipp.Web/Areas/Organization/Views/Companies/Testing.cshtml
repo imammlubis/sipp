@@ -1,0 +1,42 @@
+﻿@*@model IEnumerable<Esdm.Web.Areas.Organization.Controllers.CompanyTestingViewModel>*@
+@{
+    ViewBag.Title = "Testing";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+
+@(Html.Kendo().Grid<Esdm.Web.Areas.Organization.Controllers.CompanyTestingViewModel>()
+    .Name("grid")
+    .EnableCustomBinding(true)
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ID);
+        columns.Bound(p => p.CompanyName);
+        columns.Bound(p => p.Address);
+        //columns.Bound(p => p.TahapIup);
+        //columns.Bound(p => p.ModifiedBy);
+        //columns.Command(command => command.Custom("ViewDetails").Click("showDetails")).Width(180);
+    })
+    .Pageable()
+    .Filterable()
+    .Sortable()
+    .ColumnMenu()
+    .Resizable(resize => resize.Columns(true))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Read("ListTesting", "Companies", new { area = "Organization" })
+        .ServerOperation(true)
+        .PageSize(2)
+    )
+)
+@(Html.Kendo().Window().Name("Details")
+    .Title("Customer Details")
+    .Visible(false)
+    .Modal(true)
+    .Draggable(true)
+    .Width(300)
+)
+
+
+
+

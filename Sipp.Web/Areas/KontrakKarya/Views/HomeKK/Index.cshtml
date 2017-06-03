@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "";
+    Layout = "~/Areas/KontrakKarya/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="banner-wrapper">
+    <div class="index-banner">
+        <div class="tiles">
+            <!--start logo
+            <div class="tile image double-down double">
+                <div class="tile-body">
+                    <img src="~/Content/assets/layouts/img/logo_ESDM.png" />
+                </div>
+                <div class="tile-object">
+                    <div class="name">
+                    </div>
+                </div>
+            </div>
+            end logo-->
+            <div id="block-3" class="tile double-down hidden-xs"></div>
+            <!--start memasukan data-->
+            <a href="@Url.Action("Index", "HomeAngkutJualMineral", new { Area = "AngkutJualMineral" })">
+                <div class="tile bg-yellow-saffron box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> Angkut Jual Mineral </div>
+                    </div>
+                </div>
+            </a>
+            <!--start memasukan data-->
+            <!--start melihat daftar keseluruhan-->
+            <a href="@Url.Action("Index", "HomeAngkutJual", new { Area = "AngkutJual" })">
+                <div id="block-1" class="tile bg-blue-madison box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-list-alt"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name"> Angkut Jual Batubara </div>
+                    </div>
+                </div>
+            </a>
+            <!--start melihat daftar keseluruhan-->
+            <!--start riwayat form evaluasi-->
+            <a href="@Url.Action("Index", "HomePKP2B", new { Area = "PKP2B" })">
+                <div id="block-2" class="tile bg-green-meadow box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-history"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> PKP2B </div>
+                    </div>
+                </div>
+            </a>
+            <!--start riwayat form evaluasi-->
+            <!--start daftar laporan-->
+            <a href="#">
+                <div class="tile double bg-purple-wisteria box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-file-text-o"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> Penanaman Modal Asing</div>
+                    </div>
+                </div>
+            </a>
+            <!--start daftar laporan-->
+            <!--start daftar laporan-->
+            <a href="#">
+                <div id="block-4" class="tile double bg-red-mint box-shadow">
+                    <div class="tile-body">
+                        <i class="fa fa-file-text-o"></i>
+                    </div>
+                    <div class="tile-object">
+                        <div class="name" style="margin-right:0;"> Pengolahan & Permunian</div>
+                    </div>
+                </div>
+            </a>
+            <!--start daftar laporan-->
+            <!--start Register Perusahaan-->
+            @*<a href="@Url.Action("Index", "RegisterCompany", new { Area = "AngkutJual" })">
+                    <div id="block-3" class="tile bg-red-sunglo box-shadow">
+                        <div class="tile-body">
+                            <i class="glyphicon glyphicon-registration-mark"></i>
+                        </div>
+                        <div class="tile-object">
+                            <div class="name"> Register Perusahaan </div>
+                        </div>
+                    </div>
+                </a>*@
+            <!--end Register Perusahaan-->
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Import Data Pemegang Saham";
+    Layout = "~/Areas/Organization/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit portlet-form box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Master</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Organisasi</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Pemegang Saham</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Import Data Pemegang Saham</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="fa fa-upload font-red"></i>
+                            <span class="font-red sbold">
+                                Import Data Pemegang Saham
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+                <div class="form-body">
+                    @using (Html.BeginForm("UploadExcel", "ShareHolders", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <i class="fa fa-file-excel-o font-red"></i>
+                                <span class="caption-subject font-red sbold">
+                                    Masukan File Berformat .xls
+                                </span>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-sm-5 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <input type="file" name="UploadedFile" class="form-control" />
+                                    </div>
+                                    <div class="space"></div>
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <input type="submit" name="Submit" value="Submit" class="btn green-sharp red-stripe" />
+                                </div>
+                            </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

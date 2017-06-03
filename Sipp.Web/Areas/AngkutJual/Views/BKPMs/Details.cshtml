@@ -1,0 +1,123 @@
+﻿@model EduSpot.Entity.Tables.AngkutJual.BKPM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BKPM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LetterNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LetterNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LetterDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LetterDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LetterType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LetterType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKPMAcceptanceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKPMAcceptanceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EvaluatorAcceptanceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EvaluatorAcceptanceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInformation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SKFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SKFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

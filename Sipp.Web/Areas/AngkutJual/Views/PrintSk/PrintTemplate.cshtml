@@ -1,0 +1,393 @@
+﻿@model Esdm.Web.Areas.AngkutJual.Models.IupOpPrintViewModel
+
+@{
+    ViewBag.Title = "Print Data Baru IUP OP Khusus Pengangkutan & Penjualan Batubara";
+    Layout = "";
+}
+
+<style>
+    body {
+        font-family: 'Times New Roman';
+    }
+
+    legend {
+        font-size: 1.17em;
+        font-weight: bold;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+        table > caption {
+            text-align: left;
+            font-weight: bold;
+        }
+
+    table {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    table.no-border,
+    table.no-border tr td {
+        border: none;
+    }
+
+    table.full-width {
+        width: 100%;
+    }
+
+    td.title {
+        min-width: 139px;
+    }
+</style>
+
+<center>
+    <h3>Print Data Baru IUP OP Khusus Pengangkutan & Penjualan Batubara</h3>
+</center>
+<table class="no-border">
+    <!--start nma perusahaan-->
+    <tr>
+        <td class="title">Nama Perusahaan</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.NamaPerusahaan)</td>
+    </tr>
+    <!--end nma perusahaan-->
+    <!--start nma yg bsa dihubungi-->
+    <tr>
+        <td class="title">Nama yang Bisa Dihubungi</td>
+        <td>:</td>
+        <td>Jone</td>
+    </tr>
+    <!--end nma yg bsa dihubungi-->
+    <!--start alamat perusahaan-->
+    <tr>
+        <td class="title">Alamat Perusahaan</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.AlamatPerusahaan)</td>
+    </tr>
+    <!--end alamat perusahaan-->
+    <!--start no tlp-->
+    <tr>
+        <td class="title">No Telepon</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.NoTel)</td>
+    </tr>
+    <!--end no tlp-->
+    <!--start No fax-->
+    <tr>
+        <td class="title">No Fax</td>
+        <td>:</td>
+        <td> @Html.DisplayFor(c => c.Fax) </td>
+    </tr>
+    <!--end No fax-->
+    <!--start no hp-->
+    <tr>
+        <td class="title">No Handphone</td>
+        <td>:</td>
+        <td> @Html.DisplayFor(c => c.MobileNo) </td>
+    </tr>
+    <!--end no hp-->
+    <!--start email/website-->
+    <tr>
+        <td class="title">Email</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Email)</td>
+    </tr>
+    <!--end email/website-->
+    <!--start npwp-->
+    <tr>
+        <td class="title">NPWP</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.NPWP)</td>
+    </tr>
+    <!--end npwp-->
+    <!--start status izin-->
+    <tr>
+        <td class="title">Status Izin</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.StatusIzin)</td>
+    </tr>
+    <!--end status izin-->
+    <!--start no urut berkas-->
+    <tr>
+        <td class="title">Nomor Urut Berkas</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.NoUrutBerkas)</td>
+    </tr>
+    <!--end no urut berkas-->
+    <!--start tambah keterangan-->
+    <tr>
+        <td class="title">Keterangan</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Keterangan)</td>
+    </tr>
+    <!--end tambah keterangan-->
+</table>
+<br />
+
+<!--start table pemegang saham-->
+<table class="full-width">
+    <caption>Pemegang Saham</caption>
+    <thead>
+        <tr>
+            <th> Nama </th>
+            <th> Status Kewarganegaraan </th>
+            <th> Jumlah </th>
+            <th> Status Aktif/Non-Aktif </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["ShareHolder"] as IEnumerable<EduSpot.Entity.Tables.Organization.ShareHolder>)
+        {
+            <tr>
+                <td> @item.Name </td>
+                <td> @item.StatusWnBh </td>
+                <td> @string.Format("{0:n0}", int.Parse(item.TotalStock)) </td>
+                <td> @(item.Status.ToString() == "True" ? "Aktif" : "Non Aktif")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--end table pemegang saham-->
+<!--start table komisaris-->
+<table class="full-width">
+    <caption>Komisaris</caption>
+    <thead>
+        <tr>
+            <th> Nama </th>
+            <th> NPWP </th>
+            <th> Status Aktif/Non-Aktif </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["Commissioner"] as IEnumerable<EduSpot.Entity.Tables.Organization.Commissioner>)
+        {
+            <tr>
+                <td> @item.Name </td>
+                <td> @item.NPWP </td>
+                <td> @(item.Status)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--end table komisaris-->
+<!--start table direksi-->
+<table class="full-width">
+    <caption>Direksi</caption>
+    <thead>
+        <tr>
+            <th> Nama </th>
+            <th> NPWP </th>
+            <th> Status Aktif/Non-Aktif </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["Management"] as IEnumerable<EduSpot.Entity.Tables.Organization.Management>)
+        {
+            <tr>
+                <td> @item.Name </td>
+                <td> @item.NPWP </td>
+                <td> @(item.Status.ToString() == "True" ? "Aktif" : "Non Aktif")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--end table direksi-->
+<br />
+
+<!--start Sk awal-->
+<fieldset>
+    <legend>SK Awal</legend>
+    <table class="full-width">
+        <thead>
+            <tr>
+                <th>No. Surat</th>
+                <th>Tanggal Permohonan</th>
+                <th>Tanggal SK</th>
+                <th>Tanggal Berakhir</th>
+                <th>No. SK</th>
+                <th>Jangka Waktu</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["FirstSk"] as IEnumerable<EduSpot.Entity.Tables.AngkutJual.FirstSk>)
+            {
+                <tr>
+                    <td>@item.LetterNumber</td>
+                    <td>@DateTime.Parse(@item.LetterDate.ToString()).ToString("dd/MM/yyyy")</td>
+                    <td>@DateTime.Parse(@item.SkDate.ToString()).ToString("dd/MM/yyyy")</td>
+                    <td>@DateTime.Parse(@item.SkEndDate.ToString()).ToString("dd/MM/yyyy")</td>
+                    <td>@item.SkNumber</td>
+                    <td>@item.SkDuration</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <legend></legend>
+    <!--start sumber-->
+    <table class="full-width">
+        <thead>
+            <tr>
+                <th> Perusahaan Asal </th>
+                <th> Volume (MT) </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["FirstSkSource"] as IEnumerable<EduSpot.Entity.Tables.AngkutJual.FirstSkSource>)
+            {
+                <tr>
+                    <td> @item.CompanyName </td>
+                    <td> @string.Format("{0:n0}", int.Parse(item.Volume)) </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <!--end sumber-->
+</fieldset>
+<br />
+<!--end Sk awal-->
+<!--start Perubahan Sumber Kerjasama-->
+<fieldset>
+    <legend>Perubahan Sumber Kerjasama</legend>
+    <table class="full-width">
+        <thead>
+            <tr>
+                <th>No. Surat Permohonan</th>
+                <th>Tanggal Permohonan</th>
+                <th>No. SK</th>
+                <th>Tanggal SK</th>
+                <th>Sumber</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["SourceChanges"] as IEnumerable<Esdm.Web.Areas.AngkutJual.Controllers.SourceChangesViewModel>)
+            {
+                <tr>
+                    <td>@item.LetterNumber</td>
+                    <td>@item.LetterDate</td>
+                    <td>@item.LetterNumber</td>
+                    <td>@item.SkDate</td>
+                    <td>
+                        @item.Sumber
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>
+<br />
+<!--end Perubahan Sumber Kerjasama-->
+<!--start Sk perpanjangan-->
+<fieldset>
+    <legend>SK Perpanjangan</legend>
+    <table class="full-width">
+        <thead>
+            <tr>
+                <th>No. Surat Permohonan</th>
+                <th>Tanggal Permohonan</th>
+                <th>No. SK Perpanjangan</th>
+                <th>Masa Berlaku (Tahun)</th>
+                <th>Tanggal Berakhir SK</th>
+                <th>Sertifikat CNC</th>
+                <th>Sumber</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["ExtendedSk"] as IEnumerable<Esdm.Web.Areas.AngkutJual.Controllers.ExtendedSkViewModel>)
+            {
+                <tr>
+                    <td>@item.LetterNumber</td>
+                    <td>@DateTime.Parse(@item.LetterDate.ToString()).ToString("dd/MM/yyyy")</td>
+                    <td>@item.SkNumber</td>
+                    <td>@item.SkDuration</td>
+                    <td>@DateTime.Parse(@item.SkEndDate.ToString()).ToString("dd/MM/yyyy")</td>
+                    <td>@item.SertifikatCNC</td>
+                    <td>
+                        @item.Sumber
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>
+
+<!--start Sk Pengakhiran-->
+<fieldset>
+    <legend>SK Pengakhiran</legend>
+    <table class="full-width">
+        <thead>
+            <tr>
+                <th>No. Surat Permohonan</th>
+                <th>Tanggal Permohonan</th>
+                <th>No. SK Pengakhiran</th>
+                <th>Tanggal SK Pengakhiran</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["BannedSk"] as IEnumerable<EduSpot.Entity.Tables.AngkutJual.BannedSk>)
+            {
+                <tr>
+                    <td>@item.LetterNumber</td>
+                    <td>@DateTime.Parse(@item.LetterDate.ToString()).ToString("dd/MM/yyyy")</td>
+                    <td>@item.SkNumber</td>
+                    <td>@DateTime.Parse(@item.SkDate.ToString()).ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>
+<br />
+<!--start Sk Pengakhiran-->
+<!--start Rekap RKAB dan Realisasi-->
+<fieldset>
+    <legend>Rekap RKAB dan Realisasi</legend>
+    <table class="full-width">
+        <thead>
+            <tr>
+                <th>Tahun</th>
+                <th>RKAB</th>
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+                <th>Annual</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["Report"] as IEnumerable<Esdm.Web.Areas.AngkutJual.Controllers.ReportViewModel>)
+            {
+                <tr>
+                    <th align="center">@item.Year</th>
+                    <th>@string.Format("{0:n0}", item.Rkab)</th>
+                    <th>@string.Format("{0:n0}", item.Q1) (@string.Format("{0:n0}", item.PersenQ1)%)</th>
+                    <th>@string.Format("{0:n0}", item.Q2) (@string.Format("{0:n0}", item.PersenQ2)%)</th>
+                    <th>@string.Format("{0:n0}", item.Q3) (@string.Format("{0:n0}", item.PersenQ3)%)</th>
+                    <th>@string.Format("{0:n0}", item.Q4) (@string.Format("{0:n0}", item.PersenQ4)%)</th>
+                    <th>@string.Format("{0:n0}", item.Annual)</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>
+<br />
+<!--start Rekap RKAB dan Realisasi-->
+
+<br />
+
+
+

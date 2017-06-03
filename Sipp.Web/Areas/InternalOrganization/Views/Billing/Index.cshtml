@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "- Input Tagihan Awal";
+    Layout = "~/Areas/InternalOrganization/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Input Tagihan Awal Perusahaan</span>
+                </div>
+            </div>
+            @*<div class="portlet-body form" style="overflow:hidden;" ng-app="pkp2b" ng-controller="pkp2b-controller">
+                <div class="form-body">
+                    <!-- BEGIN FORM-->
+                    <form name="userForm" class="form-horizontal">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <div class="form-group has-success col-sm-6">
+                                    <label class="col-md-3 control-label" for="ConfirmNew">Nama Perusahaan</label>
+                                    <input type="text" class="form-control"
+                                            ng-model="billingModel.nama"
+                                            name="namaPerusahaan" id="namaPerusahaan" required>
+                                </div>
+                            </div>
+                            <div class="col-md-9 text-right">
+                                <button type="submit" class="btn green-sharp red-stripe" ng-click="SaveGeneralInformation()"><i class="fa fa-save"></i> Simpan</button>
+                                <button type="reset" class="btn red"><i class="fa fa-close"></i> Batal</button>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>*@
+
+                <div class="portlet-body form" ng-app="internal" ng-controller="internal-controller">
+                    <form class="form-horizontal" name="userForm" id="userForm" role="form">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Perusahaan</label>
+                                <div class="col-md-9">
+                                    @*<input type="text" class="form-control"
+                                           ng-model="billingModel.nama"
+                                           name="namaPerusahaan" id="namaPerusahaan" required>*@
+                                    <select class="form-control js-example-basic-single" tabindex="-1" 
+                                            aria-hidden="true" id="companyId" 
+                                            name="companyId" ng-model="billingModel.nama">
+                                        <option value="">- Silahkan Pilih  -</option>
+                                        <option ng-repeat="item in listcompanydata" value="{{item.ID}}">{{item.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Pemeriksa</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control"
+                                           ng-model="billingModel.pemeriksa"
+                                           name="tahun" id="pemeriksa" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Periode Pemeriksaan</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control"
+                                           ng-model="billingModel.periodepemeriksaan"
+                                           name="periodepemeriksaan" id="periodepemeriksaan" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Tahun Penagihan</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control"
+                                           ng-model="billingModel.tahunpenagihan"
+                                           name="tahunpenagihan" id="tahunpenagihan" required>
+                                </div>
+                            </div>   
+                            @*<div class="form-group">
+                                <label class="col-md-2 control-label">Penagihan Ke</label>
+                                <div class="col-md-9">
+                                    <select class="form-control" name="stsizin" id="stsizin"
+                                            ng-model="billingModel.penagihanke">
+                                        <option value="">- Silahkan Pilih  -</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="2">3</option>
+                                        <option value="2">4</option>
+                                    </select>
+                                </div>
+                            </div>*@
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">No Surat Tagihan</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control"
+                                           ng-model="billingModel.nosurat"
+                                           name="nosurat1" id="nosurat1" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Tanggal Tagihan</label>
+                                <div class="col-md-9">
+                                    <input class="form-control form-control-inline date-picker" size="16" type="text" value=""
+                                           id="tanggaltagihan1"
+                                           data-date-format="dd/mm/yyyy"
+                                           ng-model="billingModel.tanggaltagihan" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Tipe Tagihan</label>
+                                <div class="col-md-9">
+                                    <select class="form-control" name="stsizin" id="stsizin"
+                                            ng-model="billingModel.tipetagihan">
+                                        <option value="">- Silahkan Pilih  -</option>
+                                        <option value="Iuran Tetap">Iuran Tetap</option>
+                                        <option value="Royalti">Royalti</option>
+                                        <option value="PHT">PHT</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Nominal Tagihan</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control"
+                                           ng-model="billingModel.nominal"
+                                           name="nominal" id="nominal" required>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="form-group text-right">
+                            <div class="right col-md-11">
+                                <button type="button" class="btn default">Cancel</button>
+                                <button type="submit" class="btn green" ng-click="CreateDetailKronologiTahapan()">Submit</button>
+                                <div class="space"></div>
+                            </div>
+                        </div>
+            </form>
+                </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/InternalOrganization/Ng/Process.js")"></script>

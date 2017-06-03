@@ -1,0 +1,50 @@
+﻿
+<div id="addSumberPerubahanKerjasama" class="modal container fade"
+     tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <form id="sumberPerubahanKerjasamaForm" name="perubahanKerjasamaForm" action="#">
+        <div class="modal-header">
+            <h4 class="modal-title">Sumber Perubahan Sumber Kerjasama</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <input id="idSumberPerubahanKerjasama" ng-model="sumberPerubahanKerjasamaModel.ID" hidden="hidden" />
+                <div class="col-sm-6 col-md-4 col-md-offset-2">
+                    <div class="form-group has-success">
+                        <label for="NamaPerusahaanSkAwal">Nama Perusahaan</label>
+                        <input type="text"
+                               ng-model="sumberPerubahanKerjasamaModel.CompanyName"
+                               id="companyNameSumberSkAwal"
+                               class="form-control" />
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="form-group has-success">
+                        <label for="VolumeSkAwal">Volume (MT/Tahun)</label>
+                        <input type="number" class="form-control"
+                               ng-model="sumberPerubahanKerjasamaModel.Volume" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button"
+                    ng-show="!isEditSumberPerubahanKerjasama"
+                    class="btn green-sharp red-stripe"
+                    ng-click="simpanSumberPerubahanKerjasama()">
+                <i class="fa fa-save"></i>
+                Simpan
+            </button>
+            <button type="button"
+                    ng-show="isEditSumberPerubahanKerjasama"
+                    class="btn green-sharp red-stripe"
+                    ng-click="saveChangesSumberPerubahanKerjasama()">
+                <i class="fa fa-save"></i>
+                Simpan Perubahan
+            </button>
+            <button type="button" data-dismiss="modal" class="btn red">
+                <i class="fa fa-close"></i>
+                Batal
+            </button>
+        </div>
+    </form>
+    </div>

@@ -1,0 +1,179 @@
+﻿<div id="static5" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="dataKualitasBatubaraForm" data-toggle="validator" role="form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">Form Kualitas Batubara</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="parameter">Tahap Kegiatan</label>
+                                <select ng-model="kualitasBatubaraModel.parameter" 
+                                        id="parameter" 
+                                        class="form-control" 
+                                        name="produksitahunan" 
+                                        required>
+                                    <option></option>
+                                    <option value="Studi kelayakan">Studi kelayakan</option>
+                                    <option value="Operasi Produksi">Operasi Produksi</option>
+                                    <option value="Konstruksi">Konstruksi</option>
+                                    <option value="Eksplorasi">Eksplorasi</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="blok">Blok/Area (HA)</label>
+                                <input type="number" 
+                                       id="blok"
+                                       ng-model="kualitasBatubaraModel.blok" 
+                                       class="form-control"
+                                       name="blok"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="sampleCode">Sample Code</label>
+                                <input type="text"
+                                       class="form-control"
+                                       ng-model="kualitasBatubaraModel.sampleCode"
+                                       id="sampleCode"
+                                       name="sampleCode"
+                                       placeholder=""
+                                       required />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="tm">TM</label>
+                                <input type="number" 
+                                       class="form-control" 
+                                       ng-model="kualitasBatubaraModel.tm" 
+                                       id="tm" 
+                                       placeholder="(%ar)" 
+                                       required />
+                            </div>
+                        </div>
+                        @*<div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="ConfirmNew">Luas Dipertahankan / Blok (Ha)</label>
+                                <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                            </div>
+                        </div>*@
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="im">IM</label>
+                                <input type="number" 
+                                       class="form-control" 
+                                       ng-model="kualitasBatubaraModel.im" 
+                                       id="im"
+                                       placeholder="(%adb)" 
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="ash">ASH</label>
+                                <input type="number" 
+                                       class="form-control"
+                                       ng-model="kualitasBatubaraModel.ash" 
+                                       id="ash" 
+                                       placeholder="(%adb)" 
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="vm">VM</label>
+                                <input type="number" 
+                                       class="form-control"
+                                       ng-model="kualitasBatubaraModel.vm" 
+                                       id="vm" 
+                                       placeholder="(%adb)" 
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="fc">FC</label>
+                                <input type="number" 
+                                       class="form-control"
+                                       ng-model="kualitasBatubaraModel.fc" 
+                                       id="fc" 
+                                       placeholder="(%adb)" 
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="ts">TS</label>
+                                <input type="number" 
+                                       class="form-control"
+                                       ng-model="kualitasBatubaraModel.ts" 
+                                       id="ts" 
+                                       placeholder="(%adb)" 
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="cvadb">CV (adb)</label>
+                                <input type="number" class="form-control"
+                                       ng-model="kualitasBatubaraModel.cvadb" 
+                                       id="cvadb" 
+                                       placeholder="Cal/g (adb)" 
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="cvdaf">CV (daf)</label>
+                                <input type="number" class="form-control"
+                                       ng-model="kualitasBatubaraModel.cvdaf" 
+                                       id="cvdaf" 
+                                       placeholder="Cal/g (adb)" 
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="cvar">CV (ar)</label>
+                                <input type="number" class="form-control"
+                                       ng-model="kualitasBatubaraModel.cvar" 
+                                       id="cvar" 
+                                       placeholder="Cal/g (adb)" 
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" ng-show="!isEditKualitasBatubara" ng-click="CreateKualitasBatubara()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="submit" ng-show="isEditKualitasBatubara" ng-click="SaveChangesKualitasBatubara()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="reset" data-dismiss="modal" class="btn red"><i class="fa fa-close"></i> Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

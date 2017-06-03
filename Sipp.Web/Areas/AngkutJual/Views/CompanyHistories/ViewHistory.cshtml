@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Riwayat Penggantian Data";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="portlet light portlet-fit portlet-datatable box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Pengangkutan dan Penjualan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Melihat Daftar Keseluruhan</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="fa fa-list-alt font-red"></i>
+                            <span class="font-red sbold">
+                                Riwayat Penggantian Data @ViewBag.companyName
+                            </span>
+
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <!--start tabel kendo-->
+                @(Html.Kendo().Grid<EduSpot.Entity.Tables.Organization.CompanyHistory>()
+                   .Name("grid")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.ID).Hidden();
+                       columns.Bound(p => p.CompanyID).Hidden();
+                       //columns.Bound(p => p.Name).HeaderTemplate("Nama Perusahaan").Width(280);
+                       columns.Bound(p => p.NPWP).HeaderTemplate("NPWP").Width(200);
+                       //columns.Bound(p => p.TahapIup).HeaderTemplate("Tahap IUP").Width(200);
+                       columns.Bound(p => p.NoUrutBerkas).HeaderTemplate("No Urut Berkas").Width(200);
+                       columns.Bound(p => p.CreatedBy).HeaderTemplate("Updated By").Width(200);
+                       columns.Bound(p => p.CreatedDate).HeaderTemplate("Update Date").Width(200).Format("{0:dd/MM/yyyy}").Width(148);
+                       
+                   })
+                   .Events(e => e.DataBound("onRowBound"))
+                   .Scrollable()
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListCompanyHistory", "CompanyHistories", new { area = "AngkutJual", id= ViewBag.companyId })
+                       .ServerOperation(true)
+                    ))
+
+                @(Html.Kendo().Grid<EduSpot.Entity.Tables.Organization.CompanyAddressHistory>()
+                   .Name("grid2")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.ID).Hidden();
+                       columns.Bound(p => p.CompanyID).Hidden();
+                       columns.Bound(p => p.Address).HeaderTemplate("Alamat").Width(280);
+                       columns.Bound(p => p.TelNumber).HeaderTemplate("No. Telp").Width(200);
+                       columns.Bound(p => p.MobileNumber).HeaderTemplate("No. HP").Width(200);                       
+                       columns.Bound(p => p.Email).HeaderTemplate("Email").Width(200);
+                       columns.Bound(p => p.CreatedBy).HeaderTemplate("Updated By").Width(200);
+                       columns.Bound(p => p.CreatedDate).HeaderTemplate("Update Date").Width(200).Format("{0:dd/MM/yyyy}").Width(148);
+                       columns.Bound(p => p.AdditionalInfo).HeaderTemplate("Keterangan").Width(200);
+                   })
+                   .Events(e => e.DataBound("onRowBound"))
+                   .Scrollable()
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListCompanyAddressHistory", "CompanyHistories", new { area = "AngkutJual", id = ViewBag.companyId })
+                       .ServerOperation(true)
+                    ))
+
+                <!--end tabel kendo-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function onRowBound(e) {
+        $(".k-grid-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+    }
+    function refreshGrid() {
+        $("#grid").data("kendoGrid").dataSource.read();
+        $("#grid").data("kendoGrid").refresh();
+    }
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    var index = (function ($) {
+        var self = this;
+        return {
+            edit: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("Edit", "FirstSks")" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+
+            delete: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var konf = confirm("Are You Sure to delete " + selectedRow.Name + "'s Evaluation ?");
+                if (konf == true) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Delete")",
+                        data: {
+                        p: selectedRow.ID
+                        },
+                    traditional: true,
+                    success: function (result) {
+                        debugger;
+                        if (result) {
+                            alert("Data has been successfully Deleted");
+                            refreshGrid();
+                        }
+                    }
+                });
+            }
+        },
+
+            alert: function (e) {
+                alert('z')
+            },
+            refreshGrid1: function (e) {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            }
+        }
+    })(jQuery);
+</script>

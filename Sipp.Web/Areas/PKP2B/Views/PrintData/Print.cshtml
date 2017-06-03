@@ -1,0 +1,521 @@
+﻿@model Esdm.Web.Areas.PKP2B.Models.GeneralInformationViewModel
+@{
+    ViewBag.Title = "Print";
+    //Layout = "~/Areas/PKP2B/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    * {
+        font-family: 'Times New Roman';
+        font-size: 9px;
+    }
+
+    legend {
+        font-size: 1.17em;
+        font-weight: bold;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+        table > caption {
+            text-align: left;
+            font-weight: bold;
+        }
+
+    table {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    table.no-border,
+    table.no-border tr td {
+        border: none;
+    }
+
+    table.full-width {
+        width: 100%;
+    }
+
+    td.title {
+        min-width: 139px;
+    }
+</style>
+<center>
+    <h3 style="font-size:1.7em;">Print Data Baru IUP OP Khusus Pengangkutan & Penjualan Batubara</h3>
+</center>
+<table class="no-border">
+    <!--start nma perusahaan-->
+    <tr>
+        <td class="title">Nama Perusahaan</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Name)</td>
+    </tr>
+    <!--end nma perusahaan-->
+    <!--start npwp -->
+    <tr>
+        <td class="title">NPWP</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Npwp)</td>
+    </tr>
+    <!--end npwp -->
+    <!--start alamat perusahaan-->
+    <tr>
+        <td class="title">Alamat Perusahaan</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Alamat)</td>
+    </tr>
+    <!--end alamat perusahaan-->
+    <!--start no tlp-->
+    <tr>
+        <td class="title">No Telepon</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Telp)</td>
+    </tr>
+    <!--end no tlp-->
+    <!--start No fax-->
+    <tr>
+        <td class="title">No Fax</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Fax)</td>
+    </tr>
+    <!--end No fax-->
+    <!--start email-->
+    <tr>
+        <td class="title">Email</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Email)</td>
+    </tr>
+    <!--end email/-->
+    <!--start website-->
+    <tr>
+        <td class="title">Website</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.Website)</td>
+    </tr>
+    <!--end website-->
+    <!--start nma yg bsa dihubungi-->
+    <tr>
+        <td class="title">Nama yang Bisa Dihubungi</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.CpNama)</td>
+    </tr>
+    <!--end nma yg bsa dihubungi-->
+    <!--start no hp-->
+    <tr>
+        <td class="title">No Handphone</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(c => c.CpHp)</td>
+    </tr>
+    <!--end no hp-->
+</table>
+<br />
+
+<!--start table pemegang saham-->
+<table class="full-width">
+    <caption>Pemegang Saham</caption>
+    <thead>
+        <tr>
+            <th> Nama </th>
+            <th> Domestik / Asing </th>
+            <th> Negara </th>
+            <th> Jumlah Saham </th>
+            <th> Nilai Saham </th>
+            <th> Prosentase Saham </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        @foreach (var item in ViewData["ShareHolder"] as IEnumerable<EduSpot.Entity.Tables.Organization.ShareHolder>)
+        {
+        <tr>
+            <td> @item.Name </td>
+            <td> @item.StatusWnBh </td>
+            <td> @item.Country </td>
+            <td> @string.Format("{0:n0}", int.Parse(item.TotalStock)) </td>
+            <td> @string.Format("{0:n0}", int.Parse(item.Currency)) </td>
+            <td> @item.ProsentaseSaham </td>
+        </tr>
+        }
+        </tr>
+    </tbody>
+</table>
+<!--end table pemegang saham-->
+
+<!--start table komisaris-->
+<table class="full-width">
+    <caption>Direksi</caption>
+    <thead>
+        <tr>
+            <th> Nama </th>
+            <th> Kewarganegaraan </th>
+            <th> Negara </th>
+            <th> Keterangan </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        @foreach (var item in ViewData["Management"] as IEnumerable<EduSpot.Entity.Tables.Organization.Management>)
+        {
+        <tr>
+            <td> @item.Name </td>
+            <td> @item.Status </td>
+            <td> @item.Country </td>
+            <td> @item.AdditionalInformation </td>
+        </tr>
+        }
+        </tr>
+    </tbody>
+</table>
+<!--end table komisaris-->
+
+<!--start table direksi-->
+<table class="full-width">
+    <caption>Komisaris</caption>
+    <thead>
+        <tr>
+            <th> Nama </th>
+            <th> Kewarganegaraan </th>
+            <th> Negara </th>
+            <th> Keterangan </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        @foreach (var item in ViewData["Commissioner"] as IEnumerable<EduSpot.Entity.Tables.Organization.Commissioner>)
+        {
+        <tr>
+            <td> @item.Name </td>
+            <td> @item.Status </td>
+            <td> @item.Country </td>
+            <td> @(item.AdditionalInformation)</td>
+        </tr>
+        }
+        </tr>
+    </tbody>
+</table>
+<br />
+<!--end table direksi-->
+
+<!--Data PKP2B-->
+<table class="full-width">
+    <caption>Data PKP2B</caption>
+    <thead>
+        <tr>
+            <th> Generasi </th>
+            <th> Kode Wilayah </th>
+            <th> No Kontrak </th>
+            <th> Tanggal Kontrak </th>
+            <th> Luas Wilayah (Asal) </th>
+            <th> Luas Wilayah (Dipertahankan) </th>
+            <th> Lokasi (Provinsi) </th>
+            <th> Lokasi (Kabupaten) </th>
+            <th> Tahapan Akhir </th>
+            <th> Perizinan </th>
+            <th> Tanggal Berakhir </th>
+            <th> Jangka Waktu </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.datapkp2b as IEnumerable<EduSpot.Entity.Tables.Pkp2b.DataPkp2b>)
+        {
+            <tr>
+                <td> @item.Generasi </td>
+                <td> @item.KodeWilayah </td>
+                <td> @item.NoKontrak </td>
+                <td> @DateTime.Parse(@item.TanggalKontrak.ToString()).ToString("dd/MM/yyyy")</td>
+                <td> @item.LuasWilayahAwal</td>
+                <td> @item.LuasWilayahDipertahankan</td>
+                <td> @item.Provinsi</td>
+                <td> @item.Kabupaten</td>
+                <td> @item.TahapanAkhir</td>
+                <td> @item.Perizinan</td>
+                <td> @DateTime.Parse(@item.TanggalBerakhir.ToString()).ToString("dd/MM/yyyy")</td>
+                <td> @item.JangkaWaktu</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<!--Data PKP2B-->
+
+<!--data akta-->
+<table class="full-width">
+    <caption>Data Akta</caption>
+    <thead>
+        <tr>
+            <th colspan="3" class="text-center"> Akta Pendirian dan Perubahan </th>
+
+            <th colspan="2" class="text-center"> Pengesahan Kemenkumham </th>
+        </tr>
+        <tr>
+            <th> Judul Akta </th>
+            <th> No Akta </th>
+            <th> Tanggal Akta </th>
+            <th> No </th>
+            <th> Tanggal </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in ViewBag.dataAkta as IEnumerable<EduSpot.Entity.Tables.Pkp2b.Akta>)
+{
+                <th style="min-width:150px;"> @item.JudulAkta </th><!-- judul akta-->
+                <th style="min-width:150px;"> @item.NoAkta </th><!-- no akta-->
+                <th style="min-width:150px;"> @DateTime.Parse(@item.TanggalAkta.ToString())cc </th><!-- judul akta-->
+                <th style="min-width:150px;"> @item.NoPengesahanKemenkumham </th><!-- no-->
+                <th style="min-width:150px;"> @DateTime.Parse(@item.TanggalPengesahanKemenkumhan.ToString()).ToString("dd/MM/yyyy") </th><!-- tanggal-->
+            }
+        </tr>
+    </tbody>
+</table>
+<!--data akta-->
+
+<!--Tahap kegiatan-->
+<table class="full-width">
+    <caption>Tahap kegiatan</caption>
+    <thead>
+        <tr>
+            <th class="text-center"> Tahap Kegiatan </th>
+            <th class="text-center"> Luas Dipertahankan (HA) </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in ViewBag.tahapKegiatan as IEnumerable<EduSpot.Entity.Tables.Pkp2b.TahapKegiatan>)
+            {
+                <td style="min-width:150px;"> @item.Tahap </td><!-- no-->
+                <td style="min-width:150px;"> @item.LuasDipertahankan </td><!-- tanggal-->
+            }
+        </tr>
+    </tbody>
+</table>
+<!--Tahap kegiatan-->
+
+<!--Tahap kegiatan blok-->
+<table class="full-width">
+    <caption>Tahap kegiatan Blok</caption>
+    <thead>
+        <tr>
+            <th class="text-center"> Tahap Kegiatan / blok </th>
+            <th class="text-center"> Luas Dipertahankan / Blok (HA) </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in ViewBag.tahapKegiatanBlok as IEnumerable<EduSpot.Entity.Tables.Pkp2b.TahapKegiatanBlok>)
+            {
+                <td style="min-width:150px;"> @item.Tahap </td><!-- no-->
+                <td style="min-width:150px;"> @item.LuasDipertahankan </td><!-- tanggal-->
+            }
+        </tr>
+    </tbody>
+</table>
+<!--Tahap kegiatan blok-->
+
+<!--Sumber Daya Batubara-->
+<table class="full-width">
+    <caption>Sumber Daya Batubara</caption>
+    <thead>
+        <tr>
+            <th class="text-center"> blok (HA) </th>
+            <th class="text-center"> Tereka (MT) </th>
+            <th class="text-center"> Terunjuk (MT) </th>
+            <th class="text-center"> Terukur (MT) </th>
+            <th class="text-center"> Total (MT) </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in ViewBag.sdb as IEnumerable<EduSpot.Entity.Tables.Pkp2b.SumberDayaBatubara>)
+            {
+                <td style="min-width:150px;"> @item.Blok </td>
+                <td style="min-width:150px;"> @item.Tereka </td>
+                <td style="min-width:150px;"> @item.Terunjuk </td>
+                <td style="min-width:150px;"> @item.Terukur </td>
+                <td style="min-width:150px;"> @Convert.ToInt16(@item.Tereka + @item.Terunjuk + @item.Terukur) </td>
+            }
+        </tr>
+    </tbody>
+</table>
+<!--Sumber Daya Batubara-->
+
+<!--kronologi tahapan-->
+<table class="full-width">
+    <caption>Kronologi Tahapan</caption>
+    <thead>
+        <tr>
+            <th> Tahapan </th>
+            <th> No SK / Surat </th>
+            <th> Tanggal SK / Surat </th>
+            <th> Mulai </th>
+            <th> Sampai Dengan </th>
+            <th> Jangka Waktu </th>
+            <th> Keterangan </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.kronologiTahapan as IEnumerable<EduSpot.Entity.Tables.Pkp2b.KronologiTahapan>)
+{
+            <tr>
+                <td style="min-width:150px;"> @item.Tahapan </td>
+                <td style="min-width:150px;"> @item.NoSk </td>
+                <td style="min-width:150px;"> @DateTime.Parse(@item.TanggalSk.ToString()).ToString("dd/MM/yyyy") </td>
+                <td style="min-width:150px;"> @DateTime.Parse(@item.TanggalMulai.ToString()).ToString("dd/MM/yyyy") </td>
+                <td style="min-width:150px;"> @DateTime.Parse(@item.TanggalAkhir.ToString()).ToString("dd/MM/yyyy") </td>
+                <td> @item.JangkaWaktu </td>
+                <td style="min-width:150px;"> @item.Keterangan </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--kronologi tahapan-->
+
+<!--Detail kronologi tahapan-->
+<table class="full-width">
+    <caption>Detail Kronologi Tahapan</caption>
+    <thead>
+        <tr>
+            <th> Tahapan Induk </th>
+            <th> Tahapan </th>
+            <th> No SK / Surat </th>
+            <th> Tanggal SK / Surat </th>
+            <th> Mulai </th>
+            <th> Sampai Dengan </th>
+            <th> Jangka Waktu </th>
+            <th> Keterangan </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.detailKronologiTahapan as IEnumerable<EduSpot.Entity.Tables.Pkp2b.DetailKronologiTahapan>) {
+        <tr>
+            <td style="min-width:150px;"> @item.TahapanInduk </td>
+            <td style="min-width:150px;"> @item.Tahapan </td>
+            <td style="min-width:150px;"> @item.NoSk </td>
+            <td style="min-width:150px;"> @DateTime.Parse(@item.TanggalSk.ToString()).ToString("dd/MM/yyyy") </td>
+            <td style="min-width:150px;"> @DateTime.Parse(@item.TanggalMulai.ToString()).ToString("dd/MM/yyyy") </td>
+            <td style="min-width:150px;"> @DateTime.Parse(@item.TanggalAkhir.ToString()).ToString("dd/MM/yyyy") </td>
+            <td> @item.JangkaWaktu </td>
+            <td style="min-width:150px;"> @item.Keterangan </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<!--Detail kronologi tahapan-->
+
+<!--persetujuan-->
+<table class="full-width">
+    <caption>Lingkungan, IPPKH, dan persetujuan lainnya</caption>
+    <thead>
+        <tr>
+            <th> Jenis Persetujuan </th>
+            <th> No Surat / SK </th>
+            <th> Tanggal Surat / SK </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.lingkungan as IEnumerable<EduSpot.Entity.Tables.Pkp2b.LingkunganIppkhDanLainnya>)
+        {
+            <tr>
+                <td> @item.JenisPersetujuan </td>
+                <td> @item.NoSk </td>
+                <td> @DateTime.Parse(@item.TanggalSk.ToString()).ToString("dd/MM/yyyy") </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--persetujuan-->
+
+<!--cadangan batubara-->
+<table class="full-width">
+    <caption>Cadangan Batubara</caption>
+    <thead>
+        <tr>
+            <th> Blok (HA) </th>
+            <th> Terkira (MT) </th>
+            <th> Terbukti (MT) </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in ViewBag.cadanganBatubara as IEnumerable<EduSpot.Entity.Tables.Pkp2b.CadanganBatubara>)
+            {
+                <td>  @item.Blok  </td>
+                <td>  @item.Terkira  </td>
+                <td>  @item.Terbukti  </td>
+            }
+        </tr>
+    </tbody>
+</table>
+<!--cadangan batubara-->
+
+<!--kualitas batubara-->
+<table class="full-width">
+    <caption>Kualitas Batubara</caption>
+    <thead>
+        <tr>
+            <th> Parameter / Unit </th>
+            <th> TM </th>
+            <th> IM </th>
+            <th> ASH </th>
+            <th> VM </th>
+            <th> FC </th>
+            <th> TS </th>
+            <th> CV (adb) </th>
+            <th> CV (daf) </th>
+            <th> CV (ar) </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in ViewBag.kualitasBatubara as IEnumerable<EduSpot.Entity.Tables.Pkp2b.KualitasBatubara>)
+            {
+                <th> @item.Parameter </th>
+                <th> @item.TM </th>
+                <th> @item.IM </th>
+                <th> @item.ASH </th>
+                <th> @item.VM </th>
+                <th> @item.FC </th>
+                <th> @item.TS </th>
+                <th> @item.CVadb </th>
+                <th> @item.CVdaf </th>
+                <th> @item.CVar </th>
+            }
+        </tr>
+    </tbody>
+</table>
+<!--kualitas batubara-->
+
+<!--biaya eksplorasi-->
+<table class="full-width">
+    <caption>Biaya Eksplorasi</caption>
+    <thead>
+        <tr>
+            <th style="min-width: 200px;"> Mata Uang </th>
+            <th style="min-width: 200px;"> Jumlah Uang </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in ViewBag.biayaEksplorasi as IEnumerable<EduSpot.Entity.Tables.Pkp2b.BiayaEksplorasi>)
+            {
+                <th> @item.MataUang </th>
+                <th> @item.JumlahUang </th>
+            }
+        </tr>
+    </tbody>
+</table>
+<!--biaya eksplorasi-->
+<br />

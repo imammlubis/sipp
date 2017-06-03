@@ -1,0 +1,100 @@
+﻿<div class="modal fade bs-modal-lg"
+     id="KeteranganDetailKeuanganTahunan"
+     tabindex="-1"
+     role="dialog"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Detail keuangan</h4>
+            </div>
+            <div class="modal-body">
+                <div class="scroller" style="height:400px" data-always-visible="1" data-rail-visible1="1">
+                    <div class="row">
+                        <!--start detil keuangan-->
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="form_control_1">Jenis</label>
+                                <select class="form-control" name="detilkeuangan" disabled>
+                                    <option></option>
+                                    <option value="IDR">IDR</option>
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--end detil keuangan-->
+                    </div>
+
+                    <div class="row">
+                        <!--start revenue-->
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="Revenue">Revenue</label>
+                                <input type="number" class="form-control" name="revenue" id="Revenue" disabled>
+                            </div>
+                        </div>
+                        <!--end revenue -->
+                        <!--start harga pokok penjualan-->
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="HargaPenjualan">Harga Pokok Penjualan</label>
+                                <input type="number" class="form-control" name="hargapenjualan" id="HargaPenjualan" disabled>
+                            </div>
+                        </div>
+                        <!--end harga pokok penjualan -->
+                    </div>
+
+                    <div class="row">
+                        <!--start laba sblm pajak-->
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="LabaSblmPajak">Laba Sebelum Pajak</label>
+                                <input type="number" class="form-control" name="revenue" id="LabaSblmPajak" disabled>
+                            </div>
+                        </div>
+                        <!--end laba sblm pajak -->
+                        <!--start laba bersih-->
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="LabaBersih">Laba Bersih (rugi)</label>
+                                <input type="number" class="form-control" name="lababersih" id="LabaBersih" disabled>
+                            </div>
+                        </div>
+                        <!--end laba bersih-->
+                    </div>
+
+                    <div class="row">
+                        <!--start pajak karyawan (PPh21)-->
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="PajakKaryawan">Pajak Karyawan (PPh21)</label>
+                                <input type="number" class="form-control" name="pajakkaryawan" id="PajakKaryawan" disabled>
+                            </div>
+                        </div>
+                        <!--end pajak karyawan (PPh21)-->
+                        <!--start harga pokok penjualan-->
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="PajakBadan">Pajak Badan (PPh 25)</label>
+                                <input type="number" class="form-control" name="pajakbadan" id="PajakBadan" disabled>
+                            </div>
+                        </div>
+                        <!--end harga pokok penjualan -->
+                    </div>
+
+                    <div class="row">
+                        <!--start Keterangan-->
+                        <div class="col-md-12">
+                            <div class="form-group has-success">
+                                <label for="KeteranganTenaga">Keterangan</label>
+                                <textarea class="form-control" rows="3" disabled></textarea>
+                            </div>
+                        </div>
+                        <!--end Keterangan-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

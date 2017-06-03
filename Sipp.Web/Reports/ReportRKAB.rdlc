@@ -1,0 +1,5345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>FORM RKAB</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.11689cm</Top>
+        <Left>5.66773cm</Left>
+        <Height>0.72319cm</Height>
+        <Width>6.19125cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No. Surat</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox32</rd:DefaultName>
+        <Top>2.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox34">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>11223344</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox34</rd:DefaultName>
+        <Top>2.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox36">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox36</rd:DefaultName>
+        <Top>2.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox37">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tanggal Surat</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox37</rd:DefaultName>
+        <Top>2.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox38">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>22/10/2015</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox38</rd:DefaultName>
+        <Top>2.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox39">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox39</rd:DefaultName>
+        <Top>2.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox40">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>RKAB Tahun</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox40</rd:DefaultName>
+        <Top>3.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2015</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox41</rd:DefaultName>
+        <Top>3.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox42">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox42</rd:DefaultName>
+        <Top>3.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox52">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>KONTRAK PEMBELIAN BATUBARA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox52</rd:DefaultName>
+        <Top>3.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>12.38597cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox49">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nama Perusahaan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox49</rd:DefaultName>
+        <Top>4.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox50">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PT. COAL INDONESIA</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox50</rd:DefaultName>
+        <Top>4.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox51">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox51</rd:DefaultName>
+        <Top>4.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox46">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Lokasi Tambang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox46</rd:DefaultName>
+        <Top>5.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox47">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>JAWA BARAT / SUKABUMI</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox47</rd:DefaultName>
+        <Top>5.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox48">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox48</rd:DefaultName>
+        <Top>5.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox43">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Lokasi Pengolahan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox43</rd:DefaultName>
+        <Top>5.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox44">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Sukabumi</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox44</rd:DefaultName>
+        <Top>5.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox45">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox45</rd:DefaultName>
+        <Top>5.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox58">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Lokasi Pelabuhan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox58</rd:DefaultName>
+        <Top>6.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox59">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tanjung Perak</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox59</rd:DefaultName>
+        <Top>6.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox60">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox60</rd:DefaultName>
+        <Top>6.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox61">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Rencana Produksi Tahun</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox61</rd:DefaultName>
+        <Top>6.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox62">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2016</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox62</rd:DefaultName>
+        <Top>6.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox63">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox63</rd:DefaultName>
+        <Top>6.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox76">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tonase</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox76</rd:DefaultName>
+        <Top>7.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox77">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>10</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox77</rd:DefaultName>
+        <Top>7.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox78">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox78</rd:DefaultName>
+        <Top>7.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>28</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox79">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Kualitas Batu Bara</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox79</rd:DefaultName>
+        <Top>8.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>12.38597cm</Width>
+        <ZIndex>29</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox82">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Gross Calorific Value(GCV)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox82</rd:DefaultName>
+        <Top>8.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox83">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>20</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox83</rd:DefaultName>
+        <Top>8.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox84">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox84</rd:DefaultName>
+        <Top>8.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox67">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Moisture (TM)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox67</rd:DefaultName>
+        <Top>9.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox68">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>10</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox68</rd:DefaultName>
+        <Top>9.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox69">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox69</rd:DefaultName>
+        <Top>9.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox70">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Inherent Moisture (IM)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox70</rd:DefaultName>
+        <Top>9.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox71">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>10</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox71</rd:DefaultName>
+        <Top>9.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox72">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox72</rd:DefaultName>
+        <Top>9.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox73">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Sulphur (TS)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox73</rd:DefaultName>
+        <Top>10.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>39</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox74">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>15</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox74</rd:DefaultName>
+        <Top>10.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>40</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox75">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox75</rd:DefaultName>
+        <Top>10.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>41</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox64">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ash</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox64</rd:DefaultName>
+        <Top>11.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>42</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox65">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>90</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox65</rd:DefaultName>
+        <Top>11.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>43</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox66">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox66</rd:DefaultName>
+        <Top>11.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>44</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox55">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Harga FOB</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox55</rd:DefaultName>
+        <Top>11.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>45</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox56">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2000000000000</Value>
+                <Style>
+                  <Format>#,0.00;(#,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox56</rd:DefaultName>
+        <Top>11.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>46</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox57">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox57</rd:DefaultName>
+        <Top>11.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>47</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox97">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Jenis FOB</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox97</rd:DefaultName>
+        <Top>12.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>48</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox98">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Vesel</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox98</rd:DefaultName>
+        <Top>12.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>49</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox99">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox99</rd:DefaultName>
+        <Top>12.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>50</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox109">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Titik Jual</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox109</rd:DefaultName>
+        <Top>12.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>51</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox110">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>111,222</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox110</rd:DefaultName>
+        <Top>12.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>52</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox111">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox111</rd:DefaultName>
+        <Top>12.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>53</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox106">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Keterangan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox106</rd:DefaultName>
+        <Top>13.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>54</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox107">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Keterangan 1,2,3</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox107</rd:DefaultName>
+        <Top>13.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>55</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox108">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox108</rd:DefaultName>
+        <Top>13.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>56</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox112">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>KONTRAK PENJUALAN BATUBARA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox112</rd:DefaultName>
+        <Top>14.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>12.38597cm</Width>
+        <ZIndex>57</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox103">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nama Perusahaan Pembeli</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox103</rd:DefaultName>
+        <Top>14.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>58</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox104">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PT. Mining Coal</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox104</rd:DefaultName>
+        <Top>14.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>59</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox105">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox105</rd:DefaultName>
+        <Top>14.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>60</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox100">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Negara</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox100</rd:DefaultName>
+        <Top>15.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>61</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox101">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Australia</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox101</rd:DefaultName>
+        <Top>15.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>62</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox102">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox102</rd:DefaultName>
+        <Top>15.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>63</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox94">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Lokasi Pelabuhan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox94</rd:DefaultName>
+        <Top>15.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>64</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox95">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tanjung Perak</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox95</rd:DefaultName>
+        <Top>15.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>65</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox96">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox96</rd:DefaultName>
+        <Top>15.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>66</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox91">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Lokasi Transsipment</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox91</rd:DefaultName>
+        <Top>16.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>67</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox92">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Port Jackson</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox92</rd:DefaultName>
+        <Top>16.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>68</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox93">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox93</rd:DefaultName>
+        <Top>16.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>69</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox85">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tonase</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox85</rd:DefaultName>
+        <Top>17.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>70</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox86">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>10</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox86</rd:DefaultName>
+        <Top>17.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>71</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox87">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox87</rd:DefaultName>
+        <Top>17.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>72</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox130">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Kualitas Batu Bara</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox130</rd:DefaultName>
+        <Top>17.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>12.38597cm</Width>
+        <ZIndex>73</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox127">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Gross Clarific Value(GCV)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox127</rd:DefaultName>
+        <Top>18.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>74</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox128">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>10</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox128</rd:DefaultName>
+        <Top>18.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>75</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox129">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox129</rd:DefaultName>
+        <Top>18.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>76</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox124">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Moisture (TM)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox124</rd:DefaultName>
+        <Top>18.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>77</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox125">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>20</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox125</rd:DefaultName>
+        <Top>18.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>78</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox126">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox126</rd:DefaultName>
+        <Top>18.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>79</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox121">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Inherent Moisture (IM)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox121</rd:DefaultName>
+        <Top>19.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>80</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox122">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>90</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox122</rd:DefaultName>
+        <Top>19.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>81</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox123">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox123</rd:DefaultName>
+        <Top>19.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>82</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox118">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Sulphur (TS)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox118</rd:DefaultName>
+        <Top>20.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>83</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox119">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>11</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox119</rd:DefaultName>
+        <Top>20.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>84</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox120">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox120</rd:DefaultName>
+        <Top>20.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>85</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox115">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ash</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox115</rd:DefaultName>
+        <Top>20.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>86</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox116">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>15</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox116</rd:DefaultName>
+        <Top>20.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>87</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox117">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox117</rd:DefaultName>
+        <Top>20.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>88</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox148">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Harga FOB</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox148</rd:DefaultName>
+        <Top>21.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>89</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox149">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>200000000000</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox149</rd:DefaultName>
+        <Top>21.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>90</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox150">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox150</rd:DefaultName>
+        <Top>21.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>91</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox151">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Jenis FOB</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox151</rd:DefaultName>
+        <Top>21.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>92</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox152">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Vesel</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox152</rd:DefaultName>
+        <Top>21.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>93</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox153">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox153</rd:DefaultName>
+        <Top>21.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>94</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox139">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Titik Jual</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox139</rd:DefaultName>
+        <Top>22.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>95</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox140">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1,2</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox140</rd:DefaultName>
+        <Top>22.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>96</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox141">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox141</rd:DefaultName>
+        <Top>22.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>97</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox157">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Keterangan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox157</rd:DefaultName>
+        <Top>23.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>98</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox158">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Keterangan 1, 2, 3</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox158</rd:DefaultName>
+        <Top>23.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>99</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox159">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox159</rd:DefaultName>
+        <Top>23.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>100</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox154">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tenaga Kerja</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox154</rd:DefaultName>
+        <Top>23.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>12.38597cm</Width>
+        <ZIndex>101</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox145">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Direktur (TKI)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox145</rd:DefaultName>
+        <Top>24.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>102</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox146">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>3 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox146</rd:DefaultName>
+        <Top>24.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>103</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox147">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox147</rd:DefaultName>
+        <Top>24.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>104</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox142">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Direktur (TKA)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox142</rd:DefaultName>
+        <Top>24.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>105</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox143">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox143</rd:DefaultName>
+        <Top>24.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>106</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox144">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox144</rd:DefaultName>
+        <Top>24.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>107</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox136">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Manajer / Profesional (TKI)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox136</rd:DefaultName>
+        <Top>25.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>108</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox137">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox137</rd:DefaultName>
+        <Top>25.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>109</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox138">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox138</rd:DefaultName>
+        <Top>25.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>110</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox88">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Manajer / Profesional (TKA)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox88</rd:DefaultName>
+        <Top>26.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>111</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox89">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox89</rd:DefaultName>
+        <Top>26.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>112</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox90">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox90</rd:DefaultName>
+        <Top>26.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>113</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox175">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Supervisor / Technical (TKI)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox175</rd:DefaultName>
+        <Top>26.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>114</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox176">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>3 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox176</rd:DefaultName>
+        <Top>26.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>115</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox177">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox177</rd:DefaultName>
+        <Top>26.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>116</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox169">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Supervisor / Technical (TKA)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox169</rd:DefaultName>
+        <Top>27.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>117</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox170">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox170</rd:DefaultName>
+        <Top>27.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>118</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox171">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox171</rd:DefaultName>
+        <Top>27.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>119</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox166">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tenaga Terampil (TKI)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox166</rd:DefaultName>
+        <Top>27.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>120</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox167">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox167</rd:DefaultName>
+        <Top>27.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>121</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox168">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox168</rd:DefaultName>
+        <Top>27.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>122</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox163">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tenaga Terampil (TKA)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox163</rd:DefaultName>
+        <Top>28.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>123</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox164">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>11 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox164</rd:DefaultName>
+        <Top>28.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>124</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox165">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox165</rd:DefaultName>
+        <Top>28.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>125</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox160">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Administrasi (TKI)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox160</rd:DefaultName>
+        <Top>29.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>126</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox161">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox161</rd:DefaultName>
+        <Top>29.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>127</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox162">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox162</rd:DefaultName>
+        <Top>29.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>128</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox178">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Administrasi (TKA)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox178</rd:DefaultName>
+        <Top>29.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>129</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox179">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>3 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox179</rd:DefaultName>
+        <Top>29.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>130</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox180">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox180</rd:DefaultName>
+        <Top>29.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>131</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox193">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tenaga Tidak Terampil (TKI)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox193</rd:DefaultName>
+        <Top>30.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>132</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox194">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>5 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox194</rd:DefaultName>
+        <Top>30.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>133</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox195">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox195</rd:DefaultName>
+        <Top>30.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>134</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox199">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tenaga Tidak Terampil (TKA)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox199</rd:DefaultName>
+        <Top>30.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>135</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox200">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>8 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox200</rd:DefaultName>
+        <Top>30.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>136</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox201">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox201</rd:DefaultName>
+        <Top>30.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>137</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox196">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Keterangan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox196</rd:DefaultName>
+        <Top>31.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>138</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox197">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>5 Orang</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox197</rd:DefaultName>
+        <Top>31.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>139</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox198">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox198</rd:DefaultName>
+        <Top>31.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>140</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox181">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Detail Keuangan</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox181</rd:DefaultName>
+        <Top>32.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>12.38597cm</Width>
+        <ZIndex>141</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox190">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Jenis</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox190</rd:DefaultName>
+        <Top>32.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>142</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox191">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>IDR</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox191</rd:DefaultName>
+        <Top>32.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>143</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox192">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox192</rd:DefaultName>
+        <Top>32.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>144</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox187">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Revenue</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox187</rd:DefaultName>
+        <Top>33.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>145</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox188">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2000000000</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox188</rd:DefaultName>
+        <Top>33.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>146</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox189">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox189</rd:DefaultName>
+        <Top>33.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>147</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox184">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Harga Pokok Penjualan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox184</rd:DefaultName>
+        <Top>33.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>148</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox185">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>100000000</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox185</rd:DefaultName>
+        <Top>33.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>149</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox186">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox186</rd:DefaultName>
+        <Top>33.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>150</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox202">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Laba Sebelum Pajak</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox202</rd:DefaultName>
+        <Top>34.51963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>151</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox203">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>100000000</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox203</rd:DefaultName>
+        <Top>34.51963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>152</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox204">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox204</rd:DefaultName>
+        <Top>34.51963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>153</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox205">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Pajak Badan (PPh 25)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox205</rd:DefaultName>
+        <Top>35.11963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>154</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox206">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1500000</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox206</rd:DefaultName>
+        <Top>35.11963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>155</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox207">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox207</rd:DefaultName>
+        <Top>35.11963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>156</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox217">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Pajak Karyawan (PPh21)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox217</rd:DefaultName>
+        <Top>35.71963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>157</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox218">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1000000</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox218</rd:DefaultName>
+        <Top>35.71963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>158</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox219">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox219</rd:DefaultName>
+        <Top>35.71963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>159</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox214">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Laba Bersih (rugi)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox214</rd:DefaultName>
+        <Top>36.31963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>160</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox215">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1000000</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox215</rd:DefaultName>
+        <Top>36.31963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>161</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox216">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox216</rd:DefaultName>
+        <Top>36.31963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>162</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox211">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Keterangan</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox211</rd:DefaultName>
+        <Top>36.91963cm</Top>
+        <Left>2.69701cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.07528cm</Width>
+        <ZIndex>163</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox212">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Keterangan Test 1, 2, 3</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox212</rd:DefaultName>
+        <Top>36.91963cm</Top>
+        <Left>7.7723cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.81069cm</Width>
+        <ZIndex>164</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox213">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox213</rd:DefaultName>
+        <Top>36.91963cm</Top>
+        <Left>12.58298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>165</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>Logo_ESDM_2</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.47852cm</Top>
+        <Left>3.80757cm</Left>
+        <Height>1.5cm</Height>
+        <Width>1.5cm</Width>
+        <ZIndex>166</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+    </ReportItems>
+    <Height>15.32845in</Height>
+    <Style />
+  </Body>
+  <Width>6.67611in</Width>
+  <Page>
+    <PageHeader>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox400">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Today()</Value>
+                  <Style>
+                    <Format>dddd, dd MMMM yyyy</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox400</rd:DefaultName>
+          <Top>0.47625cm</Top>
+          <Left>9.35898cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.72401cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageHeight>21cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="ESDMDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>513a9067-bc25-46d8-abad-da8c905e2dd2</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>ESDMDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RkabYear">
+          <DataField>RkabYear</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="CompanyID">
+          <DataField>CompanyID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ESDMDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\development\esdm\Esdm.Web\ESDMDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>RKAB</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>RKABTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Logo_ESDM_2">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAFkAAABaCAYAAADTn/oBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDFFREE4QUU4QzU3MTFFNkEwRTZCNEI2QTY0MkYyRTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDFFREE4QUY4QzU3MTFFNkEwRTZCNEI2QTY0MkYyRTciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowMUVEQThBQzhDNTcxMUU2QTBFNkI0QjZBNjQy
+RjJFNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowMUVEQThBRDhDNTcxMUU2QTBFNkI0QjZBNjQyRjJFNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pq1jiq0AAD2ASURBVHja5H0HmFTF0vZ7wuSZzUvOOecMIsEAKEEBc0K8qBfDvWAWs/eqqIiIgIpZARFRUIJKkJxzlJzD5jT5hL+qz+yyEdAbvvs8//IcZnZ2pk93ddVbb1VX90hvTZ4MWZYhoeyPya8qCj+xLugwTRUSv1ky6HMS/U6/8O+mGXugR+sNMCV6Lj7Hz8X/1nPTjN2A/k73NgzTapP+Jtrg90n8PkPc15RkyEAyvdSaHmvoprnTMM29dJ+IaF+2PoVYs9b9rb4YugGn04l7brkZbpcT/xc/ErxeQFURG2WZP8PuoN7S0DQeQZieu6xBKVHINAElhEwXC0YioZD0Lipk8bKhUxsqPdBvsiXiQiGb3B9Tb0RTerVdUfo7JHS0AZX41vz2iGnuD5tYGTXMBbokraJXsyXuZ6GQJQgBIxJBXFIyDqxbjcqpKf8nQlbdcXEkY7Vo9ov/GDxom90SMo8MDhim09JgOQr13yRkXWeNLtLkKoqEQQ5ZutkpobtNgkMusqyiqeefJnxpwKiIgTMh01wcMTGDNHwFjUWTYkLWolHE+bzlju+/JmT8D/yQvkGB1JkEO9Il4QbS2pQiwZrW30vC2IUfAjPQZ6q5JOleEvi9IVPaETLxuQZzJr3v3P/C+OT/y5tbeo3rvYq0OEWR1ifJ+AsJLIU1Xmg7S/gSl1nsUulzPsLtJAkT4iVpB03aWwQ7DRgKvR7P/1+abPkqaYhLVR9zEySosVdN819s17TwnIGBPEclpyyNddnU+wmPvpg1b947cZ64Q5JklmMPMcdZ6DAJZmRFLlSCC46af5OsfvLr
+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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>67f13838-c235-4473-bf0d-27beba0732b5</rd:ReportID>
+</Report>

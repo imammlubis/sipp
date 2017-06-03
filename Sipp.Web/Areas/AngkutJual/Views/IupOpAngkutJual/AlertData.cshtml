@@ -1,0 +1,184 @@
+﻿@model EduSpot.Entity.Tables.Organization.Company
+
+@{
+    ViewBag.Title = "Peringatan";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+    var contactInformation = Model.CompanyAddresses.Count() > 0 ? Model.CompanyAddresses.FirstOrDefault() : new EduSpot.Entity.Tables.Organization.CompanyAddress();
+}
+<div class="row"
+     ng-app="alert"
+     ng-controller="alert-controller">
+    @Html.HiddenFor(s => s.ID, new { id = "ID" })
+
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Pengangkutan dan Penjualan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">Melihat Daftar Keseluruhan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Peringatan</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="fa fa-info-circle font-red"></i>
+                            <span class="font-red sbold">
+                                Peringatan
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+                <div class="progress progress-striped active" ng-show="isBusy">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        <span class="sr-only"> 40% Complete (success) </span>
+                    </div>
+                </div>
+                <form action="#" id="form_sample_4" ng-show="!isBusy">
+                    <div class="form-body">
+                        <div class="sk-habis">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h3>Masa SK Habis</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!--start nama perusahaan-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="NmPerusahaan">Nama Perusahaan</label>
+                                        <input type="text" class="form-control" name="nmperusahaan" id="NmPerusahaan"
+                                               value="@Model.Name">
+                                    </div>
+                                </div>
+                                <!--end nama perusahaan-->
+                            </div>
+                            <div class="row">
+                                <!--start email-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="Email">Email</label>
+                                        <input type="email" class="form-control" name="email" id="Email"
+                                               ng-model="warningModel.DestinationEmail" value="@contactInformation.Email">
+                                    </div>
+                                </div>
+                                <!--end email-->
+                                <!--start btn edit
+                                <div class="col-sm-1">
+                                    <div class="text-right">
+                                        <div class="space"></div>
+                                        <a href="#" class="btn green-sharp btn-outline">
+                                            Edit
+                                        </a>
+                                        <div class="space"></div>
+                                    </div>
+                                </div>
+                                start btn edit-->
+
+                            </div>
+
+                            <div class="row">
+                                <!--start No. Handphon-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="NoHp">No. Handphone</label>
+                                        <input type="text" class="form-control" name="nohp" id="NoHp"
+                                               ng-model="warningModel.DestinationMobileNo"
+                                               value="@contactInformation.MobileNumber">
+                                    </div>
+                                </div>
+                                <!--end No. Handphon-->
+                                <!--start keterangan-->
+                                @*<div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group has-success">
+                                            <label for="form_control_4">Keterangan</label>
+                                            <textarea class="form-control" name="keterangan" rows="3">@contactInformation</textarea>
+                                        </div>
+                                    </div>*@
+                                <!--end keterangan-->
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="form_control_4">Message</label>
+                                        <textarea class="form-control" name="keterangan" rows="3"
+                                                  ng-model="warningModel.KeteranganSkHabis"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions" style="border-bottom: 1px solid #e7ecf1;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button"
+                                        ng-click="sendSkHabis()"
+                                        class="btn green-sharp red-stripe">
+                                    <i class="fa fa-send-o"></i>
+                                    Kirim
+                                </button>
+                                <button type="reset" class="btn red" ng-click="buttonBatal()">
+                                    <i class="fa fa-close"></i>
+                                    Batal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/AngkutJual/Ng/IupOp/alertdata.js")"></script>
+
+@*<script>
+    function changer() {
+        var a = document.getElementById('peringatan');
+        var z = a.options[a.selectedIndex].value;
+
+        if (z == 'SP1' || z == 'SP2') {
+            $('#hides').hide();
+        }
+        else if (z == 'SP3') {
+            $('#hides').show();
+        }
+    }
+</script>*@
+
+<script>
+    function close(){
+        if ($('#tglSurat').val() == '') {
+            $('#tglEndSurat').data("kendoDatePicker").value('');
+            document.getElementById("tglSurat").focus();
+            alert('Tolong Isi Tanggal Surat Peringatan');
+        }
+        else {
+            var oneDay = 24 * 60 * 60 * 1000;
+            var firstDate = $('#tglSurat').data("kendoDatePicker").value();
+            var secondDate = $('#tglEndSurat').data("kendoDatePicker").value();
+
+            var diffDays = Math.round(Math.abs((firstDate - secondDate) / (oneDay)));
+            $('#hari').val(diffDays.toString());
+            
+        }
+    }
+</script>

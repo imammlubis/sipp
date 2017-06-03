@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Register Perusahaan";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="loadDetails()">Pengangkutan dan Penjualan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Register Perusahaan</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="glyphicon glyphicon-registration-mark font-red"></i>
+                            <span class="font-red sbold">
+                                Register Perusahaan
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="portlet-body" style="overflow:hidden;">
+                <!-- BEGIN FORM-->
+                <form action="#" id="form_sample_3">
+                    <div class="form-body">
+                        <div class="row no-margin">
+
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label for="form_control_1">Nama Perusahaan</label>
+                                    <select class="form-control" name="produksitahunan" required>
+                                        <option></option>
+                                        <option value="2016">PT Coal Indonesia</option>
+                                        <option value="2015">PT Berlian Tambang</option>
+                                        <option value="2014">PT Baramulti Sugih Sentosa</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!--start Password lama-->
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label for="Email">Alamat Email</label>
+                                    <input type="email" class="form-control" name="email" id="Email" required>
+                                </div>
+                            </div>
+                            <!--end Password lama-->
+                        </div>
+
+                        <div class="row no-margin">
+
+                            <!--start Password Baru-->
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label for="NewPass">Password Baru</label>
+                                    <input type="text" class="form-control" name="NewPass" id="NewPass" required>
+                                </div>
+                            </div>
+                            <!--end Password baru-->
+                            <!--start Konfirmasi Password Baru-->
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label for="ConfirmNew">Konfirmasi Password Baru</label>
+                                    <input type="text" class="form-control" name="ConfirmNew" id="ConfirmNew" required>
+                                </div>
+                            </div>
+                            <!--end Konfirmasi Password baru-->
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn green-sharp red-stripe"><i class="glyphicon glyphicon-registration-mark"></i> Register</button>
+                                <button type="reset" class="btn red"><i class="fa fa-close"></i> batal</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- END FORM-->
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+

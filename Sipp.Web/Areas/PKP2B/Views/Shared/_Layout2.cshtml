@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>PKP2B @ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/kendo/css")
+
+    <!--BEGIN KENDO PLUGIN-->
+    <link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.default.mobile.min.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.material.mobile.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.dataviz.material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.2.607/kendo.material.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/kendo/2016.2.607/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2016.2.607/jszip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2016.2.607/kendo.all.min.js")"></script>
+
+    <!--END KENDO PLUGIN-->
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link href="@Url.Content("~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/global/plugins/bootstrap-toastr/toastr.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/global/plugins/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/global/plugins/uniform/css/uniform.default.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css")" rel="stylesheet" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @*<link href="~/Content/assets/global/plugins/swal/sweetalert.css" rel="stylesheet" />*@
+    <link href="https://cdn.jsdelivr.net/sweetalert2/6.3.2/sweetalert2.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css")" rel="stylesheet" />
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/clockface/css/clockface.css">
+    <link href="~/Content/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" />
+    <link href="~/Content/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" />
+    -->
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="@Url.Content("~/Content/assets/global/css/components.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/global/css/plugins.min.css")" rel="stylesheet" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="@Url.Content("~/Content/assets/layouts/css/layout.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/layouts/css/themes/default.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/layouts/css/custom.css")" rel="stylesheet" />
+    <!-- END THEME LAYOUT STYLES -->
+    <!--    <link rel="shortcut icon" href="favicon.ico" />-->
+
+</head>
+<!-- END HEAD -->
+
+<body class="page-container-bg-solid page-header-menu-fixed bg_12">
+    <!-- BEGIN HEADER -->
+    <div class="page-header">
+        <!-- BEGIN HEADER TOP -->
+        <div class="page-header-top">
+            <div class="container-fluid">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="~/Content/assets/layouts/img/logo_ESDM.png" alt="logo" width="45" style="margin: 13.5px 0 0;" />
+                    </a>
+                    <div class="header_title">
+                        SISTEM INFORMASI PERIZINAN MINERAL DAN BATUBARA
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"></a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN USER LOGIN DROPDOWN
+                        <li class="dropdown dropdown-user dropdown-dark">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="user" class="img-circle" src="~/Content/assets/layouts/img/avatar9.jpg" />
+                                <span class="username username-hide-mobile">Nick</span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_lock_1.html">
+                                        <i class="icon-lock"></i> Lock Screen
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        END USER LOGIN DROPDOWN -->
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+        </div>
+        <!-- END HEADER TOP -->
+        <!-- BEGIN HEADER MENU -->
+        <div class="page-header-menu box-shadow">
+            <div class="container-fluid">
+
+                <!-- BEGIN MEGA MENU -->
+                <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+                <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+                <div class="hor-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="menu-dropdown classic-menu-dropdown">
+                            <a href="/PKP2B/HomePKP2B/Index">Home</a>
+                        </li>
+                        <!--
+                        <li class="menu-dropdown mega-menu-dropdown">
+                            <a href="javascript:;">
+                                Pengangkutan dan Penjualan
+                                <span class="arrow"></span>
+                            </a>
+
+                        </li>
+
+                        <li class="menu-dropdown classic-menu-dropdown">
+                            <a href="javascript:;">
+                                Pengolahan dan Pemurnian
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+
+                        <li class="menu-dropdown mega-menu-dropdown mega-menu-full">
+                            <a href="javascript:;">
+                                Penanaman Modal Asing
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        -->
+                        <li class="menu-dropdown mega-menu-dropdown mega-menu">
+                            <a href="javascript:;">
+                                PKP2B
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <!--
+                                <li class="">
+                                    <a href="import_data.html" class="nav-link">
+                                        <i class="fa fa-upload"></i> Import Data
+                                    </a>
+                                </li>
+                                -->
+                                <li class="">
+                                    <a href="/PKP2B/MemasukanData/Index" class="nav-link  ">
+                                        <i class="fa fa-pencil-square-o"></i> Memasukan Data
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/PKP2B/MelihatDaftarKeseluruhan/Index" class="nav-link">
+                                        <i class="fa fa-eye"></i> Melihat Daftar Keseluruhan
+                                    </a>
+                                </li>
+                                <!--
+                                <li class="">
+                                    <a href="mengisi_formulir_evaluasi.html" class="nav-link">
+                                        <i class="fa fa-pencil-square-o"></i> Mengisi Formulir Evaluasi
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="riwayat_evaluasi.html" class="nav-link">
+                                        <i class="fa fa-history"></i> Riwayat Formulir Evaluasi
+                                    </a>
+                                </li>
+                                -->
+                                <li class="">
+                                    <a href="/PKP2B/DaftarLaporan/Index" class="nav-link">
+                                        <i class="fa fa-file-text-o"></i> Daftar Laporan RKAB, Realisasi, Tahunan
+                                    </a>
+                                </li>
+                                <li class="hide">
+                                    <a href="#" class="nav-link">
+                                        <i class="fa fa-file-text-o"></i> Register Perusahaan
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MEGA MENU -->
+            </div>
+        </div>
+        <!-- END HEADER MENU -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <!-- BEGIN PAGE HEAD-->
+            <div class="page-head">
+            </div>
+            <!-- END PAGE HEAD-->
+            <!-- BEGIN PAGE CONTENT BODY -->
+            <div class="page-content bg_12">
+                <div class="container-fluid">
+                    <!-- BEGIN PAGE BREADCRUMBS -->
+                    <ul class="page-breadcrumb breadcrumb">
+                        <!--
+                        <li>
+                            <a href="index.html">Home</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <a href="#">More</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <span>Form Stuff</span>
+                        </li>
+                        -->
+                    </ul>
+                    <!-- END PAGE BREADCRUMBS -->
+                    <!-- BEGIN PAGE CONTENT INNER -->
+                    <div class="page-content-inner">
+
+                        @RenderBody()
+
+                    </div>
+                    <!-- END PAGE CONTENT INNER -->
+                </div>
+            </div>
+            <!-- END PAGE CONTENT BODY -->
+            <!-- END CONTENT BODY -->
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <!-- BEGIN INNER FOOTER -->
+    <div class="page-footer">
+        <div class="container">
+            &copy; @DateTime.Now.Year PKP2B
+        </div>
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+    <!-- END INNER FOOTER -->
+    <!-- END FOOTER -->
+    <!--[if lt IE 9]>
+    <script src="@Url.Content("~/Content/assets/global/plugins/respond.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/excanvas.min.js")"></script>
+    <![endif]-->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="@Url.Content("~/Content/assets/global/plugins/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/js.cookie.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/jquery.blockui.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/uniform/jquery.uniform.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="@Url.Content("~/Content/assets/global/plugins/moment.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js")"></script>
+    <!--
+    <script type="text/javascript" src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="assets/global/plugins/clockface/js/clockface.js"></script>
+    -->
+    <script src="@Url.Content("~/Content/assets/global/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/global/plugins/jquery-validation/js/additional-methods.min.js")"></script>
+    @*<script src="~/Content/assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>*@
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="@Url.Content("~/Content/assets/global/scripts/app.min.js")"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    @*<script src="~/Content/assets/pages/scripts/ui-modals.min.js"></script>*@
+    <script src="@Url.Content("~/Content/assets/pages/scripts/form-validation-md.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/pages/scripts/components-date-time-pickers.min.js")"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.8/jquery.mask.js"></script>
+    @*<script src="@Url.Content("~/Scripts/jasny-bootstrap/js/jasny-bootstrap.js")"></script>*@
+
+    <script src="@Url.Content("~/Content/assets/global/plugins/bootstrap-toastr/toastr.min.js")"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    @*<script src="@Url.Content("~/Content/assets/global/plugins/swal/sweetalert.min.js")"></script>*@
+
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.3.2/sweetalert2.js"></script>
+
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="@Url.Content("~/Content/assets/layouts/scripts/layout/layout.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/layouts/scripts/layout/demo.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/layouts/scripts/global/scripts/quick-sidebar.min.js")"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->
+
+    @Scripts.Render("~/bundles/kendo")
+</body>
+
+</html>

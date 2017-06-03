@@ -1,0 +1,313 @@
+﻿
+@{
+    ViewBag.Title = "Laporan RKAB, Triwulan, dan Tahunan Perusahaan";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+<style>
+
+
+    /* Page Template for the exported PDF */
+    .hidden-on-narrow {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .page-template {
+        font-family: "DejaVu Sans", "Arial", sans-serif;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+        .page-template .header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            border-bottom: 1px solid #888;
+            color: #888;
+        }
+
+        .page-template .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            border-top: 1px solid #888;
+            text-align: center;
+            color: #888;
+        }
+
+        .page-template .watermark {
+            font-weight: bold;
+            font-size: 400%;
+            text-align: center;
+            margin-top: 30%;
+            color: #aaaaaa;
+            opacity: 0.1;
+            transform: rotate(-35deg) scale(1.7, 1.5);
+        }
+
+    /* Content styling */
+    .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+
+    th.k-header.blue-steel {
+        background-color: #4B77BE!important;
+    }
+
+    th.k-header.green-jungle {
+        background-color: #26C281!important;
+    }
+
+    th.k-header.red-intense {
+        background-color: #E35B5A!important;
+    }
+
+    th.k-header.yellow-casablanca {
+        background-color: #F2784B!important;
+    }
+
+    th.k-header.red-thunderbird {
+        background-color: #D91E18!important;
+    }
+
+    th.k-header.purple-medium {
+        background-color: #BF55EC!important;
+    }
+</style>
+
+<script type="x/kendo-template" id="page-template">
+    <div class="page-template">
+        <div class="header">
+            <div style="float: right">Page #: pageNum # of #: totalPages #</div>
+            Daftar Perusahaan
+        </div>
+        <div class="watermark">ESDM</div>
+        <div class="footer">
+            Page #: pageNum # of #: totalPages #
+        </div>
+    </div>
+</script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit portlet-datatable box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="loadDetails()">Pengangkutan dan Penjualan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Daftar Laporan RKAB, Triwulan, dan Tahunan Perusahaan</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="fa fa-file-text-o font-red"></i>
+                            <span class="font-red sbold">
+                                Laporan RKAB, Triwulan, dan Tahunan Perusahaan
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                @(Html.Kendo().Grid<Esdm.Web.Areas.AngkutJual.Controllers.ReportViewModel>()
+                   .Name("grid")
+
+                   .ToolBar(tools => tools.Excel().HtmlAttributes(new { @class = "button-custom", @style = "width:150px!important;text-align:left!important;" }))
+                   .Excel(excel => excel
+                   .AllPages(true)
+                   .FileName("RekapitulasiLaporanRKAB_Tahunan_Triwulan.xlsx")
+                   .AllPages(true)
+                   )
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Command(
+                           command =>
+                           {
+                               command.Custom(" Respond").Click("index.expand");
+                           }).Width(100).Title("Action");
+                       columns.Bound(p => p.ID).Hidden();
+                       columns.Bound(p => p.CompanyName).HeaderTemplate("Nama Perusahaan").Width(200);
+
+                       columns.Bound(p => p.Year).HeaderTemplate("Tahun").Width(90);
+                       columns.Bound(p => p.Rkab).HeaderTemplate("RKAB").Format("{0:##,#}").Width(90).HeaderHtmlAttributes(new { @class= "blue-steel" });
+                       columns.Bound(p => p.StatusRkab).HeaderTemplate("Approval").Width(120).HeaderHtmlAttributes(new { @class = "blue-steel" });
+
+                       columns.Bound(p => p.Q1).HeaderTemplate("Q1").Format("{0:##,#}").Width(80).HeaderHtmlAttributes(new { @class = "green-jungle" });/*.HeaderHtmlAttributes(new { colspan = 3}).Width(120);//.ClientTemplate("#=q1(Q1, PersenQ1)#"); ;*/
+                       columns.Bound(p => p.StatusQ1).HeaderTemplate("Approval").Width(120).HeaderHtmlAttributes(new { @class = "green-jungle" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=StatusQ1#");
+                       columns.Bound(p => p.PersenQ1).HeaderTemplate("%").Format("{0:0.00}").Width(80).HeaderHtmlAttributes(new { @class = "green-jungle" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=PersenQ1#%");
+
+                       columns.Bound(p => p.Q2).HeaderTemplate("Q2").Format("{0:##,#}").Width(90).HeaderHtmlAttributes(new { @class = "red-intense" });//.HeaderHtmlAttributes(new { colspan = 3 }).Width(120);
+                       columns.Bound(p => p.StatusQ2).HeaderTemplate("Approval").Width(120).HeaderHtmlAttributes(new { @class = "red-intense" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=StatusQ2#");
+                       columns.Bound(p => p.PersenQ2).HeaderTemplate("%").Format("{0:0.00}").Width(80).HeaderHtmlAttributes(new { @class = "red-intense" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=PersenQ2#%");
+
+                       columns.Bound(p => p.Q3).HeaderTemplate("Q3").Format("{0:##,#}").Width(90).HeaderHtmlAttributes(new { @class = "yellow-casablanca" });//.HeaderHtmlAttributes(new { colspan = 3}).Width(120);
+                       columns.Bound(p => p.StatusQ3).HeaderTemplate("Approval").Width(120).HeaderHtmlAttributes(new { @class = "yellow-casablanca" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=StatusQ3#");
+                       columns.Bound(p => p.PersenQ3).HeaderTemplate("%").Format("{0:0.00}").Width(80).HeaderHtmlAttributes(new { @class = "yellow-casablanca" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=PersenQ3#%");
+
+                       columns.Bound(p => p.Q4).HeaderTemplate("Q4").Format("{0:##,#}").Width(90).HeaderHtmlAttributes(new { @class = "red-thunderbird" });//.HeaderHtmlAttributes(new { colspan = 3}).Width(120);
+                       columns.Bound(p => p.StatusQ4).HeaderTemplate("Approval").Width(120).HeaderHtmlAttributes(new { @class = "red-thunderbird" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=StatusQ4#");
+                       columns.Bound(p => p.PersenQ4).HeaderTemplate("%").Format("{0:0.00}").Width(80).HeaderHtmlAttributes(new { @class = "red-thunderbird" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=PersenQ4#%");
+
+                       columns.Bound(p => p.Annual).HeaderTemplate("Annual").Format("{0:##,#}").Width(90).HeaderHtmlAttributes(new { @class = "purple-medium" });//.HeaderHtmlAttributes(new { colspan = 3}).Width(120);
+                       columns.Bound(p => p.StatusAnnual).HeaderTemplate("Approval").Width(120).HeaderHtmlAttributes(new { @class = "purple-medium" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=StatusAnnual#");
+                       columns.Bound(p => p.PersenAnnual).HeaderTemplate("%").Format("{0:0.00}").Width(80).HeaderHtmlAttributes(new { @class = "purple-medium" });//.HeaderHtmlAttributes(new { style = "display:none;" }).Width(80).ClientTemplate("#=PersenAnnual#%");
+
+                       //columns.Bound(p => p.StatusRespond).HeaderTemplate("Status Respond");
+                   })
+                   .Events(e => e.DataBound("onRowBound"))
+                   .Scrollable()
+                   .Groupable()
+                   .Pageable(pageable => pageable
+                       .Refresh(true)
+                       .PageSizes(true)
+                       .ButtonCount(5)
+                   )
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   //.Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListReport", "RKABRealizations", new { area = "AngkutJual" })
+                       .ServerOperation(true)
+                    ))
+            </div>            
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $("#grid").kendoGrid({
+        toolbar: ["pdf"],
+        pdfExport: function (e) {
+            var grid = $("#grid").data("kendoGrid");
+            grid.hideColumn(0);
+            e.promise
+            .done(function () {
+                grid.showColumn(0);
+            });
+        }
+    })
+
+    function q1(a,b) {
+        return "" + a + " (" + b + "%)";
+    }
+
+    function onRowBound(e) {
+        $(".k-grid-Respond").find("span").addClass("k-font-icon k-i-connector");
+        //$(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+        //$(".k-grid-Alert").find("span").addClass("k-font-icon k-i-exception");
+        $(".k-grid2-Expand").find("span").addClass("k-font-icon k-i-dimension");
+        $(".k-grid3-Expand").find("span").addClass("k-font-icon k-i-dimension");
+        $(".k-grid4-Expand").find("span").addClass("k-font-icon k-i-dimension");
+
+
+    }
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow2(e) {
+        var grid = $("#grid2").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow3(e) {
+        var grid = $("#grid3").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow4(e) {
+        var grid = $("#grid4").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    var tabActive = function () {
+        debugger;
+        var tabstrip = $("#tabStrip").data("kendoTabStrip");
+        //if (tabstrip.select().text() == "Semua") {
+        //    $("#grid").data("kendoGrid").dataSource.read();
+        //    $("#grid").data("kendoGrid").refresh();
+        //}
+        if (tabstrip.select().text() == "RKAB") {
+            $("#grid2").data("kendoGrid").dataSource.read();
+            $("#grid2").data("kendoGrid").refresh();
+        }
+        else if (tabstrip.select().text() == "Tahunan"){
+            $("#grid3").data("kendoGrid").dataSource.read();
+            $("#grid3").data("kendoGrid").refresh();
+        }
+        else if (tabstrip.select().text() == "Triwulan"){
+            $("#grid4").data("kendoGrid").dataSource.read();
+            $("#grid4").data("kendoGrid").refresh();
+        }
+    }
+
+    var index = (function ($) {
+        var self = this;
+        return {
+            expand: function (e) {
+                debugger;
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("DetailRkab", "Rkabrealizations")" + "/" + selectedRow.CompanyId.toString();
+                window.location.replace(url);
+            },
+
+            edit: function (e) {
+                alert('a')
+            },
+
+            delete: function (e) {
+                alert('z')
+            },
+
+            alert: function (e) {
+                alert('z')
+            },
+            refreshGrid1: function (e) {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            },
+            refreshGrid2: function (e) {
+                $("#grid2").data("kendoGrid").dataSource.read();
+                $("#grid2").data("kendoGrid").refresh();
+            },
+            refreshGrid3: function (e) {
+                $("#grid3").data("kendoGrid").dataSource.read();
+                $("#grid3").data("kendoGrid").refresh();
+            }
+        }
+    })(jQuery);
+</script>

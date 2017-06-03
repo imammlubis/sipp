@@ -1,0 +1,67 @@
+﻿<div id="static7" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="dataSumberDayaBatubaraForm" data-toggle="validator" role="form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">Form Sumber Daya Mineral</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="blok">Blok</label>
+                                <input type="text" 
+                                       ng-model="SumberDayaBatubaraModel.blok" 
+                                       id="blok" 
+                                       class="form-control" 
+                                       name="blok"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="tereka">Tereka</label>
+                                <input type="number" 
+                                       ng-model="SumberDayaBatubaraModel.tereka" 
+                                       id="tereka"
+                                       class="form-control" 
+                                       name="tereka" 
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="terunjuk">Terunjuk</label>
+                                <input type="number"
+                                       ng-model="SumberDayaBatubaraModel.terunjuk" 
+                                       id="terunjuk" 
+                                       class="form-control" 
+                                       name="terunjuk" 
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="terukur">Terukur</label>
+                                <input type="number" 
+                                       ng-model="SumberDayaBatubaraModel.terukur" 
+                                       id="terukur"
+                                       class="form-control" 
+                                       name="terukur" 
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" ng-show="!isEditSumberDayaBatubara" ng-click="CreateSumberDayaBatubara()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="submit" ng-show="isEditSumberDayaBatubara" ng-click="SaveChangesSumberDayaBatubara()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="reset" data-dismiss="modal" class="btn red"><i class="fa fa-close"></i> Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

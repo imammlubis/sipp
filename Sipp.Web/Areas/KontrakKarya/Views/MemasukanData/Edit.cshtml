@@ -1,0 +1,1162 @@
+﻿
+@{
+    ViewBag.Title = "- Memasukan data";
+    Layout = "~/Areas/KontrakKarya/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Memasukan Data Kontrak Karya</span>
+                </div>
+            </div>
+            <input type="hidden" id="idx" value="@ViewBag.idx" />
+            <div ng-app="pkp2b" ng-controller="pkp2b-controller" class="portlet-body" style="overflow:hidden;">
+                <div class="form-body">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a href="#tab_15_1" data-toggle="tab"> General Information </a>
+                            </li>
+                            <li>
+                                <a href="#tab_15_2" data-toggle="tab"> Status Permodalan </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_15_1">
+                                <!-- BEGIN FORM-->
+                                <form name="userForm" data-toggle="validator" role="form">
+                                    <div class="row no-margin">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Nama Perusahaan</label>
+                                                    <input type="text"
+                                                           class="form-control uppercase"
+                                                           ng-model="companyModel.nama"
+                                                           tabindex="1"
+                                                           name="namaPerusahaan"
+                                                           id="namaPerusahaan"
+                                                           required />
+                                                </div>
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">NPWP</label>
+                                                    <input type="text" class="form-control"
+                                                           ng-model="companyModel.npwp"
+                                                           maxlength="21"
+                                                           tabindex="2"
+                                                           data-mask="99.999.999.9-999.999"
+                                                           name="npwp" id="npwp" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-xs-12">
+                                                    <label for="NewPass">Alamat</label>
+                                                    <textarea class="form-control"
+                                                              tabindex="3"
+                                                              ng-model="companyModel.alamat" rows="5" required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Telp</label>
+                                                    <input type="text" ng-model="companyModel.telp"
+                                                           class="form-control" name="ConfirmNew" id="ConfirmNew">
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Fax</label>
+                                                    <input type="text" ng-model="companyModel.fax" class="form-control" name="ConfirmNew" id="ConfirmNew">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="Email">Email</label>
+                                                    <input type="email" ng-model="companyModel.email"
+                                                           maxlength="35"
+                                                           data-error="Bruh, that email address is invalid"
+                                                           class="form-control" id="Email">
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="Website">Website</label>
+                                                    <input type="text" ng-model="companyModel.website" class="form-control" id="Website">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Contact Person (Nama)</label>
+                                                    <input type="text" ng-model="companyModel.namacp" class="form-control uppercase" name="cpNama" id="cpNama">
+                                                </div>
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Contact Person (HP)</label>
+                                                    <input type="text" value="+62" ng-model="companyModel.hpcp" class="form-control" name="cpHp" id="cpHp">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <h3 class="bold">Data Kontrak Karya</h3>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Generasi</label>
+                                                    <select class="form-control" ng-model="dataPkp2bModel.generasi" name="generasi" id="generasi" required>
+                                                        <option></option>
+                                                        <option value="I">Generasi I</option>
+                                                        <option value="II">Generasi II</option>
+                                                        <option value="III">Generasi III</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6" required>
+                                                    <label for="ConfirmNew">Kode Wilayah</label>
+                                                    <input type="text" class="form-control" ng-model="dataPkp2bModel.kodeWilayah" name="kodeWilayah" id="kodeWilayah" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Luas Wilayah (Awal)</label>
+                                                    <input type="number"
+                                                           ng-model="dataPkp2bModel.luasWilayahAwal" id="luasWilayahAwal" class="form-control" required>
+                                                </div>
+
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Luas Wilayah (Dipertahankan)</label>
+                                                    <input type="number"
+                                                           ng-model="dataPkp2bModel.luasWilayahDipertahankan" id="luasWilayahDipertahankan" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Tahapan Akhir</label>
+                                                    <select class="form-control" ng-model="dataPkp2bModel.tahapanAkhir" name="tahapanAkhir" id="tahapanAkhir" required>
+                                                        <option></option>
+                                                        <option value="Penyelidikan Umum">Penyelidikan Umum</option>
+                                                        <option value="Eksplorasi">Eksplorasi</option>
+                                                        <option value="Studi Kelayakan">Studi Kelayakan</option>
+                                                        <option value="Konstruksi">Konstruksi</option>
+                                                        <option value="Operasi Produksi">Operasi Produksi</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="perizinan">Perizinan</label>
+                                                    <select class="form-control" ng-model="dataPkp2bModel.perizinan" required>
+                                                        <option></option>
+                                                        <option value="BUMN">BUMN</option>
+                                                        <option value="KK">KK</option>
+                                                        <option value="IUPOPK">IUPOPK</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group has-success col-xs-12">
+                                                    <label for="ConfirmNew">Komoditi</label>
+                                                    <select class="selectpicker form-control" multiple
+                                                            title="Please select..."
+                                                            name="komoditi"
+                                                            ng-model="dataPkp2bModel.komoditi"
+                                                            id="komoditi"
+                                                            >
+                                                        <option></option>
+                                                        <option value="Timah">Timah</option>
+                                                        <option value="Emas">Emas</option>
+                                                        <option value="Nikel">Nikel</option>
+                                                        <option value="Tembaga">Tembaga</option>
+                                                        <option value="Granite">Granite</option>
+                                                        <option value="Intan">Intan</option>
+                                                        <option value="Pasir Besi">Pasir Besi</option>
+                                                        <option value="Bauksit">Bauksit</option>
+                                                        <option value="Biji Besi">Biji Besi</option>
+                                                        <option value="Iodium">Iodium</option>
+                                                        <option value="Alumina">Alumina</option>
+                                                        <option value="Clay">Clay</option>
+                                                        <option value="Zircon">Zircon</option>
+                                                        <option value="Timbal">Timbal</option>
+                                                        <option value="Seng">Seng</option>
+                                                        <option value="Mangan">Mangan</option>
+                                                        <option value="Lainnya">Lainnya</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">No Kontrak</label>
+                                                    <input type="text" ng-model="dataPkp2bModel.noKontrak" required class="form-control" name="ConfirmNew" id="ConfirmNew">
+                                                </div>
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label>Tanggal Kontrak</label>
+                                                    @*<input type="text" class="form-control form-control-inline date-picker" size="16"
+                                                        required
+                                                        id="tanggalKontrak"
+                                                        data-date-format="dd/mm/yyyy"
+                                                        ng-model="dataPkp2bModel.tanggalKontrak" />*@
+                                                    <div class="input-group input-append date" id="tanggalKontrak">
+                                                        <input type="text" ng-model="dataPkp2bModel.tanggalKontrak" 
+                                                               id="tanggalKontrak"
+                                                               class="form-control" data-date-format="dd/mm/yyyy"
+                                                               name="tanggalKontrak" />
+                                                        <span class="input-group-addon add-on">
+                                                            <span class="glyphicon glyphicon-calendar">
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Lokasi (Provinsi)</label>
+                                                    <input type="text" ng-model="dataPkp2bModel.provinsi" id="provinsi" class="form-control uppercase" required>
+                                                </div>
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Lokasi (Kabupaten)</label>
+                                                    <input type="text" ng-model="dataPkp2bModel.kabupaten" id="kabupaten" class="form-control uppercase" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label for="ConfirmNew">Jangka Waktu</label>
+                                                    <input class="form-control" ng-model="dataPkp2bModel.jangkaWaktu" id="jangkaWaktu" required type="number" value="" />
+                                                </div>
+                                                <div class="form-group has-success col-sm-6">
+                                                    <label>Tanggal Berakhir</label>
+                                                    @*<input class="form-control form-control-inline date-picker"
+                                                        size="16" type="text"
+                                                        id="tanggalBerakhir"
+                                                        data-date-format="dd/mm/yyyy"
+                                                        ng-model="dataPkp2bModel.tanggalBerakhir" />*@
+                                                    <div class="input-group input-append date" id="tanggalBerakhir">
+                                                        <input type="text" ng-model="dataPkp2bModel.tanggalBerakhir"
+
+                                                               id="tanggalBerakhir"
+                                                               class="form-control" data-date-format="dd/mm/yyyy"
+                                                               name="tanggalBerakhir" />
+                                                        <span class="input-group-addon add-on">
+                                                            <span class="glyphicon glyphicon-calendar">
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group has-success col-sm-12">
+                                                    <label for="ConfirmNew">Lainnya</label>
+                                                    <input class="form-control"
+                                                           id="lainnya"
+                                                           ng-model="dataPkp2bModel.lainnya"
+                                                           type="text"
+                                                           value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 text-right">
+                                            <button type="submit" class="btn green-sharp red-stripe" ng-click="SaveEditGeneralInformation()"><i class="fa fa-save"></i> Simpan</button>
+                                            <div class="space"></div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="portlet box green">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        History Data Kontrak Karya
+                                                    </div>
+                                                    <div class="tools">
+                                                        <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    @(Html.Kendo().Grid<EduSpot.Entity.Tables.Pkp2b.HistoryDataPkp2b>()
+                   .Name("gridHistory")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.ID).Hidden();
+                       columns.Bound(p => p.CreatedDate).Title("Tanggal Diubah").Format("{0:dd/MM/yyyy HH:mm}").Width(170);
+                       columns.Bound(p => p.Generasi).Title("Generasi").Width(223);
+                       columns.Bound(p => p.KodeWilayah).Title("Kode Wilayah").Width(200);
+                       columns.Bound(p => p.NoKontrak).Title("No. Kontrak").Width(200);
+                       columns.Bound(p => p.LuasWilayahAwal).Title("Luas Wilayah(Awal)").Width(200);
+                       columns.Bound(p => p.LuasWilayahDipertahankan).Title("Luas Wilayah (dipertahankan)").Width(200);
+                       columns.Bound(p => p.Provinsi).Title("Provinsi").Width(200);
+                       columns.Bound(p => p.Kabupaten).Title("Kabupaten").Width(200);
+                       columns.Bound(p => p.TahapanAkhir).Title("Tahapan Akhir").Width(200);
+                       columns.Bound(p => p.JangkaWaktu).Title("Jangka Waktu").Width(200);
+                       columns.Bound(p => p.Komoditi).Title("Komoditi").Width(200);
+                       columns.Bound(p => p.Lainnya).Title("Lainnya").Width(200);
+                       columns.Bound(p => p.TanggalKontrak).Title("Tanggal Kontrak").Format("{0:dd/MM/yyyy}").Width(170);
+                       columns.Bound(p => p.TanggalBerakhir).Title("Tanggal Berakhir").Format("{0:dd/MM/yyyy}").Width(170);
+
+                   })
+                   .Sortable()
+                   .Pageable()
+                   .Scrollable()
+                   .Filterable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListHistoryDataKk", "memasukandata", new { area = "kontrakkarya", id = ViewBag.idx })
+                       .ServerOperation(true)
+                    ))
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+
+                                <div class="row no-margin">
+                                    <div class="col-md-12">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Data Akta
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a ng-click="tambahDataAktaClick()"
+                                                           data-target="#static"
+                                                           data-toggle="modal"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="3" class="text-center"> Akta Pendirian dan Perubahan </th>
+                                                                <th colspan="2" class="text-center"> Pengesahan Kemenkumham </th>
+                                                                <th rowspan="2" class="text-center"> File </th>
+                                                                <th colspan="2" rowspan="2" class="text-center"> action </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th> Judul Akta </th>
+                                                                <th> No Akta </th>
+                                                                <th> Tanggal Akta </th>
+                                                                <th> No </th>
+                                                                <th> Tanggal </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataAkta">
+                                                                <th style="min-width:150px;"> &nbsp; {{item.JudulAkta}} </th><!-- judul akta-->
+                                                                <th style="min-width:150px;"> &nbsp; {{item.NoAkta}}</th><!-- no akta-->
+                                                                <th style="min-width:150px;"> &nbsp; {{item.TanggalAkta | formatDate | date:'dd/MM/yyyy'}}</th><!-- judul akta-->
+                                                                <th style="min-width:150px;"> &nbsp; {{item.NoPengesahanKemenkumham}}</th><!-- no-->
+                                                                <th style="min-width:150px;"> &nbsp; {{item.TanggalPengesahanKemenkumhan | formatDate | date:'dd/MM/yyyy'}}</th><!-- tanggal-->
+                                                                <td>
+                                                                    <a ng-show="item.File"
+                                                                       href="../../../DocumentKk/DataAkta/{{item.File}}"
+                                                                       target="_blank">
+                                                                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editDataAktaClick(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteDataAkta(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-margin">
+                                    <div class="col-md-12">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Tahap Kegiatan
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a data-target="#static6"
+                                                           data-toggle="modal"
+                                                           ng-click="tambahTahapKegiatanClick()"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="min-width:150px;"> Tahap kegiatan </th>
+                                                                <th style="min-width:200px;"> Luas Dipertahankan (HA) </th>
+                                                                <th> Detail Tahap Kegiatan</th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataTahapKegiatan">
+                                                                <td style="min-width:150px;"> {{item.Tahap}} </td>
+                                                                <td style="min-width:200px;"> {{item.LuasDipertahankan}} </td>
+                                                                <td>
+                                                                    <!-- table detail -->
+                                                                    <table class="table table-striped table-bordered table-hover">
+                                                                        <thead class="bg-green-soft bg-font-green-soft">
+                                                                            <tr>
+                                                                                <th style="min-width:190px;"> Tahap kegiatan / Blok </th>
+                                                                                <th style="min-width:240px;"> Luas Dipertahankan / Blok (HA) </th>
+                                                                                <th colspan="2">
+                                                                                    <div class="btn-group btn-group-solid">
+                                                                                        <a style="margin-right:0;"
+                                                                                           href=""
+                                                                                           data-target="#detailStatic6"
+                                                                                           data-toggle="modal"
+                                                                                           ng-click="tambahTahapKegiatanBlokClick(item.ID)"
+                                                                                           class="btn red btn-sm">
+                                                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr ng-repeat="itemdetail in dataTahapKegiatanBlok | filter: item.ID track by $index">
+                                                                                <td style="min-width:190px;"> {{itemdetail.Tahap}} </td>
+                                                                                <td style="min-width:240px;"> {{itemdetail.LuasDipertahankan}} </td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0)" ng-click="editTahapKegiatanBlokClick(itemdetail.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0)" ng-click="deleteTahapKegiatanBlok(itemdetail.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <!-- table detail -->
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editTahapKegiatanClick(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteTahapKegiatan(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Sumber Daya Mineral
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a ng-click="tambahSumberDayaBatubaraClick()"
+                                                           data-target="#static7"
+                                                           data-toggle="modal"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="min-width:150px;"> Blok (HA) </th>
+                                                                <th style="min-width:150px;"> Tereka (MT) </th>
+                                                                <th style="min-width:150px;"> Terunjuk (MT) </th>
+                                                                <th style="min-width:150px;"> Terukur (MT) </th>
+                                                                <th style="min-width:150px;"> Total (MT) </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataSumberDayaBatubara">
+                                                                <td style="min-width:150px;"> {{item.Blok}} </td>
+                                                                <td style="min-width:150px;"> {{item.Tereka}} </td>
+                                                                <td style="min-width:150px;"> {{item.Terunjuk}} </td>
+                                                                <td style="min-width:150px;"> {{item.Terukur}} </td>
+                                                                <td style="min-width:150px;"> {{item.Tereka + item.Terunjuk + item.Terukur}} </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editSumberDayaBatubaraClick(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteSumberDayaBatubara(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row no-margin">
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Kronologi Tahapan
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a data-target="#static2"
+                                                           ng-click="tambahKronologiTahapanClick()"
+                                                           data-toggle="modal"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="min-width:150px;"> Tahapan </th>
+                                                                <th style="min-width:150px;"> No SK / Surat </th>
+                                                                <th style="min-width:150px;"> Tanggal SK / Surat </th>
+                                                                <th style="min-width:150px;"> Mulai </th>
+                                                                <th style="min-width:150px;"> Sampai Dengan </th>
+                                                                <th style="min-width:150px;"> Jangka Waktu </th>
+                                                                <th style="min-width:150px;"> File </th>
+                                                                <th style="min-width:150px;"> Keterangan </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataKronologiTahapan">
+                                                                <td style="min-width:150px;"> {{item.Tahapan}} </td>
+                                                                <td style="min-width:150px;"> {{item.NoSk}} </td>
+                                                                <td style="min-width:150px;"> {{item.TanggalSk | formatDate | date:'dd/MM/yyyy'}} </td>
+                                                                <td style="min-width:150px;"> {{item.TanggalMulai | formatDate | date:'dd/MM/yyyy'}} </td>
+                                                                <td style="min-width:150px;"> {{item.TanggalAkhir | formatDate | date:'dd/MM/yyyy'}} </td>
+                                                                <td> {{item.JangkaWaktu}} </td>
+                                                                <td>
+                                                                    <a ng-show="item.File"
+                                                                       href="../../../documentkk/KronologiTahapan/{{item.File}}"
+                                                                       target="_blank">
+                                                                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </td>
+                                                                <td style="min-width:150px;"> {{item.Keterangan}} </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editKronologiTahapanClick(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteKronologiTahapan(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Detail Kronologi Tahapan
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a data-target="#static8"
+                                                           ng-click="tambahDetailKronologiTahapanClick()"
+                                                           data-toggle="modal"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="min-width:150px;"> Tahapan Induk </th>
+                                                                <th style="min-width:150px;"> Tahapan </th>
+                                                                <th style="min-width:150px;"> No SK / Surat </th>
+                                                                <th style="min-width:150px;"> Tanggal SK / Surat </th>
+                                                                <th style="min-width:150px;"> Mulai </th>
+                                                                <th style="min-width:150px;"> Sampai Dengan </th>
+                                                                <th style="min-width:150px;"> Jangka Waktu </th>
+                                                                <th style="min-width:150px;"> File </th>
+                                                                <th style="min-width:150px;"> Keterangan </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataDetailKronologiTahapan">
+                                                                <td style="min-width:150px;"> {{item.TahapanInduk}} </td>
+                                                                <td style="min-width:150px;"> {{item.Tahapan}} </td>
+                                                                <td style="min-width:150px;"> {{item.NoSk}} </td>
+                                                                <td style="min-width:150px;"> {{item.TanggalSk | formatDate | date:'dd/MM/yyyy'}} </td>
+                                                                <td style="min-width:150px;"> {{item.TanggalMulai | formatDate | date:'dd/MM/yyyy'}} </td>
+                                                                <td style="min-width:150px;"> {{item.TanggalAkhir | formatDate | date:'dd/MM/yyyy'}} </td>
+                                                                <td> {{item.JangkaWaktu}} </td>
+                                                                <td>
+                                                                    <a ng-show="item.File"
+                                                                       href="../../../documentkk/DetailKronologiTahapan/{{item.File}}"
+                                                                       target="_blank">
+                                                                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </td>
+                                                                <td style="min-width:150px;"> {{item.Keterangan}} </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editDetailKronologiTahapanClick(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteDetailKronologiTahapan(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-margin">
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Lingkungan, IPPKH, dan persetujuan lainnya
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a ng-click="tambahPersetujuanClick()"
+                                                           data-target="#static3"
+                                                           data-toggle="modal"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Jenis Persetujuan </th>
+                                                                <th> No Surat / SK </th>
+                                                                <th> Tanggal Surat / SK </th>
+                                                                <th> File </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataPersetujuan">
+                                                                <td> {{item.JenisPersetujuan}} </td>
+                                                                <td> {{item.NoSk}} </td>
+                                                                <td> {{item.TanggalSk | formatDate | date:'dd/MM/yyyy'}} </td>
+                                                                <td>
+                                                                    <a ng-show="item.File"
+                                                                       href="../../../documentkk/Lingkungan/{{item.File}}"
+                                                                       target="_blank">
+                                                                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editDataPersetujuanClick(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteDataPersetujuan(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Cadangan Mineral
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a ng-click="tambahCadanganBatubaraClick()"
+                                                           data-target="#static4"
+                                                           data-toggle="modal"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Cut Of Grade (COG) </th>
+                                                                <th> Blok (HA) </th>
+                                                                <th> Terkira (MT) </th>
+                                                                <th> Terbukti (MT) </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataCadanganBatubara">
+                                                                <td> {{item.Sr}} </td>
+                                                                <td> {{item.Blok}} </td>
+                                                                <td> {{item.Terkira}} </td>
+                                                                <td> {{item.Terbukti}} </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editCadanganBatubaraClick(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteCadanganBatubara(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-margin">
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Kadar
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="btn-group btn-group-solid">
+                                                        <a ng-click="tambahKualitasBatubaraClick()"
+                                                           data-target="#static5"
+                                                           data-toggle="modal"
+                                                           class="btn red">
+                                                            <i class="fa fa-plus"></i> Tambah Data
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title="" style="margin-right:5px;"> </a>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="min-width: 200px;"> Komoditi </th>
+                                                                <th style="min-width: 200px;"> Kadar </th>
+                                                                <th style="min-width: 200px;"> Blok/Area </th>
+                                                                <th style="min-width: 200px;"> Sample Code </th>
+                                                                <th colspan="2"> action </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in dataKadar">
+                                                                <th> {{item.Komoditi}} </th>
+                                                                <th> {{item.KadarKomoditi}} </th>
+                                                                <th> {{item.Blok}} </th>
+                                                                <th> {{item.SampleCode}} </th>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="editKadar(item.ID)"><i class="fa fa-pencil font-blue" title="Edit"></i></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0)" ng-click="deleteKadar(item.ID)"><i class="fa fa-trash font-red" title="Delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="portlet box green">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Biaya Eksplorasi
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <form name="biayaEksplorasiForm">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group has-success">
+                                                                <label for="form_control_1">Mata Uang</label>
+                                                                <select class="form-control" ng-model="biayaEksplorasiModel.mataUang" id="mataUang" name="mataUang">
+                                                                    <option></option>
+                                                                    <option value="USD">USD</option>
+                                                                    <option value="IDR">IDR</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group has-success">
+                                                                <label for="jumlahUang">Jumlah Uang</label>
+                                                                <input id="jumlahUang" ng-model="biayaEksplorasiModel.jumlahUang" name="jumlahUang" type="number" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <button type="submit" ng-click="SaveEditBiayaEksplorasi()" class="btn green-sharp red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                                                            @*<button type="reset" class="btn red"><i class="fa fa-close"></i> batal</button>*@
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--For Upload Modal POP UP-->
+                                <div id="modalUploadFile"
+                                     class="modal fade"
+                                     tabindex="-1"
+                                     data-backdrop="static"
+                                     data-keyboard="false">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button"
+                                                        class="close"
+                                                        data-dismiss="modal"
+                                                        aria-hidden="true"></button>
+                                                <h4 class="modal-title bold">Upload File {{modelUpload.title}}</h4>
+                                            </div>
+                                            <div class="modal-body" style="overflow:hidden;">
+                                                <div class="col-sm-8 col-sm-offset-2 text-center">
+                                                    <input type="hidden"
+                                                           id="idActiveTable"
+                                                           ng-model="modelUpload.id" />
+                                                    <input name="files" id="files" type="file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--For Upload Modal POP UP-->
+                                <!-- Start Modal Detail kronologi tahpan -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/DetailKronologiTahapan.cshtml")
+                                <!-- End Modal Detail kronologi tahpan -->
+                                <!-- Start Modal Tahap Kegiaan -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/TahapKegiatan.cshtml")
+                                <!-- End Modal Tahap Kegiaan -->
+                                <!-- Start Modal Tahap Kegiaan Blok -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/TahapKegiatanBlok.cshtml")
+                                <!-- End Modal Tahap Kegiaan Blok -->
+                                <!-- Start Modal Sumber Daya Batubara -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/SumberDayaMineral.cshtml")
+                                <!-- End Modal Sumber Daya Batubara -->
+                                <!-- Start Modal data akta -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/DataAkta.cshtml")
+                                <!-- End Modal data akta -->
+                                <!-- Start Modal Kronologi Tahapan -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/KronologiTahapan.cshtml")
+                                <!-- End Modal Kronologi Tahapan -->
+                                <!-- Start Modal Persetujuan -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/Persetujuan.cshtml")
+                                <!-- End Modal Persetujuan -->
+                                <!-- Start Modal Tahap Kegiatan -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/TahapKegiatan.cshtml")
+                                <!-- End Modal Tahap Kegiatan -->
+                                <!-- Start Modal Cadangan Batubara -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/CadanganMineral.cshtml")
+                                <!-- End Modal Cadangan Batubara -->
+                                <!-- Start Modal Kualitas Batubara -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/Kadar.cshtml")
+                                <!-- End Modal Kualitas Batubara -->
+                                <!-- Start Sumber Daya Batubara -->
+                                @Html.Partial("~/Areas/KontrakKarya/Views/PartialView/MemasukanData/SumberDayaMineral.cshtml")
+                                <!-- End Sumber Daya Batubara -->
+                            </div>
+
+                            <div class="tab-pane" id="tab_15_2">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <caption class="bold">Pemegang Saham</caption>
+                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                    <tr>
+                                                        <th> Nama </th>
+                                                        <th> Domestik / Asing </th>
+                                                        <th> Negara </th>
+                                                        <th> Jumlah Saham </th>
+                                                        <th> Nilai Saham </th>
+                                                        <th> Prosentase Saham </th>
+                                                        <th> &nbsp; </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in shareHolders">
+                                                        <td class="uppercase">
+                                                            {{item.Name}}
+                                                        </td>
+                                                        <td>
+                                                            <span ng-show="item.StatusWnBh == 'WNI'">WNI</span>
+                                                            <span ng-show="item.StatusWnBh == 'WNA'">WNA</span>
+                                                        </td>
+                                                        <td class="uppercase">
+                                                            {{item.Country}}
+                                                        </td>
+                                                        <td> {{item.TotalStock | currency : "" : 0}} </td>
+                                                        <td> {{item.Currency | currency: "": 0}} </td>
+                                                        <td> {{item.ProsentaseSaham}} </td>
+                                                        <td class="text-center">
+                                                            <a href="javascript:void(0)"
+                                                               ng-click="editShareHolderClick(item.ID)"
+                                                               class="btn btn-xs btn-outline">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </a>
+                                                            |
+                                                            <a href="javasript:void(0)"
+                                                               ng-click="deleteShareholder(item.ID)"
+                                                               class="btn btn-xs btn-outline">
+                                                                <i class="fa fa-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm uppercase" type="text" ng-model="shareholderModel.nama">
+                                                        </td>
+                                                        <td>
+                                                            <select class="form-control" id="statuswnbhshareholder" 
+                                                                    ng-change="changeddl()" ng-model="shareholderModel.statuswnbh">
+                                                                <option value="WNI">WNI</option>
+                                                                <option value="WNA">WNA</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm uppercase" ng-model="shareholderModel.negara" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" ng-model="shareholderModel.jumlahSaham" type="number">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" ng-model="shareholderModel.nilaiSaham" type="number">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" ng-model="shareholderModel.prosentaseSaham" 
+                                                                   type="number">
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0)"
+                                                               ng-click="saveShareholder()"
+                                                               class="btn green-sharp btn-outline btn-block red-stripe">
+                                                                <i class="fa fa-save"></i> Simpan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <caption class="bold">Direksi</caption>
+                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                    <tr>
+                                                        <th> Nama </th>
+                                                        <th> Kewarganegaraan </th>
+                                                        <th> Negara </th>
+                                                        <th> Keterangan </th>
+                                                        <th> &nbsp; </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Directors">
+                                                        <td class="uppercase">{{item.Name}}</td>
+                                                        <td>{{item.Status}}</td>
+                                                        <td class="uppercase">{{item.Country}}</td>
+                                                        <td>{{item.AdditionalInformation}}</td>
+                                                        <td class="text-center">
+                                                            <a href="javascript:void(0)"
+                                                               ng-click="editDirectorClick(item.ID)"
+                                                               class="btn btn-xs btn-outline">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </a>
+                                                            |
+                                                            <a href="javasript:void(0)"
+                                                               ng-click="deleteDirector(item.ID)"
+                                                               class="btn btn-xs btn-outline">
+                                                                <i class="fa fa-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm uppercase" ng-model="DirectorModel.nama" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <select class="form-control" ng-model="DirectorModel.status" id="direksiId" ng-change="changeddl2()">
+                                                                <option value="WNI">WNI</option>
+                                                                <option value="WNA">WNA</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm uppercase" ng-model="DirectorModel.negara" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" ng-model="DirectorModel.keterangan" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0)"
+                                                               ng-click="saveDirector()"
+                                                               class="btn green-sharp btn-outline btn-block red-stripe">
+                                                                <i class="fa fa-save"></i> Simpan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <caption class="bold">Komisaris</caption>
+                                                <thead class="bg-green-sharp bg-font-green-sharp">
+                                                    <tr>
+                                                        <th> Nama </th>
+                                                        <th> Kewarganegaraan </th>
+                                                        <th> Negara </th>
+                                                        <th> Keterangan </th>
+                                                        <th> &nbsp; </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in Commisioners">
+                                                        <td class="uppercase"> {{item.Name}}</td>
+                                                        <td> {{item.Status}}</td>
+                                                        <td class="uppercase"> {{item.Country}}</td>
+                                                        <td> {{item.AdditionalInformation}}</td>
+                                                        <td class="text-center">
+                                                            <a href="javascript:void(0)"
+                                                               ng-click="editCommisionerClick(item.ID)"
+                                                               class="btn btn-xs btn-outline">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </a>
+                                                            |
+                                                            <a href="javasript:void(0)"
+                                                               ng-click="deleteCommisioner(item.ID)"
+                                                               class="btn btn-xs btn-outline">
+                                                                <i class="fa fa-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm uppercase"
+                                                                   ng-model="CommisionerModel.nama"
+                                                                   type="text">
+                                                        </td>
+                                                        <td>
+                                                            <select class="form-control" ng-model="CommisionerModel.status" id="komisarisId" ng-change="changeddl3()">
+                                                                <option value="WNI">WNI</option>
+                                                                <option value="WNA">WNA</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm uppercase" ng-model="CommisionerModel.negara" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-filter input-sm" ng-model="CommisionerModel.keterangan" type="text">
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0)"
+                                                               ng-click="saveCommisioner()"
+                                                               class="btn green-sharp btn-outline btn-block red-stripe">
+                                                                <i class="fa fa-save"></i> Simpan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/KontrakKarya/Ng/KontrakKarya/ProcessEditing.js")"></script>
+

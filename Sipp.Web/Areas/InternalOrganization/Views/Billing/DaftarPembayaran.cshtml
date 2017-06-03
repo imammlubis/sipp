@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "- Input Tagihan Awal";
+    Layout = "~/Areas/InternalOrganization/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Daftar Pembayaran oleh Perusahaan</span>
+                </div>
+            </div>
+            <div class="portlet-body form" ng-app="internal" ng-controller="internal-controller">
+                @(Html.Kendo().Grid<Sipp.Web.Areas.InternalOrganization.Models.DaftarPembayaranViewModel>()
+                   .Name("grid")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.Id).Hidden();
+                       columns.Bound(p => p.CompanyName).HeaderTemplate("Perusahaan").Width(200);
+                       columns.Bound(p => p.Amount).HeaderTemplate("Nominal Pembayaran");
+                       columns.Bound(p => p.FileValidation).HeaderTemplate("File Bukti");
+                       columns.Bound(p => p.CreatedBy).HeaderTemplate("Pembuat");
+                       columns.Bound(p => p.CreatedDate).HeaderTemplate("Tgl Pembuatan");                       
+                   })
+                   .Scrollable()
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListDaftarPembayaran", "Billing", new { area = "InternalOrganization" })
+                       .ServerOperation(true)
+                    ))
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/InternalOrganization/Ng/Process.js")"></script>

@@ -1,0 +1,64 @@
+﻿<form id="perubahanKerjasamaForm" name="perubahanKerjasamaForm" action="#">
+    <div class="modal-header">
+        <h4 class="modal-title">Perubahan Sumber Kerjasama</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-body">
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label for="JenisLaporan">No. Surat Permohonan</label>
+                        <input type="text" class="form-control" name="nosurat" id="NoSurat"
+                               ng-model="perubahanKerjasamaModel.LetterNumber" />
+                    </div>
+                    <div class="form-group has-success">
+                        <label for="NoSk">No. SK</label>
+                        <input type="text" class="form-control" name="nosk" id="NoSk"
+                               ng-model="perubahanKerjasamaModel.SkNumber" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label> Tanggal Surat Permohonan </label>
+                        <input class="form-control form-control-inline date-picker" size="16" type="text"
+                               id="tanggalpermohonanperubahankerjasama" name="tanggalpermohonanperubahankerjasama"
+                               data-date-format="dd/mm/yyyy"
+                               ng-model="perubahanKerjasamaModel.LetterDate" />
+
+                    </div>
+                    <div class="form-group has-success">
+                        <label> Tanggal SK </label>
+                        <input class="form-control form-control-inline date-picker" type="text"
+                               id="tglperubahankerjasama" name="tglperubahankerjasama"
+                               data-date-format="dd/mm/yyyy"
+                               ng-model="perubahanKerjasamaModel.SkDate" />
+
+                    </div>
+                    <input type="hidden" class="form-control"
+                           ng-model="perubahanKerjasamaModel.skFile" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button"
+                ng-show="!isEditPerubahanKerjasama"
+                class="btn green-sharp red-stripe"
+                ng-click="simpanPerubahanKerjasama()">
+            <i class="fa fa-save"></i>
+            Simpan
+        </button>
+        <button type="button"
+                ng-show="isEditPerubahanKerjasama"
+                class="btn green-sharp red-stripe"
+                ng-click="saveChangesPerubahanKerjasama()">
+            <i class="fa fa-save"></i>
+            Simpan Perubahan
+        </button>
+        <button type="button" data-dismiss="modal" class="btn red">
+            <i class="fa fa-close"></i>
+            Batal
+        </button>
+    </div>
+
+</form>

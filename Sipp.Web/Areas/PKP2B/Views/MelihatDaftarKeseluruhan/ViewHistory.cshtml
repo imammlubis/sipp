@@ -1,0 +1,221 @@
+﻿@{
+    ViewBag.Title = "- History Company";
+    Layout = "~/Areas/PKP2B/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">History Company</span>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow:hidden;">
+                <div class="form-body">
+                    @(Html.Kendo().Grid<Esdm.Web.Areas.PKP2B.Models.HistoryViewModel>()
+                   .Name("grid")                   
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.IdCompanyHistoryPkp2b).Hidden();
+                       columns.Bound(p => p.Name).Title("Nama Perusahaan").Width(223);
+                       columns.Bound(p => p.Address).Title("Alamat").Width(400);
+                       columns.Bound(p => p.NPWP).Title("NPWP").Width(200);
+                       columns.Bound(p => p.Telphone).Title("Telepon").Width(100);
+                       columns.Bound(p => p.Fax).Title("Fax").Width(100);
+                       columns.Bound(p => p.Email).Title("Email").Width(150);
+                       columns.Bound(p => p.Website).Title("Website").Width(100);
+                       columns.Bound(p => p.CpName).Title("Cp Name").Width(150);
+                       columns.Bound(p => p.CpMobileNo).Title("Cp Mobile").Width(100);
+                       columns.Bound(p => p.CreatedBy).Title("Update By").Width(100);
+                       columns.Bound(p => p.CreatedDate).Title("Update Date").Format("{0:dd/MM/yyyy}").Width(170);
+                   })
+                   .Events(e => e.DataBound("onRowBound"))
+                   .Pageable()
+                   .Filterable()
+                   .Scrollable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListHistory", "MelihatDaftarKeseluruhan", new { area = "pkp2b", id=ViewBag.idx })
+                       .ServerOperation(true)
+                    ))
+                </div>
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+<script>
+    //$("#grid").kendoGrid({
+    //    toolbar:["pdf"],
+    //    pdfExport: function (e) {
+    //        var grid = $("#grid").data("kendoGrid");
+    //        grid.hideColumn(0);
+    //        e.promise
+    //        .done(function () {
+    //            grid.showColumn(0);
+    //        });
+    //    }
+    //})
+
+    function onRowBound(e) {
+        debugger;
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+        $(".k-grid-Print").find("span").addClass("k-font-icon  k-i-print");
+        $(".k-grid-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-grid-Alert").find("span").addClass("k-font-icon k-i-exception");
+        $(".k-grid-History").find("span").addClass("k-font-icon k-i-refresh");
+
+        $(".k-grid2-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid2-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-grid2-Alert").find("span").addClass("k-font-icon k-i-exception");
+
+        $(".k-grid3-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid3-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-grid3-Alert").find("span").addClass("k-font-icon k-i-exception");
+    }
+
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function refreshGrid() {
+        $("#grid").data("kendoGrid").dataSource.read();
+        $("#grid").data("kendoGrid").refresh();
+    }
+
+    function returnSelectedRow2(e) {
+        var grid = $("#grid2").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function returnSelectedRow4(e) {
+        var grid = $("#grid4").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+
+    function returnSelectedRow3(e) {
+        var grid = $("#grid3").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function refreshGrid3() {
+        $("#grid3").data("kendoGrid").dataSource.read();
+        $("#grid3").data("kendoGrid").refresh();
+    }
+    function refreshGrid4() {
+        $("#grid4").data("kendoGrid").dataSource.read();
+        $("#grid4").data("kendoGrid").refresh();
+    }
+    var tabActive = function () {
+        var tabstrip = $("#tabStrip").data("kendoTabStrip");
+        if (tabstrip.select().text() == "Semua") {
+            $("#grid").data("kendoGrid").dataSource.read();
+            $("#grid").data("kendoGrid").refresh();
+        }
+        else if (tabstrip.select().text() == "Masa SK Akan Habis") {
+            $("#grid2").data("kendoGrid").dataSource.read();
+            $("#grid2").data("kendoGrid").refresh();
+        }
+    }
+
+    var index = (function ($) {
+        var self = this;
+        return {
+            edit: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("edit", "memasukandata", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+            edit3: function (e) {
+                var selectedRow = returnSelectedRow3(e);
+                var url = "@Url.Action("details", "IupOpAngkutJual")" + "/" + selectedRow.CompanyID.toString();
+                window.location.replace(url);
+            },
+            edit4: function (e) {
+                var selectedRow = returnSelectedRow4(e);
+                var url = "@Url.Action("details", "IupOpAngkutJual")" + "/" + selectedRow.CompanyID.toString();
+                window.location.replace(url);
+            },
+            print: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("DownloadViewPDF", "memasukandata", new { area = "" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+            history: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("ViewHistory", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+
+            delete3: function (e) {
+                var selectedRow = returnSelectedRow3(e);
+                var konf = confirm("Are You Sure to delete " + selectedRow.Name + "'s Evaluation ?");
+                if (konf == true) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Delete")",
+                        data: {
+                        p: selectedRow.ID
+                        },
+                    traditional: true,
+                    success: function (result) {
+                        if (result) {
+                            alert("Data has been successfully Deleted");
+                            refreshGrid3();
+                        }
+                    }
+                });
+            }
+            },
+
+            delete4: function (e) {
+                var selectedRow = returnSelectedRow3(e);
+                var konf = confirm("Are You Sure to delete " + selectedRow.Name + "'s  ?");
+                if (konf == true) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Delete")",
+                        data: {
+                            p: selectedRow.ID
+                        },
+                    traditional: true,
+                    success: function (result) {
+                        debugger;
+                        if (result) {
+                            alert("Data has been successfully Deleted");
+                            refreshGrid4();
+                        }
+                    }
+                });
+            }
+        },
+        alert: function (e) {
+            var selectedRow = returnSelectedRow2(e);
+            var url = "@Url.Action("AlertData", "IupOpAngkutJual")" + "/" + selectedRow.ID.toString();
+            window.location.replace(url);
+        },
+
+        refreshGrid1: function (e) {
+            $("#grid").data("kendoGrid").dataSource.read();
+            $("#grid").data("kendoGrid").refresh();
+        },
+        refreshGrid2: function (e) {
+            $("#grid2").data("kendoGrid").dataSource.read();
+            $("#grid2").data("kendoGrid").refresh();
+        },
+        refreshGrid3: function (e) {
+            $("#grid3").data("kendoGrid").dataSource.read();
+            $("#grid3").data("kendoGrid").refresh();
+        }}
+    })(jQuery);
+</script>

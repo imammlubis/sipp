@@ -1,0 +1,81 @@
+﻿<style>
+    #jenisPersetujuan {
+        text-transform: uppercase;
+    }
+    #noSuratPersetujuan {
+        text-transform: uppercase;
+    }
+</style>
+<div id="static3" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="persetujuanForm" data-toggle="validator" role="form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">Form Lingkungan, IPPKH, dan persetujuan lainnya</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="jenisPersetujuan">Jenis Persetujuan</label>
+                                <input type="text" 
+                                       ng-model="persetujuanModel.JenisPersetujuan" 
+                                       id="jenisPersetujuan" 
+                                       class="form-control" 
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="noSuratPersetujuan">No Surat / SK</label>
+                                <input type="text" 
+                                       ng-model="persetujuanModel.noSK" 
+                                       id="noSuratPersetujuan" 
+                                       class="form-control" 
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="tanggalSuratPersetujuan">Tanggal Surat / SK</label>
+                                @*<input id="tanggalSuratPersetujuan" ng-model="persetujuanModel.tanggalSurat"  
+                                       class="form-control form-control-inline date-picker" size="16" type="text" 
+                                       value="" required />*@
+                                <div class="input-group input-append date" id="tanggalSuratPersetujuan">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           data-date-format="dd/mm/yyyy"
+                                           name="tanggalSuratPersetujuan" 
+                                           ng-model="persetujuanModel.tanggalSurat" 
+                                           required />
+                                    <span class="input-group-addon add-on">
+                                        <span class="glyphicon glyphicon-calendar">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label for="filePersetujuan">File</label>
+                                <input id="filePersetujuan" 
+                                       ng-model="persetujuanModel.file"  
+                                       type="file" 
+                                       class="form-control" />
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" ng-show="!isEditDataPersetujuan" ng-click="CreatePersetujuan()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="submit" ng-show="isEditDataPersetujuan" ng-click="SaveChangesDataPersetujuan()" class="btn green red-stripe"><i class="fa fa-save"></i> Simpan</button>
+
+                    <button type="reset" data-dismiss="modal" class="btn red"><i class="fa fa-close"></i> Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

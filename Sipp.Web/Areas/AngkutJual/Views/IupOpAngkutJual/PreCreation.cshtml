@@ -1,0 +1,112 @@
+﻿@model Esdm.Web.Areas.AngkutJual.Controllers.PreCreationViewModel
+@{
+    ViewBag.Title = "Entri Data Baru IUP OP Khusus Pengangkutan & Penjualan Batubara";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+<!-- BEGIN PAGE CONTENT INNER -->
+<div class="page-content-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN VALIDATION STATES-->
+            <div class="portlet light portlet-fit portlet-form box-shadow">
+                <div class="portlet-title">
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <a href="#">Home</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <a href="#" ng-click="loadDetails()">Pengangkutan dan Penjualan</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <span>Memasukan Data</span>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="title">
+                                <i class="fa fa-pencil-square-o font-red"></i>
+                                <span class="font-red sbold">
+                                    Entri Data Baru IUP OP Khusus Pengangkutan & Penjualan Batubara
+                                </span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body" style="overflow:hidden;">
+                    <!-- BEGIN FORM-->
+                    <form method="post" action="@Url.Action("PreCreation","IupOpAngkutJual", new { Area = "AngkutJual"})">
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-body">
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group has-success">
+                                                <h4><label for="NmPerusahaan">Nama Perusahaan</label></h4>
+                                                @Html.TextBoxFor(model => model.Name, null, new {@placeholder = "Nama Perusahaan", @class = "form-control" })
+                                                @*@Html.Kendo().MaskedTextBoxFor(c => c.Name).Mask("AA. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA").HtmlAttributes(new { @class = "form-control" }).PromptChar(" ").Events(e=>e.Change("onChange"))*@
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <h4><label for="NpWp">NPWP</label></h4>
+                                                @Html.Kendo().MaskedTextBoxFor(c => c.NPWP).Mask("00.000.000.0-000.000").HtmlAttributes(new { @placeholder = "NPWP Perusahaan", @class = "form-control" })
+                                                @*@Html.TextBoxFor(model => model.NPWP, null, new { @class = "form-control" })*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group has-success">
+                                                <h4><label for="NoUrutBerkas">Nomor Urut Berkas</label></h4>
+                                                @Html.TextBoxFor(model => model.NoUrutBerkas, null, new { @placeholder = "Nomor Urut Berkas", @class = "form-control" })
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <h4><label for="Address">Alamat Perusahaan</label></h4>
+                                                @Html.TextAreaFor(model => model.Address, new { @placeholder = "Alamat Perusahaan", @class = "form-control", @rows="4" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn green-sharp red-stripe">
+                                        <i class="fa fa-arrow-circle-o-right"></i>
+                                        Lanjut
+                                    </button>
+                                    <button type="reset" class="btn red">
+                                        <i class="fa fa-close"></i>
+                                        Batal
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+            <!-- END VALIDATION STATES-->
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT INNER -->
+<script>
+    //var input = document.getElementById('Name');
+    //var input = $('#Name').data('kendoMaskedTextBox').value();
+    function onChange()
+    {
+        var nilai = $('#Name').data('kendoMaskedTextBox').value();
+        //$('#Name').data('kendoMaskedTextBox').value($('#Name').data('kendoMaskedTextBox').value().toUpperCase())
+        $('#Name').data('kendoMaskedTextBox').value(nilai.toString().toUpperCase().trim())
+    }
+    $("#Name").bind("input", function (e) {
+        this.value = this.value.toUpperCase();
+    });
+</script>
+
+@*<script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Areas/AngkutJual/Ng/IupOp/precreation.js"></script>*@

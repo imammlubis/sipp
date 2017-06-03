@@ -1,0 +1,64 @@
+﻿<form id="skPengakhiranForm" name="skPengakhiranForm" action="#">
+    <div class="modal-header">
+        <h4 class="modal-title">SK Pengakhiran</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-body">
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label for="JenisLaporan">No. Surat Permohonan</label>
+                        <input type="text" class="form-control" name="nosuratpengakhiran" id="nosuratpengakhiran"
+                               ng-model="skPengakhiranModel.LetterNumber" />
+                    </div>
+                    <div class="form-group has-success">
+                        <label for="NoSk">No. SK</label>
+                        <input type="text" class="form-control" name="NoSkPengakhiran" id="NoSkPengakhiran"
+                               ng-model="skPengakhiranModel.SkNumber" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label> Tanggal Surat Permohonan </label>
+                        <input class="form-control form-control-inline date-picker" size="16" type="text"
+                               id="tglmohon" name="tglmohon"
+                               data-date-format="dd/mm/yyyy"
+                               ng-model="skPengakhiranModel.LetterDate" />
+
+                    </div>
+                    <div class="form-group has-success">
+                        <label> Tanggal SK </label>
+                        <input class="form-control form-control-inline date-picker" type="text"
+                               id="tglSkPengakhiran" name="tglSkPengakhiran"
+                               data-date-format="dd/mm/yyyy"
+                               ng-model="skPengakhiranModel.SkDate" />
+
+                    </div>
+                    <input type="hidden" class="form-control"
+                           ng-model="skPengakhiranModel.SkFile" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button"
+                ng-show="!isEditSkPengakhiran"
+                class="btn green-sharp red-stripe"
+                ng-click="simpanSkPengakhiran()">
+            <i class="fa fa-save"></i>
+            Simpan
+        </button>
+        <button type="button"
+                ng-show="isEditSkPengakhiran"
+                class="btn green-sharp red-stripe"
+                ng-click="saveChangesSkPengakhiran()">
+            <i class="fa fa-save"></i>
+            Simpan Perubahan
+        </button>
+        <button type="button" data-dismiss="modal" class="btn red">
+            <i class="fa fa-close"></i>
+            Batal
+        </button>
+    </div>
+
+</form>

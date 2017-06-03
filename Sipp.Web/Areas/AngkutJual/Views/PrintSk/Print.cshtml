@@ -1,0 +1,110 @@
+﻿@model Esdm.Web.Areas.AngkutJual.Models.IupOpPrintViewModel
+@{
+    ViewBag.Title = "Print Peringatan";
+    Layout = "";
+}
+
+<style>
+    body {
+        font-family: 'Times New Roman';
+    }
+
+    legend {
+        font-size: 1.17em;
+        font-weight: bold;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+        table > caption {
+            text-align: left;
+            font-weight: bold;
+        }
+
+    table {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    table.no-border,
+    table.no-border tr td {
+        border: none;
+    }
+
+    table.full-width {
+        width: 100%;
+    }
+
+    td.title {
+        min-width: 139px;
+    }
+</style>
+
+<center>
+    <h3>Print Peringatan</h3>
+</center>
+<table class="no-border">
+    <!--start nma perusahaan-->
+    <tr>
+        <td class="title">Nama Perusahaan</td>
+        <td>:</td>
+        <td> &nbsp;  @Html.DisplayFor(c => c.NamaPerusahaan)</td>
+    </tr>
+    <!--end nma perusahaan-->
+    <!--start alamat perusahaan-->
+    <tr>
+        <td class="title">Alamat Perusahaan</td>
+        <td>:</td>
+        <td> &nbsp; @Html.DisplayFor(c => c.AlamatPerusahaan)</td>
+    </tr>
+    <!--end alamat perusahaan-->
+    <!--start email/website-->
+    <tr>
+        <td class="title">Email</td>
+        <td>:</td>
+        <td> &nbsp; @Html.DisplayFor(c => c.Email)</td>
+    </tr>
+    <!--end email/website-->
+    <!--start no tlp-->
+    <tr>
+        <td class="title">No Handphone</td>
+        <td>:</td>
+        <td> &nbsp; @Html.DisplayFor(c => c.MobileNo)</td>
+    </tr>
+</table>
+<br />
+
+<!--start table pemegang saham-->
+<table class="full-width">
+    <thead>
+        <tr>
+            <th> Keterangan </th>
+            <th> Jenis Peringatan </th>
+            <th> Jangka Waktu </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.WarningLetter as IEnumerable<EduSpot.Entity.Tables.AngkutJual.WarningLetter>)
+        {
+        <tr>
+            <td> &nbsp; @item.AdditionalInfo </td>
+            <td> &nbsp; @item.WarningType</td>
+            <td> &nbsp; @item.WarningDuration</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br />

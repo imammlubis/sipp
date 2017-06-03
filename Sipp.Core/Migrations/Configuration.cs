@@ -32,18 +32,28 @@
         {
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(
                 new ApplicationDbContext()));
-
             var user = new ApplicationUser()
             {
-                UserName = "admin@admin.com",
-                FirstName = "Admin",
-                LastName = "Admin",
-                Email = "admin@admin.com",
+                UserName = "company@company.com",
+                FirstName = "Company",
+                LastName = "Company",
+                Email = "company@company.com",
                 EmailConfirmed = true,
             };
             manager.Create(user, "pass123");
             var findUser = manager.FindByName(user.UserName);
-            manager.AddToRoles(findUser.Id, new string[] { "administrator" });
+            manager.AddToRoles(findUser.Id, new string[] { "company" });
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "admin@admin.com",
+            //    FirstName = "Admin",
+            //    LastName = "Admin",
+            //    Email = "admin@admin.com",
+            //    EmailConfirmed = true,
+            //};
+            //manager.Create(user, "pass123");
+            //var findUser = manager.FindByName(user.UserName);
+            //manager.AddToRoles(findUser.Id, new string[] { "administrator" });
 
 
             //var user1 = new ApplicationUser()

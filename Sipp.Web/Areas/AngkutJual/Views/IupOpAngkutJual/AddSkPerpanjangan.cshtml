@@ -1,0 +1,78 @@
+﻿<form id="skPerpanjanganForm" name="skPerpanjanganForm" action="#">
+    <div class="modal-header">
+        <h4 class="modal-title">Sk Perpanjangan</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-body">
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label for="JenisLaporan">No. Surat Permohonan</label>
+                        <input type="text" class="form-control" name="nosurat" id="NoSurat"
+                               ng-model="skPerpanjanganModel.LetterNumber" />
+                    </div>
+                    <div class="form-group has-success">
+                        <label for="NoSk">No. SK</label>
+                        <input type="text" class="form-control" name="nosk" id="NoSk"
+                               ng-model="skPerpanjanganModel.SkNumber" />
+                    </div>
+                    <div class="form-group has-success">
+                        <label>Masa Berlaku (Tahun)</label>
+                        <input type="text" class="form-control" ng-model="skPerpanjanganModel.SkDuration" id="masaberlaku2" name="masaberlaku2" />
+                    </div>
+                    <div class="form-group has-success">
+                        <label>Sertifikat CNC</label>
+                        <input type="text" class="form-control" ng-model="skPerpanjanganModel.SertifikatCNC" id="sertifikatCnc" name="sertifikatCnc" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label> Tanggal Surat Permohonan </label>
+                        <input class="form-control form-control-inline date-picker" size="16" type="text" value=""
+                               id="tglpermohonan"
+                               data-date-format="dd/mm/yyyy"
+                               ng-model="skPerpanjanganModel.LetterDate" />
+
+                    </div>
+                    <div class="form-group has-success">
+                        <label> Tanggal SK </label>
+                        <input class="form-control form-control-inline date-picker" type="text"
+                               id="tglskawal2"
+                               data-date-format="dd/mm/yyyy"
+                               ng-model="skPerpanjanganModel.SkDate" />
+
+                    </div>
+                    <div class="form-group has-success">
+                        <label>Tanggal Izin Berakhir</label>
+                        <input class="form-control form-control-inline date-picker" size="16" type="text" value=""
+                               id="tglberakhirskawal2"
+                               data-date-format="dd/mm/yyyy"
+                               ng-model="skPerpanjanganModel.SkEndDate" disabled="disabled" />
+                    </div>
+                    <input type="hidden" class="form-control"
+                           ng-model="skPerpanjanganModel.skFile" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button"
+                ng-show="!isEditSkPerpanjangan"
+                class="btn green-sharp red-stripe"
+                ng-click="simpanSkPerpanjangan2()">
+            <i class="fa fa-save"></i>
+            Simpan
+        </button>
+        <button type="button"
+                ng-show="isEditSkPerpanjangan"
+                class="btn green-sharp red-stripe"
+                ng-click="saveChangesSkPerpanjangan2()">
+            <i class="fa fa-save"></i>
+            Simpan Perubahan
+        </button>
+        <button type="button" data-dismiss="modal" class="btn red">
+            <i class="fa fa-close"></i>
+            Batal
+        </button>
+    </div>
+</form>

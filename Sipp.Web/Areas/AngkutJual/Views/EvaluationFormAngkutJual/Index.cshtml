@@ -1,0 +1,552 @@
+﻿@model Esdm.Web.Areas.AngkutJual.Models.EvaluationFormViewModel
+@*@model IEnumerable<Esdm.Web.Areas.AngkutJual.Models.EvaluationFormViewModel>*@
+
+@{
+    ViewBag.Title = "Formulir Evaluasi";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+<div ng-app="evaluationformangkutjual" ng-controller="evaluationformangkutjual-controller">   
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN VALIDATION STATES-->
+            <div class="portlet light portlet-fit portlet-form box-shadow">
+                <div class="portlet-title">
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <a href="#">Home</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <a href="#" ng-click="loadDetails()">Pengangkutan dan Penjualan</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <span>Mengisi Form Evaluasi</span>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="title">
+                                <i class="fa fa-pencil-square-o font-red"></i>
+                                <span class="font-red sbold">
+                                    Formulir Evaluasi
+                                </span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body" style="overflow:hidden;">
+                    <!-- BEGIN FORM-->             
+                    <form method="post" action="@Url.Action("Create", "EvaluationFormAngkutJual", new { Area = "AngkutJual" })">
+                        @Html.AntiForgeryToken()
+                        <div class="form-body">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="row">
+                                <!--start nma perusahaan-->
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="NmPerusahaan">Nama Perusahaan</label>   
+
+                                        @(Html.Kendo().AutoCompleteFor(c => c.CompanyId)
+                                            .DataTextField("Text")
+                                            .HtmlAttributes(new { @class = "form-control" })
+                                            .Filter(FilterType.Contains)
+                                            .Suggest(true)
+                                            .BindTo(ViewBag.CompanyList as IEnumerable<SelectListItem>)
+                                            .Events(e => { e.Select("onSelect"); e.Close("onClose"); })
+                                                )
+
+
+                                        @*@(Html.Kendo().AutoCompleteFor(c => c.CompanyId)
+                                          .DataTextField("Name")
+                                          .Filter(FilterType.StartsWith)
+                                          .Suggest(true)
+                                          .DataSource(
+                                            source => source.Read(r => {
+                                                r.Action("GetCompanyData", "EvaluationFormAngkutJual");
+                                                })
+                                          .ServerFiltering(false));
+                                           )*@
+                                        @*@Html.DropDownListFor(c=>c.CompanyId, ViewBag.CompanyList as IEnumerable<SelectListItem>, new {@class="form-control", ng_change = "onCompanySelectedChange()", ng_model = "companyModel.id" })*@
+                                        @*<select id="CompanyId"  class="form-control" 
+                                                ng-change="onCompanySelectedChange()"
+                                                ng-model="companyModel.id">
+                                            @foreach (var item in Model.CompanyList) {
+                                                <option value="@item.ID">@item.Name</option>
+                                            }                                            
+                                          </select>*@
+                                        @Html.TextBoxFor(c=>c.CompanyIds, "", new { ng_model = "companyModel.id", @hidden = "true" })
+                                    </div>
+                                </div>
+                                <!--end nma perusahaan-->
+
+                                <!--start email/website-->
+                                <div class="col-sm-4">
+                                    <div class="form-group has-success">
+                                        <label for="Email_Website">Email / Website</label>
+                                        <input disabled="disabled" type="text" class="form-control" name="email_website" id="Email_Website" ng-model="companyModel.email">
+                                    </div>
+                                </div>
+                                <!--end email/website-->
+                            </div>
+
+                            <div class="row">
+                                <!--start alamat perusahaan-->
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="form_control_1">Alamat Perusahaan</label>
+                                        <textarea class="form-control" id="alamat" name="alamat"
+                                                  disabled="disabled" 
+                                                  ng-model="companyModel.address"
+                                                  rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <!--end alamat perusahaan-->
+                            </div>
+
+                            <div class="row">
+                                <!--start no tlp-->
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="NoTlpn">No Telepon</label>
+                                        <input disabled="disabled" type="text" class="form-control" name="notlpn" id="NoTlpn" ng-model="companyModel.telnumber">
+                                    </div>
+                                </div>
+                                <!--end no tlp-->
+                                
+                                <!--start tgl sk-->
+                                <div class="col-sm-4">
+                                    <div class="form-group has-success">
+                                        <label> Tanggal SK  @*{{companyModel.skdate | mydate | date: 'MM/dd/yyyy'}}*@ </label>
+                                        @Html.TextBox("skdate", "", new { @class = "form-control", @disabled = "disabled" })
+                                        @*<input class="form-control form-control-inline date-picker"
+                                        size="16" type="text" data-date-format="MM/dd/yyyy" id="skdate" value="" ng-bind="date | date: 'MM/dd/yyyy'"
+                                        disabled="disabled" ng-model="companyModel.skdate" />*@
+                                    </div>
+                                </div>
+                                <!--end tgl sk-->
+                            </div>
+
+                            <div class="row">
+                                <!--start no sk-->
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="NoSk">No SK</label>
+                                        <input disabled="disabled" type="text" class="form-control" name="nosk" id="NoSk" ng-model="companyModel.sknumber">
+                                    </div>
+                                </div>
+                                <!--end no sk-->
+
+                                <!--start sumber batubara-->
+                                <div class="col-sm-4">
+                                    <div class="form-group has-success">
+                                        <label for="SumberBatubara">Sumber Batubara sesuai SK</label>
+                                        @Html.EditorFor(model => model.CoalSourceSk, new { htmlAttributes = new { @disabled = "disabled", @class = "form-control", ng_model = "companyModel.sourcecoalsk" } })
+                                        @Html.ValidationMessageFor(model => model.CoalSourceSk, "", new { @class = "text-danger" })
+                                        @*@Html.TextBox("CoalSourceSk", "", new { @class = "form-control", ng_model="companyModel.sourcecoalsk" })*@
+                                        @*<input type="text" class="form-control" name="sumberbatubara" id="SumberBatubara" ng-model="companyModel.sourcecoalsk">*@
+                                    </div>
+                                </div>
+                                <!--end sumber batubara-->
+                            </div>
+
+                            <div class="row">
+                                <!--start table pemegang saham-->
+                             
+                                <!--end table pemegang saham-- >
+                             </ div >
+
+
+
+                             < div class="row">
+                                <!--start pengurus
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="form-group has-success">
+                                        <label for="form_control_1">Pengurus</label>
+                                        <textarea class="form-control" name="pengurus" rows="3" ng-model="companyModel.organizer"></textarea>
+                                    </div>
+                                </div>
+                                end pengurus-->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!--start accordion-->
+                                    <div class="panel-group accordion" id="FormEvaluasiRKAB1">
+                                        <!--start accordion detil laporan-->
+                                        <div class="panel border-red">
+                                            <div class="panel-heading bg-red bg-font-red">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle accordion-toggle-styled"
+                                                       data-toggle="collapse"
+                                                       data-parent="#FormEvaluasiRKAB1"
+                                                       href="#pelaporan">
+                                                        Detail Pelaporan
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id = "pelaporan" class="panel-collapse collapse">
+                                                <div class="panel-body">
+
+                                                    <div class="row">
+                                                        <!--start jenis laporan-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="JenisLaporan">Jenis Laporan</label>
+                                                                @*<input type="text" class="form-control" name="jenislaporan" id="JenisLaporan" ng-model="companyModel.reporttype">*@
+                                                                @Html.TextBox("ReportType", "", new { @class = "form-control" })
+                                                                @Html.ValidationMessage("ReportType", "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end jenis laporan-->
+
+                                                        <!--start no disposisi-->
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group has-success">
+                                                                <label for="NoDisposisi">Nomor Disposisi</label>
+                                                                @*<input type="text" class="form-control" name="nodisposisi" id="NoDisposition" ng-model="companyModel.dispositionnumber">*@
+                                                                @Html.TextBox("NoDisposition", "", new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end no disposisi-->
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!--start no surat pengantar lap-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="NoSuratPengLap">Nomor Surat Pengantar Laporan</label>
+                                                                @*<input type="text" class="form-control" name="nosuratpenglap" id="NoIntroductoryLetter" ng-model="companyModel.reportletternumber">*@
+                                                                @Html.TextBox("NoIntroductoryLetter", "", new { @class = "form-control" })
+                                                                @Html.ValidationMessage("NoIntroductoryLetter", "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end no surat pengantar lap-->
+                                                        
+                                                        <!--start tgl pengumpulan lap-->
+                                                        <div class="col-sm-4">
+                                                            <label> Tanggal Pengumpulan Laporan </label>
+                                                            @*<input class="form-control form-control-inline date-picker" id="ReportSubmittedDate" size="16" type="text" value="" ng-model="companyModel.reportcollectiondate" />*@
+                                                            @*@Html.TextBox("ReportSubmittedDate", "", new { @class = "form-control form-control-inline date-picker" })*@
+                                                            @Html.Kendo().DatePicker().Name("ReportSubmittedDate").HtmlAttributes(new { @class = "form-control" })
+                                                        </div>
+                                                        <!--end tgl pengumpulan lap-->
+                                                        <div class="space"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end accordion detil laporan-->
+
+                                        <!--start accordion detil kegiatan-->
+                                        <div class="panel border-red">
+                                            <div class="panel-heading bg-red bg-font-red">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle accordion-toggle-styled collapsed" 
+                                                       data-toggle="collapse" 
+                                                       data-parent="#FormEvaluasiRKAB1" 
+                                                       href="#kegiatan">
+                                                        Detail Kegiatan
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="kegiatan" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <!--start Nama sumber batubara-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="SumberBatubara">Sumber Batubara sesuai Laporan</label>
+                                                                @*<input type="text" class="form-control" name="sumberbatubara" id="SumberBatubara" ng-model="companyModel.sourcecoalreport">*@
+                                                                @Html.TextBox("CoalOrigin", "", new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end Nama sumber batubara-->
+
+                                                        <!--start end user-->
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group has-success">
+                                                                <label for="EndUser">End User sesuai Laporan</label>
+                                                                @*<input type="text" class="form-control" name="enduser" id="EndUser" ng-model="companyModel.enduserreport">*@
+                                                                @Html.TextBox("EndUser", "", new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end end user-->
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!--start tonase batubara-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="TonaseBatubara">Tonase Batubara (MT/Ton)</label>
+                                                                @*<input type="text" class="form-control" name="tonasebatubara" id="TonaseBatubara" ng-model="companyModel.coaltonase">*@
+                                                                @Html.TextBox("Tonnage", "", new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end tonase batubara-->
+
+                                                        <!--start realisasi kegiatan-->
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group has-success">
+                                                                <label for="RealiKegiatan">Realisasi Kegiatan</label>
+                                                                @*<input type="text" class="form-control" name="realikegiatan" id="RealiKegiatan" ng-model="companyModel.activityrealization">*@
+                                                                @Html.TextBox("ActivityRealization", "", new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end realisasi kegiatan-->
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!--start rencana kegiatan-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="RenKegiatan">Rencana Kegiatan</label>
+                                                                @*<input type="text" class="form-control" name="renkegiatan" id="RenKegiatan" ng-model="companyModel.activityplan">*@
+                                                                @Html.TextBox("ActivityPlan", "", new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end rencana kegiatan-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end accordion detil kegiatan-->
+
+                                        <!--start accordion detil keuangan-->
+                                        <div class="panel border-red">
+                                            <div class="panel-heading bg-red bg-font-red">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle accordion-toggle-styled collapsed" 
+                                                       data-toggle="collapse" 
+                                                       data-parent="#FormEvaluasiRKAB1" 
+                                                       href="#Keuangan">
+                                                        Detail Keuangan
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="Keuangan" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <!--start detil keuangan-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="form_control_1">Jenis</label>
+                                                                @(Html.Kendo().DropDownList()
+                                                                    .Name("CurrencyType").DataTextField("Text")
+                                                                    .DataValueField("Value")
+                                                                    .BindTo(
+                                                                    new List<SelectListItem>() {
+                                                                            new SelectListItem() {
+                                                                              Text = "IDR",
+                                                                              Value = "1"
+                                                                          },
+                                                                          new SelectListItem() {
+                                                                              Text = "USD",
+                                                                              Value = "2"
+                                                                          }
+                                                                    })
+                                                                    .Value("1")
+                                                                    .HtmlAttributes(new { style = "width: 100%" })
+                                                                    )
+                                                                @*<select class="form-control" name="detilkeuangan" id="CurrencyType">
+                                                                    <option>--Please Select--</option>
+                                                                    <option value="IDR">IDR</option>
+                                                                    <option value="USD">USD</option>
+                                                                </select>*@
+                                                            </div>
+                                                        </div>
+                                                        <!--end detil keuangan-->
+
+                                                        <!--start catatan evaluator-->
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group has-success">
+                                                                <label for="form_control_1">Catatan Evaluator</label>
+                                                                @*<textarea class="form-control" name="catevaluator" rows="3" aria-invalid="false" ng-model="companyModel.evaluatorsnote"></textarea>*@
+                                                                @Html.TextBox("AdditionalInformation", "", new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end catatan evaluator-->
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!--start revenue-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="Revenue">Revenue</label>
+                                                                @*<input type="text" class="form-control" name="revenue" id="Revenue" ng-model="companyModel.revenue">*@
+                                                                @*@Html.TextBox("Revenue", "", new { @class = "form-control" })*@
+                                                                @Html.Kendo().NumericTextBox().Name("Revenue").Spinners(false).HtmlAttributes(new { @class = "form-control", style = "width:100%;display:inline-block" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end revenue -->
+
+                                                        <!--start harga pokok penjualan-->
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group has-success">
+                                                                <label for="HargaPenjualan">Harga Pokok Penjualan</label>
+                                                                @*<input type="text" class="form-control" name="hargapenjualan" id="HargaPenjualan" ng-model="companyModel.costofgoodssold">*@
+                                                                
+                                                                @Html.Kendo().NumericTextBox().Name("BasicPrice").Spinners(false).HtmlAttributes(new { @class = "form-control", style = "width:100%;display:inline-block" })
+                                                                @*@Html.ValidationMessageFor(c=>c.BasicPrice, "", new { @class = "text-danger" })*@
+
+                                                            </div>
+                                                        </div>
+                                                        <!--end harga pokok penjualan -->
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!--start laba sblm pajak-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="LabaSblmPajak">Laba Sebelum Pajak</label>
+                                                                @*<input type="text" class="form-control" name="revenue" id="LabaSblmPajak" ng-model="companyModel.profitbeforetax">*@
+                                                                @Html.Kendo().NumericTextBox().Name("ProfitBefore").Spinners(false).HtmlAttributes(new { @class = "form-control", style = "width:100%;display:inline-block" })
+                                                                @*@Html.TextBox("ProfitBefore", "", new { @class = "form-control" })*@
+                                                            </div>
+                                                        </div>
+                                                        <!--end laba sblm pajak -->
+
+                                                        <!--start harga pokok penjualan-->
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group has-success">
+                                                                <label for="PajakBadan">Pajak Badan (PPh 25)</label>
+                                                                @*<input type="text" class="form-control" name="pajakbadan" id="PajakBadan" ng-model="companyModel.corporatetax">*@
+                                                                @*@Html.TextBox("OrganizationTax", "", new { @class = "form-control" })*@
+                                                                @Html.Kendo().NumericTextBox().Name("OrganizationTax").Spinners(false).HtmlAttributes(new { @class = "form-control", style = "width:100%;display:inline-block" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end harga pokok penjualan -->
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!--start pajak karyawan (PPh21)-->
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <div class="form-group has-success">
+                                                                <label for="PajakKaryawan">PPh21</label>
+                                                                @*<input type="text" class="form-control" name="pajakkaryawan" id="PajakKaryawan" ng-model="companyModel.pph21">*@
+                                                                @*@Html.TextBox("Pph", "", new { @class = "form-control" })*@
+                                                                @Html.Kendo().NumericTextBox().Name("Pph").Spinners(false).HtmlAttributes(new { @class = "form-control", style = "width:100%;display:inline-block" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end pajak karyawan (PPh21)-->
+
+                                                        <!--start laba bersih-->
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group has-success">
+                                                                <label for="LabaBersih">Laba (rugi)</label>
+                                                                @*<input type="text" class="form-control" name="lababersih" id="LabaBersih" ng-model="companyModel.profit">*@
+                                                                @*@Html.TextBox("Profit", "", new { @class = "form-control" })*@
+                                                                @Html.Kendo().NumericTextBox().Name("Profit").Spinners(false).HtmlAttributes(new { @class = "form-control", style = "width:100%;display:inline-block" })
+                                                            </div>
+                                                        </div>
+                                                        <!--end laba bersih-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end accordion detil keuangan-->
+                                    </div>
+                                    <!--end accordion-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn green-sharp red-stripe">
+                                        <i class="fa fa-save"></i>
+                                        Simpan
+                                    </button>
+                                    <button type="reset" class="btn red">
+                                        <i class="fa fa-close"></i>
+                                        Batal
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+            <!-- END VALIDATION STATES-->
+        </div>
+    </div>
+</div>
+
+<script>
+
+    @{int globals = 1;}
+    var globalInit = 1;
+    function addShareholder() {
+        @{int count = globals;}
+        var count = parseInt(globalInit);
+        //$('#rowAdd').append(newElement(count));
+        $("#tableId").find('tbody')
+        .append(
+                newElement(count)
+                );
+        globalInit = count + 1;
+        @{globals = globals + 1;}
+    }
+    function newElement(value) {
+
+        return '<tr id="temprow">' +
+                      ' <td class="respons" style="width:249px;!important">' +
+                          '@Html.TextBox("shnama","", new { id = "shnama" + "new", @class = "form-control" })'+
+        //' <input type="text" ng-model="companyModel.email" class="form-control form-filter input-sm ng-pristine ng-untouched ng-valid ng-empty" name="nama" id="shnama' + globalInit + '">' +
+        ' </td>' +
+                      ' <td class="respons" style="width:249px;!important">' +
+        '@Html.TextBox("shjumlah", "", new { id = "shjumlah" + "new", @class = "form-control" })' +
+                      //' <input type="text" class="form-control form-filter input-sm ng-pristine ng-untouched ng-valid ng-empty" name="jumlah" id="shjumlah ' + globalInit + '" >' +
+        '</td>' +
+                      ' <td class="respons" style="width:249px;!important">' +
+        '@Html.TextBox("shnilai", "", new { id = "shnilai" + "new", @class = "form-control" })' +
+        //              ' <input type="text" class="form-control form-filter input-sm ng-pristine ng-untouched ng-valid ng-empty" name="nilai" id="shnilai ' + globalInit + '">' +
+                      ' </td>' +
+                      ' <td class="respons" style="width:249px;!important">' +
+        '@Html.TextBox("shstatus", "", new { id = "shstatus" + "new", @class = "form-control" })' +
+                      //' <input type="text" class="form-control form-filter input-sm ng-pristine ng-untouched ng-valid ng-empty" name="status" id="shstatus' + globalInit + '">' +
+                      ' </td>' +
+                      ' </tr>'
+    }
+    var a = "";
+    function onSelect(e) {
+        var dataItem = this.dataItem(e.item.index());
+        a = dataItem.Value.toString();
+    }
+
+    function onClose(e) {
+        var url = "@Url.Action("CompanyDetails", "EvaluationFormAngkutJual")";
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: {
+                CompanyId: a
+            },
+            success: function (data) {
+                debugger;
+                $('#CompanyIds').val(data.CompanyIds);
+                $('#alamat').val(data.Address);
+                $('#NoTlpn').val(data.TelNumber);
+                $('#Email_Website').val(data.Email);
+                $('#NoSk').val(data.SkNumber);
+                $('#skdate').val(data.SkDate2);
+                $('#CoalSourceSk').val(data.Province + "/" + data.CompanySourceAddress);
+                //$("#theTable").load("/EvaluationFormAngkutJual/Index/");
+            },
+            error: function (data) {
+                alert('No Addresses Found or Sk been found')
+                $('#CompanyId').val('');
+            }
+        });
+    }
+
+</script>
+
+@*@section scripts{*@
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Areas/AngkutJual/Ng/EvaluationFormAngkutJual/create.js"></script>
+@*}*@

@@ -1,0 +1,128 @@
+﻿/*
+//
+//
+KENDO CUSTOM CSS
+*/
+th.k-header {
+    background-color: #2AB4C0!important;
+}
+
+th.k-header>span,
+th.k-header>a {
+    font-weight: bold;
+    color: white!important;
+}
+
+.k-content.k-state-active > .k-widget.k-grid {
+    display: inline-block!important;
+}
+
+.k-tabstrip .k-tabstrip-items {
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.k-tabstrip-items .k-state-active .k-loading {
+    border-top-width: 2px;
+    border-color: red;
+}
+
+.k-grid tbody .k-button {
+    min-width: 26px!important;
+}
+
+.button-custom.k-grid-excel,
+.button-custom.k-grid-pdf {
+    display: inline-block!important;
+}
+
+@media (max-width: 386px) {
+    .button-custom.k-grid-excel,
+    .button-custom.k-grid-pdf {
+        display: table-cell!important;
+    }
+}
+
+.k-button {
+    color: #2AB4C0!important;
+}
+
+.k-grid-Delete {
+    color: #e7505a!important;
+}
+
+.k-grid-Alert {
+    color: #E87E04!important;
+}
+
+.k-grid-Edit {
+    color: #4B77BE!important;
+}
+
+.k-button,
+.k-grid-Edit,
+.k-grid-Delete,
+.k-grid-Alert,
+th.k-header {
+    background-image: none!important;
+}
+
+.k-button,
+.k-grid-Edit,
+.k-grid-Delete,
+.k-grid-Alert {
+    width: 100%!important;
+    text-align: center!important;
+    font-weight: bold!important;
+    display: table-cell!important;    
+    border: none!important;
+    background-color: transparent!important;
+}
+.k-button:hover,
+.k-grid-Edit:hover,
+.k-grid-Delete:hover,
+.k-grid-Alert:hover {
+    background-color: #eee!important;
+}
+
+@media (min-width: 945px) {
+    .k-button,
+    .k-grid-Edit,
+    .k-grid-Delete,
+    .k-grid-Alert {
+        width: 30.3333333%!important;
+    }
+}
+
+.k-grid-content {
+    height: auto!important;
+}
+
+.k-grid-content td {
+    border-bottom: 1px solid #dedede!important;
+}
+
+span.k-picker-wrap,
+span.k-dropdown-wrap {
+    border-color: #27a4b0!important;
+}
+
+.k-widget.k-datepicker.form-control {
+    height: 32px;
+}
+
+.k-widget.k-datepicker.form-control > .k-picker-wrap {
+    height: 31px;
+}
+
+.k-numeric-wrap {
+    border-color: transparent!important;
+}
+
+.k-autocomplete,
+.k-picker-wrap.k-state-hover,
+.k-autocomplete.k-state-hover,
+.k-numeric-wrap.k-state-hover {
+    background-color: transparent!important;
+    background-image: none!important;
+}

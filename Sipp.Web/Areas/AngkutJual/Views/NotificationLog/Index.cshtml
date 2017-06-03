@@ -1,0 +1,228 @@
+﻿@*@model IEnumerable<EduSpot.Entity.Tables.AngkutJual.Evaluation>*@
+
+@{
+    ViewBag.Title = "Notification Log";
+    Layout = "~/Areas/AngkutJual/Views/Shared/_LayoutAngkutJual.cshtml";
+}
+
+<style>
+    /* Page Template for the exported PDF */
+    .page-template {
+        font-family: "DejaVu Sans", "Arial", sans-serif;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+        .page-template .header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            border-bottom: 1px solid #888;
+            color: #888;
+        }
+
+        .page-template .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            border-top: 1px solid #888;
+            text-align: center;
+            color: #888;
+        }
+
+        .page-template .watermark {
+            font-weight: bold;
+            font-size: 400%;
+            text-align: center;
+            margin-top: 30%;
+            color: #aaaaaa;
+            opacity: 0.1;
+            transform: rotate(-35deg) scale(1.7, 1.5);
+        }
+
+    /* Content styling */
+    .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit portlet-datatable box-shadow">
+            <div class="portlet-title">
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+
+                    <li>
+                        <a href="#" ng-click="loadDetails()">Pengangkutan dan Penjualan</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Notification Log</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="title">
+                            <i class="fa fa-history font-red"></i>
+                            <span class="font-red sbold">
+                                Notification Log
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                @(Html.Kendo().Grid<Esdm.Web.Areas.AngkutJual.Controllers.NotificationLogController.NotificationLogViewModel>()
+                   .Name("grid")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.IdNotificationLog).Hidden();
+                       columns.Bound(p => p.NotificationLogDate).Title("Log Date").Format("{0:dd/MM/yyyy}");
+                       columns.Bound(p => p.CompanyName).Title("Perusahaan").Width(200);
+                       columns.Bound(p => p.Email).Title("Email");
+                       columns.Bound(p => p.MobileNo).Title("HP");
+                       columns.Bound(p => p.TglSuratPeringatan).Title("Tgl Surat Peringatan").Format("{0:dd/MM/yyyy}").Width(100);
+                       columns.Bound(p => p.TglAkhirPeringatan).Title("Tgl Akhir Peringatan").Format("{0:dd/MM/yyyy}").Width(100);
+                       columns.Bound(p => p.NotificationsContent).Title("Isi Pesan").Width(300);
+                   })
+                       .Events(e => e.DataBound("onRowBound"))
+               .Pageable()
+               .Filterable()
+               .Sortable()
+               .Scrollable()
+               .ColumnMenu()
+               .Resizable(resize => resize.Columns(true))
+               .DataSource(dataSource => dataSource
+                   .Ajax()
+                   .Read("List", "NotificationLog", new { area = "AngkutJual" })
+                   .ServerOperation(true)
+                   .Events(ev => ev.Error("error_handler"))
+                ))
+            </div>
+    </div>
+</div>
+    </div>
+
+<script type="x/kendo-template" id="page-template">
+    <div class="page-template">
+        <div class="header">
+            <div style="float: right">Page #: pageNum # of #: totalPages #</div>
+            Riwayat Evaluasi
+        </div>
+        <div class="watermark">ESDM</div>
+        <div class="footer">
+            Page #: pageNum # of #: totalPages #
+        </div>
+    </div>
+</script>
+
+<script>
+
+    function onRowBound(e) {
+        $(".k-grid-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+
+        $(".k-grid2-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid2-Delete").find("span").addClass("k-font-icon k-i-trash");
+        //$(".k-grid-View").find("span").addClass("k-icon km-view");
+    }
+    $(document).ready(function () {
+        $("#grid").data("kendoGrid").dataSource.read();
+        $("#grid").data("kendoGrid").refresh();
+
+    });
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    var index = (function ($) {
+        var self = this;
+
+        return {
+            deleteaction: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var konf = confirm("Are You Sure to delete " + selectedRow.Name + "'s Evaluation ?");
+                if (konf == true) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Delete")",
+                        data: {
+                            p: selectedRow.ID
+                        },
+                    traditional: true,
+                    success: function (result) {
+                        if (result) {
+                            alert("Data has been successfully Deleted");
+                            refreshGrid();
+                        }
+                    }
+                });
+                }
+            },
+            edit: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("Edit", "EvaluationFormAngkutJual")" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            }
+        }
+    })(jQuery);
+
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    function refreshGrid() {
+        $("#grid").data("kendoGrid").dataSource.read();
+        $("#grid").data("kendoGrid").refresh();
+    }
+
+    var tabActive = function () {
+        var tabstrip = $("#tabStrip").data("kendoTabStrip");
+        if (tabstrip.select().text() == "All") {
+            $("#grid").data("kendoGrid").dataSource.read();
+            $("#grid").data("kendoGrid").refresh();
+        }
+        else if (tabstrip.select().text() == "Sumber tidak sesuai") {
+            $("#grid2").data("kendoGrid").dataSource.read();
+            $("#grid2").data("kendoGrid").refresh();
+        }
+    }
+
+</script>

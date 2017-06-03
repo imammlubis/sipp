@@ -65,8 +65,8 @@
     <Compile Include="Entity\CoreIdentity\ApplicationUserDevice.cs" />
     <Compile Include="Entity\Organization\Company.cs" />
     <Compile Include="Entity\Organization\CompanyHistory.cs" />
-    <Compile Include="Entity\Payment\PaymentHistory.cs" />
-    <Compile Include="Entity\Payment\RegularPayment.cs" />
+    <Compile Include="Entity\Payment\BillCredit.cs" />
+    <Compile Include="Entity\Payment\RegularBill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
