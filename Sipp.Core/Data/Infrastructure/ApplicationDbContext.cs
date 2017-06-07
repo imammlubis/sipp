@@ -18,7 +18,7 @@ namespace Sipp.Core.Data.Infrastructure
         //public DbSet<RegularPayment> RegularPayment { get; set; }
         public DbSet<BillCredit> BillCredit { get; set; }
         public DbSet<RegularBill> RegularBill { get; set; }
-
+        public DbSet<CompanyEmail> CompanyEmail { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

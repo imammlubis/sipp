@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Organization\CompanyEmailRepository.cs" />
     <Compile Include="Organization\CompanyHistoryRepository.cs" />
     <Compile Include="Organization\CompanyRepository.cs" />
+    <Compile Include="Organization\ICompanyEmailRepository.cs" />
     <Compile Include="Organization\ICompanyHistoryRepository.cs" />
     <Compile Include="Organization\ICompanyRepository.cs" />
     <Compile Include="Payment\BillCreditRepository.cs" />

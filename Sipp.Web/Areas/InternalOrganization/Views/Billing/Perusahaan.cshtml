@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "- Perusahaan";
+    Layout = "~/Areas/InternalOrganization/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .select2{
+        width:270px !important;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12" ng-app="internal" ng-controller="internal-controller">
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="portlet box green-dark ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i> Tambah Perusahaan
+                        </div>
+                        @*<div class="tools">
+                            <a href="" class="collapse" data-original-title="" title=""> </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                            <a href="" class="reload" data-original-title="" title=""> </a>
+                            <a href="" class="remove" data-original-title="" title=""> </a>
+                        </div>*@
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Nama Perusahaan</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control js-example-basic-single" tabindex="-1"
+                                                aria-hidden="true" id="companyId"
+                                                name="companyId" ng-model="companyModel.nama">
+                                            <option value="">- Silahkan Pilih  -</option>
+                                            <option ng-repeat="item in listcompanydata" value="{{item.ID}}">{{item.Name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+                                        <input ng-model="companyModel.email" type="email" class="form-control input-sm" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions right1">
+                                <button type="button" class="btn default"ng-click="CreateCompany()" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn green" >Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <!-- Modal -->
+            
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Daftar Perusahaan</span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;" 
+                       data-toggle="modal" data-target="#myModal">
+                        <i class="icon-plus" title="Tambah Perusahaan"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                
+                @(Html.Kendo().Grid<Sipp.Web.Areas.InternalOrganization.Models.CompanyViewModel>()
+                   .Name("grid")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Bound(p => p.Id).Hidden();
+                       columns.Bound(p => p.Name).HeaderTemplate("Perusahaan").Width(200);
+                       columns.Bound(p => p.Province).HeaderTemplate("Provinsi");
+                       columns.Bound(p => p.Email).HeaderTemplate("Email");
+                   })
+                   .Scrollable()
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("LoadListAllCompany", "Billing", new { area = "InternalOrganization" })
+                       .ServerOperation(true)
+                    ))
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/InternalOrganization/Ng/Process.js")"></script>

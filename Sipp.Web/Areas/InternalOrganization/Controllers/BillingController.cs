@@ -19,6 +19,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
     {
         private EmailServices emailService = new EmailServices();
         private ICompanyRepository companyRepository = new CompanyRepository();
+        private ICompanyEmailRepository companyEmailRepository = new CompanyEmailRepository();
         private IRegularBillRepository regularBillRepository = new RegularBillRepository();
         private IBillCreditRepository billCreditRepository = new BillCreditRepository();
 
@@ -30,6 +31,11 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
 
         [Authorize(Roles = "administrator")]
         public ActionResult DaftarTagihan()
+        {
+            return View();
+        }
+        [Authorize(Roles = "administrator")]
+        public ActionResult Perusahaan()
         {
             return View();
         }
@@ -49,6 +55,28 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                        };
             return Json(data, JsonRequestBehavior.AllowGet);
         }
+
+        [Authorize(Roles = "administrator")]
+        public JsonResult LoadListAllCompany([DataSourceRequest] DataSourceRequest request)
+        {
+            var dataCompany = from a in companyRepository.Get().AsEnumerable()
+                              join b in companyEmailRepository.Get().AsEnumerable()
+                              on a.ID equals b.UserCompanyId into group1
+                              from g1 in group1.DefaultIfEmpty()
+                              select new CompanyViewModel
+                              {
+                                  Id = a.ID,
+                                  Address = a.Address,
+                                  Email = g1 == null ? String.Empty : g1.Email,
+                                  LegalType = a.LegalType,
+                                  Name = a.Name,
+                                  NPWP = a.NPWP,
+                                  Province = a.Province
+                              };
+            DataSourceResult result = dataCompany.ToDataSourceResult(request);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
         [Authorize(Roles = "administrator")]
         public async Task<string> CreateFirstBill(RegularBill regularBill)
         {

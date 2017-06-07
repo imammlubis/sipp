@@ -284,6 +284,7 @@
     <Compile Include="Areas\InternalOrganization\Controllers\CompaniesController.cs" />
     <Compile Include="Areas\InternalOrganization\Controllers\DashboardController.cs" />
     <Compile Include="Areas\InternalOrganization\InternalOrganizationAreaRegistration.cs" />
+    <Compile Include="Areas\InternalOrganization\Models\CompanyViewModel.cs" />
     <Compile Include="Areas\InternalOrganization\Models\DaftarPembayaranViewModel.cs" />
     <Compile Include="Areas\InternalOrganization\Models\DaftarTagihanViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -1120,6 +1121,7 @@
     <Content Include="Areas\InternalOrganization\Views\Companies\Index.cshtml" />
     <Content Include="Areas\InternalOrganization\Views\Shared\_LayoutCompanies.cshtml" />
     <Content Include="Areas\InternalOrganization\Views\Shared\_LayoutHomeCompanies.cshtml" />
+    <Content Include="Areas\InternalOrganization\Views\Billing\Perusahaan.cshtml" />
     <None Include="Properties\PublishProfiles\esdm_sipp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jasny-bootstrap\css\jasny-bootstrap.css" />
