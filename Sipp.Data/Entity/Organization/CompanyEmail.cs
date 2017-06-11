@@ -15,5 +15,9 @@ namespace Sipp.Data.Entity.Organization
         [ForeignKey("UserCompany")]
         public string UserCompanyId { get; set; }
         public virtual ApplicationUser UserCompany { get; set; }
+
+        [ForeignKey("Company")]
+        public string CompanyId { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

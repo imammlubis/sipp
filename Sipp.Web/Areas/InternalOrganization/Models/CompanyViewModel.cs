@@ -14,5 +14,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Models
         public string Province { get; set; }
         public string Id { get; set; }
         public string Email { get; set; }
+        public string CreatedBy { get; set; }
+        public Nullable<DateTime> CreatedDate { get; set; }
     }
 }

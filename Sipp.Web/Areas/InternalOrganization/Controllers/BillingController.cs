@@ -1,6 +1,7 @@
 ﻿using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Sipp.Data.Entity.Payment;
 using Sipp.Service.Organization;
 using Sipp.Service.Payment;
@@ -17,6 +18,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
 {
     public class BillingController : Controller
     {
+        private ApplicationUserManager _userManager;
         private EmailServices emailService = new EmailServices();
         private ICompanyRepository companyRepository = new CompanyRepository();
         private ICompanyEmailRepository companyEmailRepository = new CompanyEmailRepository();
@@ -61,7 +63,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
         {
             var dataCompany = from a in companyRepository.Get().AsEnumerable()
                               join b in companyEmailRepository.Get().AsEnumerable()
-                              on a.ID equals b.UserCompanyId into group1
+                              on a.ID equals b.CompanyId into group1
                               from g1 in group1.DefaultIfEmpty()
                               select new CompanyViewModel
                               {
@@ -92,6 +94,58 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
             }
             return message;
         }
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+        [Authorize(Roles = "administrator")]
+        public async Task<string> CreateCompany(CompanyViewModel companyModel)
+        {
+            var userid = User.Identity.GetUserId();
+            var message = "";
+            if (ModelState.IsValid)
+            {
+                var company = await companyRepository.AddAsync(new Data.Entity.Organization.Company
+                {
+                    ID = Guid.NewGuid().ToString(),
+                    CreatedBy = userid,
+                    CreatedDate = DateTime.Now,
+                    Name = companyModel.Name,
+                    Province = companyModel.Province,
+                    LegalType = companyModel.LegalType
+                });
+                var user = new Data.Entity.CoreIdentity.ApplicationUser
+                {
+                    FirstName = companyModel.Email.Split('@')[0],
+                    UserName = companyModel.Email,
+                    Email = companyModel.Email,
+                    EmailConfirmed = true
+                };
+                var result = await UserManager.CreateAsync(user, "Pass@123");
+                var companyEmail = await companyEmailRepository.AddAsync(new Data.Entity.Organization.CompanyEmail
+                {
+                    ID = Guid.NewGuid().ToString(),
+                    CreatedBy = userid,
+                    CreatedDate = DateTime.Now,
+                    Email = companyModel.Email,
+                    UserCompanyId = user.Id,
+                    CompanyId = company.ID
+                });
+
+               
+
+                message = "sukses";
+            }
+            return message;
+        }
+
         [Authorize(Roles = "administrator")]
         public JsonResult ListDaftarPembayaran([DataSourceRequest] DataSourceRequest request)
         {
@@ -147,6 +201,6 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
             DataSourceResult result = data.ToDataSourceResult(request);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-
+        
     }
 }

@@ -24,7 +24,16 @@ app.controller('internal-controller', function ($scope, $http, $interval, $timeo
         }
     }
     $scope.initBillingModel();
-
+    $scope.initCompanyModel = function () {
+        $scope.companyModel = {
+            id: '',
+            nama: '',
+            email: '',
+            provinsi:'',
+            legaltype:''
+        }
+    }
+    $scope.initCompanyModel();
 
     $scope.LoadListCompany = function () {
         $http.get('/InternalOrganization/Billing/LoadListCompany')
@@ -50,12 +59,39 @@ app.controller('internal-controller', function ($scope, $http, $interval, $timeo
             BillingType: $scope.billingModel.tipetagihan
         })
         .success(function (data) {
-            toastr["success"]("Data Berhasil Disimpan..");            
+            toastr["success"]("Data Berhasil Disimpan..");
+            $('#myModal').modal('hide');
         })
         .finally(function () {
             setInterval(function () {
                 window.location.href = '/InternalOrganization/Billing/';
             }, 1000)            
+        })
+    }
+
+    $scope.CreateCompany = function () {
+        debugger;
+        //if ($scope.dataAktaForm.$invalid) { return; }
+        toastr["info"]("Menyimpan Data..");
+        $http.post('/internalorganization/billing/CreateCompany', {
+            ID: '-',
+            Name: $scope.companyModel.nama,
+            Province: $scope.companyModel.provinsi,
+            Email: $scope.companyModel.email,
+            LegalType: $scope.companyModel.legaltype
+        })
+        .success(function (data) {
+            toastr["success"]("Data Berhasil Disimpan..");
+            $('#myModal').modal('hide');
+            $('#nama').val('');
+            $('#provinsi').val('');
+            $('#email').val('');
+            $('#tipe').val('');
+        })
+        .finally(function () {
+            //setInterval(function () {
+            //    window.location.href = '/InternalOrganization/Billing/';
+            //}, 1000)
         })
     }
  })
