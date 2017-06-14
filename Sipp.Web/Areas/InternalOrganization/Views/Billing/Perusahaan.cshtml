@@ -67,7 +67,67 @@
                             </div>
                             <div class="form-actions right1">
                                 <button type="button" class="btn default" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn green" ng-click="CreateCompany()">Submit</button>
+                                <button type="submit" class="btn green" ng-click="CreateCompany()">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <input type="hidden" id="idx" value=""/>
+        <div id="myModalEdit" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="portlet box green-dark ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-folder"></i> Edit Perusahaan
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" id="forms" role="form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Nama Perusahaan</label>
+                                    <div class="col-md-9">
+                                        <input ng-model="company2Model.nama2"
+                                               id="nama2" name="nama2"
+                                               type="text" class="form-control input-sm" placeholder="Nama Perusahaan">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Provinsi</label>
+                                    <div class="col-md-9">
+                                        <input ng-model="company2Model.provinsi2"
+                                               id="provinsi2" name="provinsi2"
+                                               type="text" class="form-control input-sm" placeholder="Provinsi">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+                                        <input ng-model="company2Model.email2" type="email"
+                                               id="email2"
+                                               class="form-control input-sm" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Tipe</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" name="tipe2" id="tipe2"
+                                                ng-model="company2Model.legaltype2">
+                                            <option value="">- Silahkan Pilih  -</option>
+                                            <option value="IUP">IUP</option>
+                                            <option value="PKP2B">PKP2B</option>
+                                            <option value="KK">KK</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions right1">
+                                <button type="button" class="btn default" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn green" ng-click="EditCompany()">Simpan</button>
                             </div>
                         </form>
                     </div>
@@ -91,13 +151,18 @@
                     </a>
                 </div>
             </div>
-            <div>
-                
+            <div>                
                 @(Html.Kendo().Grid<Sipp.Web.Areas.InternalOrganization.Models.CompanyViewModel>()
                    .Name("grid")
                    .EnableCustomBinding(true)
                    .Columns(columns =>
                    {
+                       columns.Command(
+                           command =>
+                           {
+                               command.Custom(" Edit").Click("index.edit").HtmlAttributes(new { data_toggle = "modal", data_target = "#myModalEdit"});
+                               command.Custom(" Delete").Click("index.remove");
+                           }).Width(160).Title("Action");
                        columns.Bound(p => p.Id).Hidden();
                        columns.Bound(p => p.Name).HeaderTemplate("Perusahaan").Width(200);
                        columns.Bound(p => p.Province).HeaderTemplate("Provinsi");
@@ -122,3 +187,134 @@
 <script src="@Url.Content("~/Scripts/angular.min.js")"></script>
 <script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
 <script src="@Url.Content("~/Areas/InternalOrganization/Ng/Process.js")"></script>
+
+<script>
+    function onRowBound(events) {
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+        $(".k-grid-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-grid-Alert").find("span").addClass("k-font-icon k-i-exception");
+
+    }
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    var index = (function ($) {
+        var self = this;
+        return {
+            edit: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                $('#idx').val(selectedRow.Id.toString());
+                $('#nama2').val(selectedRow.Name.toString());
+                $('#provinsi2').val(selectedRow.Province.toString());
+                $('#email2').val(selectedRow.Email.toString());
+                $('#tipe2').val(selectedRow.LegalType.toString());
+            },
+            remove: function (e) {
+                debugger;
+                var selectedRow = returnSelectedRow(e);
+                swal({
+                    title: "Are you sure delete "+selectedRow.Name + " ?",
+                    text: "You will not be able to recover this company data!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("RemoveCompany", "Billing", new { area = "InternalOrganization" })",
+                            data: {
+                                id: selectedRow.Id
+                            },
+                        traditional: true,
+                        success: function (result) {
+                            if (result) {                                
+                                swal("Deleted!", "Company data has been deleted.", "success");
+                                refreshGrid();
+                            }                            
+                        },
+                        });                        
+                    } else {
+                        swal("Cancelled", "Company data is safe :)", "error");
+                    }
+                });
+
+            },
+            print: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("DownloadViewPDF", "printdata", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+            history: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("ViewHistory", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+
+            dataBound: function(){
+                var grid = $("#grid").data("kendoGrid");
+                grid.find(".k-hierarchy-cell, .k-hierarchy-col").hide(); //get rid of detail icon
+            },
+
+        alert: function (e) {           
+            var inputOptions = new Promise(function (resolve) {
+                setTimeout(function () {
+                    resolve({
+                        'EMAIL': 'EMAIL',
+                        'SMS': 'SMS',
+                        'EMAIL&SMS': 'EMAIL&SMS'
+                    })
+                }, 2000)
+            })
+            swal({
+                title: 'Select option',
+                input: 'radio',
+                inputOptions: inputOptions,
+                inputValidator: function (result) {
+                    return new Promise(function (resolve, reject) {
+                        var selectedRow = returnSelectedRow2(e);
+                        if (result) {
+                            $.ajax({
+                                type: "POST",
+                                url: "@Url.Action("SendAlert", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })",
+                                data: {
+                                id: selectedRow.SkEndId,
+                                type: result
+                                },
+                            traditional: true,
+                            success: function (result) {
+                                debugger;
+                                if (result) {
+                                    swal("Sukses!", "Peringatan Telah dikirim", "success");
+                                }
+                            },                
+                            });
+                    } else {
+                            reject('You need to select something!')
+                }
+            })
+            }}).then(function (result) {
+            swal({
+                type: 'success',
+                html: 'You selected: ' + result
+            })
+        })
+        },
+            refreshGrid: function (e) {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            },
+            refreshGrid3: function (e) {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            }}
+    })(jQuery);
+</script>

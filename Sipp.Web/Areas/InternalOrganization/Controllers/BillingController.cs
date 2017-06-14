@@ -65,6 +65,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                               join b in companyEmailRepository.Get().AsEnumerable()
                               on a.ID equals b.CompanyId into group1
                               from g1 in group1.DefaultIfEmpty()
+                              where a.IsVisible == true
                               select new CompanyViewModel
                               {
                                   Id = a.ID,
@@ -105,6 +106,92 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                 _userManager = value;
             }
         }
+
+        public async Task<string> RemoveCompany(string id)
+        {
+            var userid = User.Identity.GetUserId();
+            var data = await companyRepository.FindAsync(id);
+            data.IsVisible = false;
+            data.UpdatedBy = userid;
+            data.UpdatedDate = DateTime.Now;
+            await companyRepository.UpdateAsync(data);
+            return "OK";
+        }
+
+        [Authorize(Roles = "administrator")]
+        public async Task<string> EditCompany(CompanyViewModel companyModel)
+        {
+            var userid = User.Identity.GetUserId();
+            var message = "";
+            if (ModelState.IsValid)
+            {
+                var company = await companyRepository.FindAsync(companyModel.Id);
+                company.UpdatedBy = userid;
+                company.UpdatedDate = DateTime.Now;
+                company.Name = companyModel.Name;
+                company.Province = companyModel.Province;
+                var updateCompany = await companyRepository.UpdateAsync(company);
+
+                var companyEmail = companyEmailRepository.Get().Where(c => c.CompanyId == companyModel.Id).FirstOrDefault();
+                                
+                if (companyEmail == null)
+                {
+                    var user = new Data.Entity.CoreIdentity.ApplicationUser
+                    {
+                        FirstName = companyModel.Email.Split('@')[0],
+                        UserName = companyModel.Email,
+                        Email = companyModel.Email,
+                        EmailConfirmed = true
+                    };
+                    var result = await UserManager.CreateAsync(user, "Pass@123");
+
+                    var _companyEmail = await companyEmailRepository.AddAsync(new Data.Entity.Organization.CompanyEmail
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        CreatedBy = userid,
+                        CreatedDate = DateTime.Now,
+                        Email = companyModel.Email,
+                        UserCompanyId = user.Id,
+                        CompanyId = company.ID
+                    }); 
+                }
+                else
+                {
+                    var user = UserManager.FindById(companyEmail.UserCompanyId);
+                    user.Email = companyModel.Email;
+                    var updateUser = await UserManager.UpdateAsync(user);
+
+                    companyEmail.Email = companyModel.Email;
+                    var updateCompanyEmail = await companyEmailRepository.UpdateAsync(companyEmail);
+                }
+
+                message = "success";
+            }
+            return message;
+        }
+        public async Task<JsonResult> FindDataCompany(string id)
+        {
+            var data = from a in billCreditRepository.Get().AsEnumerable()
+                       join b in regularBillRepository.Get().AsEnumerable()
+                       on a.RegularBillId equals b.ID
+                       join z in companyRepository.Get().AsEnumerable()
+                       on b.CompanyId equals z.ID
+                       select new DaftarPembayaranViewModel
+                       {
+                           Id = a.ID,
+                           CompanyId = z.ID,
+                           RegularBillId = a.RegularBillId,
+                           Amount = a.Amount,
+                           CompanyName = z.Name,
+                           FileValidation = a.FileValidation,
+                           IsApproved = a.IsApproved,
+                           ObjectionInformation = a.ObjectionInformation
+                       };
+            
+           
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
         [Authorize(Roles = "administrator")]
         public async Task<string> CreateCompany(CompanyViewModel companyModel)
         {
@@ -154,6 +241,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                        on a.RegularBillId equals b.ID
                        join z in companyRepository.Get().AsEnumerable()
                        on b.CompanyId equals z.ID
+                       where z.IsVisible == true
                        select new DaftarPembayaranViewModel
                        {
                            Id = a.ID,
@@ -174,6 +262,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
             var data = from a in regularBillRepository.Get().AsEnumerable()
                        join b in companyRepository.Get().AsEnumerable()
                        on a.CompanyId equals b.ID
+                       where b.IsVisible == true
                        select new DaftarTagihanViewModel
                        {
                            Id = a.ID,

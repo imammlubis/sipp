@@ -18,6 +18,7 @@ namespace Sipp.Data.Entity.Organization
         public string LegalType { get; set; } //IUPMINERAL, IUPBATUBARA, PKP2B, KK
         public string Address { get; set; }
         public string Province { get; set; }
+        public Nullable<bool> IsVisible { get; set; }
 
         [ForeignKey("UserCompany")]
         public string UserCompanyId { get; set; }
