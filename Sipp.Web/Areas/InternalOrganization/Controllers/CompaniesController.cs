@@ -91,7 +91,7 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                     billCredit.ID = Guid.NewGuid().ToString();
                     //string _FileName = Path.GetFileName(file.FileName);
                     string extension = Path.GetExtension(file.FileName);
-                    string _path = Path.Combine(Server.MapPath("~/Documents/ImageApprovement"), billCredit.ID);
+                    string _path = Path.Combine(Server.MapPath("~/Documents/ImageApprovement"), billCredit.ID+extension);
                     file.SaveAs(_path);
                     
                     billCredit.Amount = double.Parse(fc["nominal"].ToString().Replace(".", ""));
@@ -99,8 +99,8 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                     billCredit.CreatedDate = DateTime.Now;
                     billCredit.FileValidation = billCredit.ID + extension;
                     billCredit.ObjectionInformation = fc["keterangan"];
-                    billCredit.IsApproved = null;
-                    billCredit.CompanyId = compId.ToString();
+                    //billCredit.IsApproved = null;
+                    billCredit.CompanyId = compId.CompanyId;
                     var result = await billCreditRepository.AddAsync(billCredit);
                     message = "success";
                 }

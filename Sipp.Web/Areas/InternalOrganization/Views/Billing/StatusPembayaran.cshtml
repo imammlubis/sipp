@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "- Daftar Pembayaran";
+    Layout = "~/Areas/InternalOrganization/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet light portlet-fit portlet-form box-shadow background-siluet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-red"></i>
+                    <span class="caption-subject font-red sbold uppercase">Daftar Pembayaran oleh Perusahaan</span>
+                </div>
+            </div>
+            <div class="portlet-body form" ng-app="internal" ng-controller="internal-controller">
+                @(Html.Kendo().Grid<Sipp.Web.Areas.InternalOrganization.Models.DaftarPembayaranViewModel>()
+                   .Name("grid")
+                   .EnableCustomBinding(true)
+                   .Columns(columns =>
+                   {
+                       columns.Command(
+                              command =>
+                              {
+                                  command.Custom(" Respond").Click("index.respond");
+                              }).Width(160).Title("Action");
+                       columns.Bound(p => p.Id).Hidden();
+                       columns.Bound(p => p.CompanyName).HeaderTemplate("Perusahaan").Width(300);
+                       columns.Bound(p => p.Amount).HeaderTemplate("Nominal Pembayaran").Format("{0:##,#}");
+                       columns.Bound(p => p.FileValidation).HeaderTemplate("File Bukti").ClientTemplate("<a href='" + @Url.Content("~/Documents/ImageApprovement/" + "#=FileValidation#'") + "' target='_blank''>#=FileValidation#</a>"); ;
+                       columns.Bound(p => p.CreatedDate).HeaderTemplate("Tanggal Bayar").Format("{0:dd/MM/yyyy}").Width(148);
+                       columns.Bound(p => p.IsApproved).HeaderTemplate("Status").ClientTemplate("#if(IsApproved# == 'true'){'Approved'}");
+                   })
+                   .Scrollable()
+                   .Pageable()
+                   .Filterable()
+                   .Sortable()
+                   .ColumnMenu()
+                   .Resizable(resize => resize.Columns(true))
+                   .DataSource(dataSource => dataSource
+                       .Ajax()
+                       .Read("ListAllDaftarPembayaran", "Billing", new { area = "InternalOrganization" })
+                       .ServerOperation(true)
+                    ))
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+<script src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+<script src="@Url.Content("~/Areas/InternalOrganization/Ng/Process.js")"></script>
+<script>
+    function onRowBound(events) {
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+        $(".k-grid-Edit").find("span").addClass("k-font-icon k-i-pencil");
+        $(".k-grid-Delete").find("span").addClass("k-font-icon k-i-trash");
+        $(".k-grid-Alert").find("span").addClass("k-font-icon k-i-exception");
+
+    }
+    function refreshGrid() {
+        $("#grid").data("kendoGrid").dataSource.read();
+        $("#grid").data("kendoGrid").refresh();
+    }
+    function returnSelectedRow(e) {
+        var grid = $("#grid").data("kendoGrid");
+        var selectedRow = grid.dataItem($(e.currentTarget).closest("tr"));
+        return selectedRow;
+    };
+    var index = (function ($) {
+        var self = this;
+        return {
+            edit: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                $('#idx').val(selectedRow.Id.toString());
+                $('#nama2').val(selectedRow.Name.toString());
+                $('#provinsi2').val(selectedRow.Province.toString());
+                $('#email2').val(selectedRow.Email.toString());
+                $('#tipe2').val(selectedRow.LegalType.toString());
+            },
+            remove: function (e) {
+                debugger;
+                var selectedRow = returnSelectedRow(e);
+                swal({
+                    title: "Are you sure delete "+selectedRow.Name + " ?",
+                    text: "You will not be able to recover this company data!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("RemoveCompany", "Billing", new { area = "InternalOrganization" })",
+                            data: {
+                                id: selectedRow.Id
+                            },
+                        traditional: true,
+                        success: function (result) {
+                            if (result) {
+                                swal("Deleted!", "Company data has been deleted.", "success");
+                                refreshGrid();
+                            }
+                        },
+                        });
+                    } else {
+                        swal("Cancelled", "Company data is safe :)", "error");
+                    }
+                });
+
+            },
+            print: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("DownloadViewPDF", "printdata", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+            history: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                var url = "@Url.Action("ViewHistory", "MelihatDaftarKeseluruhan", new { area = "pkp2b" })" + "/" + selectedRow.ID.toString();
+                window.location.replace(url);
+            },
+
+            dataBound: function(){
+                var grid = $("#grid").data("kendoGrid");
+                grid.find(".k-hierarchy-cell, .k-hierarchy-col").hide(); //get rid of detail icon
+            },
+
+            respond: function (e) {
+                var selectedRow = returnSelectedRow(e);
+                swal({
+                    title: 'Respon ' + selectedRow.CompanyName.toString() + '?',
+                    text: "Respon Pembayaran Tagihan " + selectedRow.CompanyName.toString(),
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d12a0c',
+                    confirmButtonText: 'Approve',
+                    cancelButtonText: 'Reject'
+                }).then(function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("Approve", "Billing", new { area = "InternalOrganization" })",
+                            data: {
+                                id: selectedRow.Id
+                            },
+                            traditional: true,
+                            success: function (result) {
+                                debugger;
+                                if (result) {
+                                    refreshGrid();
+                                    swal(
+                                    'Approved!',
+                                    selectedRow.CompanyName.toString() + 'has been approved',
+                                    'success'
+                                    )
+                                }
+                            },
+                        })
+                },
+                function (dismiss) {
+                    if (dismiss === 'cancel') {
+                              $.ajax({
+                                  type: "POST",
+                                  url: "@Url.Action("Reject", "Billing", new { area = "InternalOrganization" })",
+                            data: {
+                            id: selectedRow.Id
+                            },
+                            traditional: true,
+                            success: function (result) {
+                                debugger;
+                                if (result) {
+                                    refreshGrid();
+                                    swal(
+                                        'Rejected!',
+                                        selectedRow.CompanyName.toString() + 'has been rejected',
+                                        'error'
+                                    )
+                                }
+
+                            },
+                            })
+                    }
+                })
+            },
+            refreshGrid3: function (e) {
+                $("#grid").data("kendoGrid").dataSource.read();
+                $("#grid").data("kendoGrid").refresh();
+            }}
+    })(jQuery);
+</script>

@@ -42,6 +42,12 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
             return View();
         }
         [Authorize(Roles = "administrator")]
+        public ActionResult StatusPembayaran()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "administrator")]
         public ActionResult DaftarPembayaran()
         {
             return View();
@@ -297,6 +303,29 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
             DataSourceResult result = data.ToDataSourceResult(request);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        [Authorize(Roles = "administrator")]
+        public JsonResult ListAllDaftarPembayaran([DataSourceRequest] DataSourceRequest request)
+        {
+            var data = from a in billCreditRepository.Get().AsEnumerable()
+                       join z in companyRepository.Get().AsEnumerable()
+                       on a.CompanyId equals z.ID
+                       where z.IsVisible == true
+                       select new DaftarPembayaranViewModel
+                       {
+                           Id = a.ID,
+                           CompanyId = z.ID,
+                           Amount = a.Amount,
+                           CompanyName = z.Name,
+                           FileValidation = a.FileValidation,
+                           IsApproved = a.IsApproved,
+                           CreatedDate = a.CreatedDate,
+                           ObjectionInformation = a.ObjectionInformation
+                       };
+            DataSourceResult result = data.ToDataSourceResult(request);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
         [Authorize(Roles = "administrator")]
         public JsonResult ListDaftarTagihan([DataSourceRequest] DataSourceRequest request)
         {

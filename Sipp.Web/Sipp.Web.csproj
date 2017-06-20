@@ -1124,6 +1124,7 @@
     <Content Include="Areas\InternalOrganization\Views\Shared\_LayoutHomeCompanies.cshtml" />
     <Content Include="Areas\InternalOrganization\Views\Billing\Perusahaan.cshtml" />
     <Content Include="Areas\InternalOrganization\Views\Companies\TransactionHistory.cshtml" />
+    <Content Include="Areas\InternalOrganization\Views\Billing\StatusPembayaran.cshtml" />
     <None Include="Properties\PublishProfiles\esdm_sipp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jasny-bootstrap\css\jasny-bootstrap.css" />
