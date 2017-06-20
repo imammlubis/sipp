@@ -1123,6 +1123,7 @@
     <Content Include="Areas\InternalOrganization\Views\Shared\_LayoutCompanies.cshtml" />
     <Content Include="Areas\InternalOrganization\Views\Shared\_LayoutHomeCompanies.cshtml" />
     <Content Include="Areas\InternalOrganization\Views\Billing\Perusahaan.cshtml" />
+    <Content Include="Areas\InternalOrganization\Views\Companies\TransactionHistory.cshtml" />
     <None Include="Properties\PublishProfiles\esdm_sipp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jasny-bootstrap\css\jasny-bootstrap.css" />
@@ -1132,6 +1133,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.mask.js" />
+    <Content Include="Scripts\jquery.maskMoney.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1323,8 +1326,9 @@
   <ItemGroup>
     <Folder Include="App_Browsers\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Documents\" />
+    <Folder Include="Documents\ImageApprovement\" />
     <Folder Include="Reports\" />
+    <Folder Include="Scripts\dist\" />
     <Folder Include="Views\GridKendo\" />
     <Folder Include="Views\IupOpAngkutJualList\" />
   </ItemGroup>

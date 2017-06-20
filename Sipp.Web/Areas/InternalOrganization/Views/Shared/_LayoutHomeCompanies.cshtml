@@ -122,7 +122,6 @@
         <!-- BEGIN HEADER MENU -->
         <div class="page-header-menu box-shadow">
             <div class="container-fluid">
-
                 <!-- BEGIN MEGA MENU -->
                 <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
                 <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
@@ -130,6 +129,9 @@
                     <ul class="nav navbar-nav">
                         <li class="menu-dropdown classic-menu-dropdown">
                             <a href="/InternalOrganization/Companies">Home</a>
+                        </li>
+                        <li class="menu-dropdown classic-menu-dropdown">
+                            <a href="/InternalOrganization/Companies/TransactionHistory">Transaksi</a>
                         </li>
                         @*<li class="menu-dropdown mega-menu-dropdown mega-menu">
                             <a href="javascript:;">
@@ -258,6 +260,8 @@
     <script src="@Url.Content("~/Content/assets/pages/scripts/form-validation-md.min.js")"></script>
     <script src="@Url.Content("~/Content/assets/pages/scripts/components-date-time-pickers.min.js")"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.8/jquery.mask.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery.mask.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/dist/jquery.inputmask.bundle.js")"></script>*@
     @*<script src="@Url.Content("~/Scripts/jasny-bootstrap/js/jasny-bootstrap.js")"></script>*@
 
     <script src="@Url.Content("~/Content/assets/global/plugins/bootstrap-toastr/toastr.min.js")"></script>

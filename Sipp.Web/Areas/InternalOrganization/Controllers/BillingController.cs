@@ -144,6 +144,8 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                         EmailConfirmed = true
                     };
                     var result = await UserManager.CreateAsync(user, "Pass@123");
+                    var findUser = UserManager.FindByName(user.UserName);
+                    UserManager.AddToRoles(findUser.Id, new string[] { "company" });
 
                     var _companyEmail = await companyEmailRepository.AddAsync(new Data.Entity.Organization.CompanyEmail
                     {
@@ -216,6 +218,9 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                     EmailConfirmed = true
                 };
                 var result = await UserManager.CreateAsync(user, "Pass@123");
+                var findUser = UserManager.FindByName(user.UserName);
+                UserManager.AddToRoles(findUser.Id, new string[] { "company" });
+
                 var companyEmail = await companyEmailRepository.AddAsync(new Data.Entity.Organization.CompanyEmail
                 {
                     ID = Guid.NewGuid().ToString(),
@@ -225,32 +230,68 @@ namespace Sipp.Web.Areas.InternalOrganization.Controllers
                     UserCompanyId = user.Id,
                     CompanyId = company.ID
                 });
-
-               
-
                 message = "sukses";
             }
             return message;
         }
+        [Authorize(Roles = "administrator")]
+        public async Task<string> Approve(string id)
+        {
+            var userid = User.Identity.GetUserId();
+            var message = "";
+            try
+            {
+                var billCred = await billCreditRepository.FindAsync(id);
+                billCred.IsApproved = true;
+                billCred.UpdatedBy = userid;
+                billCred.UpdatedDate = DateTime.Now;
+                await billCreditRepository.UpdateAsync(billCred);
+                message = "success";
+            }
+            catch (Exception ex)
+            {
+                message = "failed "+ ex;
+            }
+            return message;
+        }
+        [Authorize(Roles = "administrator")]
+        public async Task<string> Reject(string id)
+        {
+            var userid = User.Identity.GetUserId();
+            var message = "";
+            try
+            {
+                var billCred = await billCreditRepository.FindAsync(id);
+                billCred.IsApproved = false;
+                billCred.UpdatedBy = userid;
+                billCred.UpdatedDate = DateTime.Now;
+                await billCreditRepository.UpdateAsync(billCred);
+                message = "success";
+            }
+            catch (Exception ex)
+            {
+                message = "failed " + ex;
+            }
+            return message;
+        }
+
 
         [Authorize(Roles = "administrator")]
         public JsonResult ListDaftarPembayaran([DataSourceRequest] DataSourceRequest request)
         {
             var data = from a in billCreditRepository.Get().AsEnumerable()
-                       join b in regularBillRepository.Get().AsEnumerable()
-                       on a.RegularBillId equals b.ID
                        join z in companyRepository.Get().AsEnumerable()
-                       on b.CompanyId equals z.ID
-                       where z.IsVisible == true
+                       on a.CompanyId equals z.ID
+                       where z.IsVisible == true && a.IsApproved == null
                        select new DaftarPembayaranViewModel
                        {
                            Id = a.ID,
                            CompanyId = z.ID,
-                           RegularBillId = a.RegularBillId,
                            Amount = a.Amount,
                            CompanyName = z.Name,
                            FileValidation = a.FileValidation,
                            IsApproved = a.IsApproved,
+                           CreatedDate = a.CreatedDate,
                            ObjectionInformation = a.ObjectionInformation
                        };
             DataSourceResult result = data.ToDataSourceResult(request);

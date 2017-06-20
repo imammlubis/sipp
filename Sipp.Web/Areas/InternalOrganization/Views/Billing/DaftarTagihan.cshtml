@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "- Input Tagihan Awal";
+    ViewBag.Title = "- Daftar Tagihan";
     Layout = "~/Areas/InternalOrganization/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -30,11 +30,11 @@
                        columns.Bound(p => p.FirstAmount).HeaderTemplate("Nominal Tagihan I").Format("{0:##,#}");
                        columns.Bound(p => p.FirstBillingDate).HeaderTemplate("Tgl Tagihan I").Format("{0:dd/MM/yyyy}").Width(148);
 
-                       //columns.Bound(p => p.SecondBillingNo).HeaderTemplate("No. Surat Tagihan II");
+                       //columns.Bound(p => p.SecondBillingNo).Hidden().HeaderTemplate("No. Surat Tagihan II");
                        //columns.Bound(p => p.SecondAmount).HeaderTemplate("Nominal Tagihan II");
                        //columns.Bound(p => p.SecondBillingDate).HeaderTemplate("Tgl Tagihan II").Format("{0:dd/MM/yyyy}").Width(148);
 
-                       //columns.Bound(p => p.ThirdBillingNo).HeaderTemplate("No. Surat Tagihan III");
+                       //columns.Bound(p => p.ThirdBillingNo).Hidden().HeaderTemplate("No. Surat Tagihan III");
                        //columns.Bound(p => p.ThirdAmount).HeaderTemplate("Nominal Tagihan III");
                        //columns.Bound(p => p.ThirdBillingDate).HeaderTemplate("Tgl Tagihan III").Format("{0:dd/MM/yyyy}").Width(148);
 

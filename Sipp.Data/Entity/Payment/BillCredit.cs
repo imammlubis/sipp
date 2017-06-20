@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sipp.Data.Entity.Organization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace Sipp.Data.Entity.Payment
         [ForeignKey("RegularBill")]
         public string RegularBillId { get; set; }
         public virtual RegularBill RegularBill { get; set; }
-
+        [ForeignKey("Company")]
+        public string CompanyId { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

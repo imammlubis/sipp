@@ -9,17 +9,16 @@ app.filter("mydate", function () {
 app.controller('company-controller', function ($scope, $http, $interval, $timeout) {
 
     $('.date-picker').datepicker({ format: "dd/mm/yyyy", autoclose: true, })
-    $(".js-example-basic-single").select2();
+    
     $scope.initCreditModel = function () {
         $scope.creditModel = {
             id: '',
             nominal: '',
-            bukti:'' 
+            bukti:'' ,
+            jumlahPiutang:''
         }
     }
     $scope.initCreditModel();
-
-
     $scope.LoadListCompany = function () {
         $http.get('/InternalOrganization/Billing/LoadListCompany')
         .success(function (data) {
@@ -50,6 +49,24 @@ app.controller('company-controller', function ($scope, $http, $interval, $timeou
             setInterval(function () {
                 window.location.href = '/InternalOrganization/Billing/';
             }, 1000)            
+        })
+    }
+
+    $scope.CreateTransaction = function () {
+        debugger;
+        //if ($scope.dataAktaForm.$invalid) { return; }
+        toastr["info"]("Menyimpan Data..");
+        $http.post('/internalorganization/Companies/CreateTransaction', {
+            ID: '-',
+            Amount: $('#nominal').val(),
+            //FileValidation: '',
+            ObjectionInformation: $('#keterangan').val()
+        })
+        .success(function (data) {
+            toastr["success"]("Data Berhasil Disimpan..");
+        })
+        .finally(function () {
+          
         })
     }
  })
